@@ -44,8 +44,7 @@
             line-height: 1.5;
             font-size: 14px;
             overflow-x: hidden;
-            /* Margen inferior para que el badge de Netlify no tape contenido */
-            padding-bottom: 40px;
+            padding-bottom: 50px;
         }
 
         /* ANNOUNCEMENT BAR */
@@ -111,7 +110,6 @@
             min-width: 0;
         }
 
-        /* TÍTULO SAMURÁI ORIGINAL CON J EN ROJO */
         .brand-logo .logo-title {
             font-family: var(--font-samurai);
             font-size: 1.15rem;
@@ -284,7 +282,7 @@
             cursor: pointer;
         }
 
-        /* SELECCIÓN RÁPIDA DE JUEGOS Y SECCIONES */
+        /* SELECCIÓN RÁPIDA */
         .game-quick-access {
             display: flex;
             gap: 8px;
@@ -323,7 +321,7 @@
             color: #FFF;
         }
 
-        /* CATÁLOGO Y FILTROS LATERALES */
+        /* CATÁLOGO Y FILTROS */
         .catalog-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -536,7 +534,7 @@
             color: var(--primary-dark);
         }
 
-        /* BANNER CAFETERÍA PRESENCIAL */
+        /* CAFETERÍA & COMUNIDAD */
         .coffee-banner {
             background: linear-gradient(rgba(61, 35, 20, 0.9), rgba(61, 35, 20, 0.9)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80') center/cover;
             border: 2px solid var(--accent-gold);
@@ -573,7 +571,6 @@
             display: inline-block;
         }
 
-        /* APERTURAS & INSTAGRAM FEED */
         .community-section {
             background-color: var(--primary-mahogany);
             border: 2px solid var(--accent-gold);
@@ -677,11 +674,11 @@
             line-height: 1.25;
         }
 
-        /* FOOTER */
+        /* FOOTER CON TODOS LOS CORREOS Y SECCIONES ORIGINALES */
         footer {
             background-color: var(--primary-mahogany);
             color: #D0C2B0;
-            padding: 30px 16px 50px 16px;
+            padding: 30px 16px 60px 16px;
             border-top: 2px solid var(--accent-gold);
             margin-top: 30px;
         }
@@ -731,7 +728,6 @@
             color: var(--accent-gold);
         }
 
-        /* ÍCONOS SVG ESTILIZADOS */
         .social-svg-icon {
             width: 16px;
             height: 16px;
@@ -811,7 +807,7 @@
             color: #9E8E7C;
         }
 
-        /* BOTÓN FLOTANTE DE WHATSAPP ELEVADO PARA QUE NETLIFY NO LO TAPE */
+        /* BOTÓN FLOTANTE DE WHATSAPP ELEVADO */
         .whatsapp-float {
             position: fixed;
             width: 52px;
@@ -841,7 +837,7 @@
             fill: #FFFFFF;
         }
 
-        /* MODAL / DRAWER INTERACTIVO DEL CARRITO */
+        /* CARRITO / MODAL */
         .cart-overlay {
             position: fixed;
             top: 0;
@@ -1022,7 +1018,7 @@
             font-family: var(--font-tcg);
         }
 
-        /* BOTÓN MERCADO PAGO CON LOGOTIPO OFICIAL PERFECTO */
+        /* BOTÓN MERCADO PAGO OFICIAL */
         .checkout-mercadopago-btn {
             width: 100%;
             background-color: #009EE3;
@@ -1061,7 +1057,7 @@
             gap: 6px;
         }
 
-        /* MODAL DE TRANSFERENCIA BANCARIA */
+        /* MODAL TRANSFERENCIA */
         .transfer-modal-overlay {
             position: fixed;
             top: 0;
@@ -1141,7 +1137,6 @@
             cursor: pointer;
         }
 
-        /* TOAST NOTIFICACIÓN */
         .toast-notification {
             position: fixed;
             bottom: 75px;
@@ -1221,7 +1216,7 @@
         ☕ ¡Bienvenidos a Dolakanjima! Despachos a todo Chile | 🎴 Preventas oficiales TCG con entrega garantizada
     </div>
 
-    <!-- Header Responsivo y Centrado -->
+    <!-- Header -->
     <header>
         <div class="header-top">
             <button class="menu-btn" id="toggleMenu">CATÁLOGO 🎴 ▾</button>
@@ -1253,7 +1248,7 @@
 
     <div class="main-wrapper">
 
-        <!-- HERO BANNER PRINCIPAL -->
+        <!-- HERO BANNER -->
         <section class="hero-banner">
             <span class="hero-badge">Tu Punto de Guardado</span>
             <h2>TU PUNTO DE GUARDADO PARA EL CAFÉ Y EL TCG</h2>
@@ -1261,7 +1256,7 @@
             <a href="#catalogo" class="btn-primary">EXPLORAR CATÁLOGO</a>
         </section>
 
-        <!-- SELECCIÓN RÁPIDA DE JUEGOS Y SECCIONES -->
+        <!-- SELECCIÓN RÁPIDA -->
         <div class="game-quick-access">
             <div class="game-pill pill-promo" id="pill-promociones" onclick="filterGame('promociones', this)">Ofertas 🏷️</div>
             <div class="game-pill active" id="pill-one-piece" onclick="filterGame('one-piece', this)">One Piece</div>
@@ -1272,9 +1267,8 @@
             <div class="game-pill" id="pill-accesorios" onclick="filterGame('accesorios', this)">Accesorios</div>
         </div>
 
-        <!-- CATÁLOGO Y FILTROS LATERALES -->
+        <!-- CATÁLOGO Y FILTROS -->
         <div class="catalog-container" id="catalogo">
-            
             <aside>
                 <button class="filter-toggle-btn" id="toggleFilter">
                     <span>Filtros de Búsqueda ⚙️</span>
@@ -1324,10 +1318,7 @@
                 <div class="section-header">
                     <h3 id="catalogTitle">CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️</h3>
                 </div>
-
-                <div class="product-grid" id="productGrid">
-                    <!-- Contenido dinámico renderizado por JS -->
-                </div>
+                <div class="product-grid" id="productGrid"></div>
             </main>
         </div>
 
@@ -1342,12 +1333,10 @@
         <section class="community-section">
             <h3>Aperturas & Unboxings</h3>
             <h4>Dolakanjima (@dolakanjima.tcg)</h4>
-
             <div class="video-box">
                 <div class="video-thumb">▶️</div>
                 <p>Apertura Caso Completo OP-05 buscando a Manga Luffy</p>
             </div>
-
             <div class="reviews-box">
                 <p>"¡Llegó mi Booster Box súper rápido y ultra protegido! El mejor servicio para coleccionistas."</p>
                 <span style="font-size: 0.7rem; color: var(--accent-gold); font-weight: bold;">- Cliente Verificado (@dolakanjima.tcg)</span>
@@ -1380,7 +1369,7 @@
 
     </div>
 
-    <!-- FOOTER COMPLETO CON CONTACTOS E INFORMACIÓN -->
+    <!-- FOOTER COMPLETO ORIGINAL CON TODOS LOS CORREOS E INFORMACIÓN -->
     <footer>
         <div class="footer-block">
             <h4>DOLAKANJIMA TCG</h4>
@@ -1539,7 +1528,7 @@
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE OFICIAL DE WHATSAPP -->
+    <!-- BOTÓN WHATSAPP FLOTANTE ELEVADO -->
     <a href="https://wa.me/56941394287" class="whatsapp-float" target="_blank" aria-label="Contacto WhatsApp">
         <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     </a>
@@ -1562,7 +1551,7 @@
                 💳 Pagar con Webpay / Transbank
             </button>
             <button class="checkout-mercadopago-btn" onclick="checkoutMercadoPago()">
-                <!-- LOGO OFICIAL MERCADO PAGO OPTIMIZADO -->
+                <!-- LOGO OFICIAL MERCADO PAGO SVG -->
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                 Pagar con Mercado Pago
             </button>
@@ -1572,7 +1561,7 @@
         </div>
     </div>
 
-    <!-- MODAL DATOS DE TRANSFERENCIA -->
+    <!-- MODAL TRANSFERENCIA -->
     <div class="transfer-modal-overlay" id="transferModal">
         <div class="transfer-card">
             <h4>🏦 TRANSFERENCIA BANCARIA</h4>
@@ -1588,7 +1577,7 @@
     <!-- TOAST -->
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
-    <!-- JAVASCRIPT: STOCK REAL Y LÓGICA -->
+    <!-- SCRIPT -->
     <script>
         let cart = [];
 
@@ -1669,7 +1658,6 @@
             }, 2500);
         }
 
-        // PASARELAS DE PAGO
         function checkoutWebpay() {
             if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
             window.open("https://www.webpay.cl", '_blank');
@@ -1693,18 +1681,14 @@
 
         function checkoutWhatsApp() {
             if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
-
             let text = "¡Hola Dolakanjima! ☕🎴 Quisiera coordinar el pago por transferencia y envío de mi pedido:\n\n";
             let total = 0;
-
             cart.forEach(item => {
                 const subtotal = item.price * item.qty;
                 total += subtotal;
                 text += `• ${item.qty}x ${item.title} - $${subtotal.toLocaleString('es-CL')}\n`;
             });
-
             text += `\n*TOTAL: $${total.toLocaleString('es-CL')}*\n\n¡Quedo atento a los datos bancarios oficiales!`;
-
             const encoded = encodeURIComponent(text);
             window.open(`https://wa.me/56941394287?text=${encoded}`, '_blank');
         }
@@ -1728,7 +1712,6 @@
         closeCartBtn.addEventListener('click', () => toggleCartModal(false));
         cartOverlay.addEventListener('click', () => toggleCartModal(false));
 
-        /* BASE DE DATOS CON STOCK REAL */
         const productsData = {
             'promociones': [
                 { badge: 'OFERTA ESPECIAL', isAlt: true, tag: 'Pokémon TCG', title: 'Pack 3 Blisters Scarlet & Violet (Descuento Especial)', price: 12900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
@@ -1769,26 +1752,20 @@
             const searchTerm = query.toLowerCase().trim();
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
-
             let allProducts = [];
             Object.values(productsData).forEach(list => { allProducts = allProducts.concat(list); });
-
             const uniqueProducts = Array.from(new Set(allProducts.map(p => p.title)))
                 .map(title => allProducts.find(p => p.title === title));
-
             const filtered = uniqueProducts.filter(item => 
                 item.title.toLowerCase().includes(searchTerm) || 
                 item.tag.toLowerCase().includes(searchTerm)
             );
-
             if (filtered.length === 0) {
                 grid.innerHTML = '<p style="grid-column: span 2; text-align:center; padding: 25px; color: var(--text-muted);">No se encontraron productos que coincidan con tu búsqueda.</p>';
                 document.getElementById('catalogTitle').innerText = 'RESULTADOS DE BÚSQUEDA';
                 return;
             }
-
             document.getElementById('catalogTitle').innerText = `RESULTADOS DE BÚSQUEDA (${filtered.length})`;
-
             filtered.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
@@ -1824,10 +1801,8 @@
                 alert("Por favor selecciona al menos un filtro de categoría.");
                 return;
             }
-
             renderFilteredProducts(selectedGames);
             showToast("🔍 Filtros aplicados correctamente");
-            
             if (window.innerWidth < 768) {
                 document.getElementById('filterPanel').classList.remove('active');
             }
@@ -1836,11 +1811,9 @@
         function clearCustomFilters() {
             document.querySelectorAll('.filter-checkbox').forEach(cb => cb.checked = false);
             document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
-
             renderFilteredProducts(['one-piece', 'pokemon', 'riftbound', 'accesorios', 'promociones', 'preventas', 'torneos']);
             document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO';
             showToast("Filtros desmarcados");
-            
             if (window.innerWidth < 768) {
                 document.getElementById('filterPanel').classList.remove('active');
             }
@@ -1849,17 +1822,13 @@
         function renderFilteredProducts(gameKeys) {
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
-
             let combinedItems = [];
             gameKeys.forEach(key => {
                 if (productsData[key]) combinedItems = combinedItems.concat(productsData[key]);
             });
-
             const uniqueItems = Array.from(new Set(combinedItems.map(p => p.title)))
                 .map(title => combinedItems.find(p => p.title === title));
-
             document.getElementById('catalogTitle').innerText = `CATÁLOGO FILTRADO (${uniqueItems.length} PRODUCTOS)`;
-
             uniqueItems.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
@@ -1881,12 +1850,10 @@
 
         const toggleBtn = document.getElementById('toggleMenu');
         const drawer = document.getElementById('mobileDrawer');
-
         toggleBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             drawer.classList.toggle('active');
         });
-
         document.addEventListener('click', (e) => {
             if (!drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
                 drawer.classList.remove('active');
@@ -1902,7 +1869,6 @@
         function selectGameFromNav(gameKey) {
             drawer.classList.remove('active');
             document.getElementById('searchInput').value = '';
-            
             const pillMap = {
                 'promociones': 'pill-promociones',
                 'preventas': 'pill-preventas',
@@ -1913,7 +1879,6 @@
                 'riftbound': 'pill-riftbound',
                 'accesorios': 'pill-accesorios'
             };
-
             filterGame(gameKey, document.getElementById(pillMap[gameKey]));
             document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
         }
@@ -1927,10 +1892,8 @@
             const content = document.getElementById(id);
             const arrow = document.getElementById('arrow-' + id);
             const isActive = content.classList.contains('active');
-
             document.querySelectorAll('.info-content').forEach(item => item.classList.remove('active'));
             document.querySelectorAll('[id^="arrow-"]').forEach(a => a.innerText = '▸');
-
             if (!isActive) {
                 content.classList.add('active');
                 if (arrow) arrow.innerText = '▾';
@@ -1942,15 +1905,12 @@
             document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
             if(element) element.classList.add('active');
             document.getElementById('searchInput').value = '';
-
             const titleElem = document.getElementById('catalogTitle');
             if (titleElem && gameTitles[gameKey]) {
                 titleElem.innerText = gameTitles[gameKey];
             }
-
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
-
             const items = productsData[gameKey] || [];
             items.forEach(item => {
                 const card = document.createElement('div');
