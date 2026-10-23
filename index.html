@@ -44,18 +44,19 @@
             line-height: 1.5;
             font-size: 14px;
             overflow-x: hidden;
-            padding-bottom: 70px; /* Margen de seguridad estricto para Netlify Badge */
+            padding-bottom: 75px; /* Margen de seguridad estricto para Netlify Badge */
         }
 
         .top-bar {
             background-color: var(--primary-dark);
             color: var(--accent-gold);
             text-align: center;
-            padding: 6px 10px;
-            font-size: 0.72rem;
+            padding: 8px 12px;
+            font-size: 0.75rem;
             font-weight: 600;
             border-bottom: 1px solid var(--accent-gold);
             word-break: break-word;
+            letter-spacing: 0.5px;
         }
 
         header {
@@ -65,7 +66,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 16px rgba(61, 35, 20, 0.08);
-            padding: 8px 10px;
+            padding: 10px 12px;
             width: 100%;
         }
 
@@ -73,7 +74,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 4px;
+            gap: 6px;
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
@@ -82,18 +83,23 @@
         .menu-btn {
             background-color: var(--primary-mahogany);
             border: 1px solid var(--accent-gold);
-            padding: 6px 8px;
+            padding: 8px 12px;
             border-radius: 6px;
             color: var(--accent-gold);
             font-weight: 700;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 4px;
             font-family: var(--font-tcg);
             white-space: nowrap;
             flex-shrink: 0;
+            transition: background-color 0.2s;
+        }
+
+        .menu-btn:hover {
+            background-color: var(--primary-dark);
         }
 
         .brand-logo {
@@ -110,7 +116,7 @@
 
         .brand-logo .logo-title {
             font-family: var(--font-samurai);
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             color: var(--primary-mahogany);
             letter-spacing: 0.5px;
             line-height: 1.1;
@@ -127,16 +133,16 @@
 
         .brand-logo .logo-title span.accent-k {
             color: var(--ruby);
-            font-size: 1.25rem;
+            font-size: 1.35rem;
         }
 
         .brand-logo span.sub-title {
-            font-size: 0.48rem;
+            font-size: 0.52rem;
             color: var(--gold-dark);
             font-weight: 800;
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            margin-top: 1px;
+            margin-top: 2px;
             font-family: var(--font-tcg);
             white-space: nowrap;
         }
@@ -144,11 +150,11 @@
         .cart-icon-btn {
             background-color: var(--accent-gold);
             color: white;
-            padding: 6px 10px;
-            border-radius: 18px;
+            padding: 8px 12px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -156,10 +162,15 @@
             border: none;
             flex-shrink: 0;
             white-space: nowrap;
+            transition: transform 0.1s;
+        }
+
+        .cart-icon-btn:active {
+            transform: scale(0.95);
         }
 
         .search-bar {
-            margin: 8px auto 0;
+            margin: 10px auto 0;
             max-width: 600px;
             position: relative;
             width: 100%;
@@ -167,22 +178,22 @@
 
         .search-bar input {
             width: 100%;
-            padding: 7px 12px 7px 32px;
+            padding: 8px 12px 8px 36px;
             border: 1px solid var(--border-gold);
             border-radius: 22px;
             background-color: var(--bg-cream);
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             outline: none;
             font-family: var(--font-body);
         }
 
         .search-icon-svg {
             position: absolute;
-            left: 10px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             fill: var(--gold-dark);
         }
 
@@ -203,11 +214,11 @@
 
         .drawer-item {
             display: block;
-            padding: 10px 16px;
+            padding: 12px 16px;
             text-decoration: none;
             color: var(--primary-mahogany);
             font-weight: 600;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             border-bottom: 1px dashed var(--border-light);
             cursor: pointer;
         }
@@ -220,7 +231,7 @@
         .main-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 14px;
+            padding: 16px;
             width: 100%;
         }
 
@@ -228,62 +239,64 @@
             background: linear-gradient(rgba(61, 35, 20, 0.88), rgba(61, 35, 20, 0.88)), url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1350&q=80') center/cover;
             border: 2px solid var(--accent-gold);
             border-radius: 12px;
-            padding: 30px 16px;
+            padding: 35px 20px;
             color: white;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .hero-badge {
             background-color: var(--accent-gold);
             color: var(--primary-dark);
-            font-size: 0.68rem;
+            font-size: 0.72rem;
             font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 10px;
+            padding: 4px 12px;
+            border-radius: 12px;
             text-transform: uppercase;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-family: var(--font-tcg);
         }
 
         .hero-banner h2 {
             font-family: var(--font-tcg);
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             color: var(--bg-cream);
-            line-height: 1.25;
-            margin-bottom: 10px;
+            line-height: 1.3;
+            margin-bottom: 12px;
         }
 
         .hero-banner p {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             color: #E8D4A8;
-            margin-bottom: 16px;
-            max-width: 600px;
+            margin-bottom: 18px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.5;
         }
 
         .btn-primary {
             background-color: var(--accent-gold);
             color: var(--primary-dark);
-            padding: 10px 22px;
+            padding: 12px 26px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             display: inline-block;
             font-family: var(--font-tcg);
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .game-quick-access {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             overflow-x: auto;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 24px;
             -webkit-overflow-scrolling: touch;
         }
 
@@ -291,13 +304,14 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-gold);
             border-radius: 20px;
-            padding: 8px 16px;
+            padding: 8px 18px;
             white-space: nowrap;
             color: var(--primary-mahogany);
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             cursor: pointer;
             flex-shrink: 0;
+            transition: all 0.2s;
         }
 
         .game-pill.active {
@@ -319,16 +333,16 @@
         .catalog-container {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 16px;
+            gap: 20px;
         }
 
         .filter-toggle-btn {
             background-color: var(--card-bg);
             border: 1px solid var(--border-gold);
-            padding: 8px 12px;
+            padding: 10px 14px;
             border-radius: 6px;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--primary-mahogany);
             cursor: pointer;
             display: flex;
@@ -342,7 +356,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-gold);
             border-radius: 8px;
-            padding: 15px;
+            padding: 18px;
             margin-bottom: 15px;
         }
 
@@ -351,30 +365,30 @@
         }
 
         .filter-group {
-            margin-bottom: 12px;
-            padding-bottom: 8px;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
             border-bottom: 1px dashed var(--border-light);
         }
 
         .filter-group h5 {
             font-family: var(--font-tcg);
             color: var(--primary-mahogany);
-            font-size: 0.8rem;
-            margin-bottom: 6px;
+            font-size: 0.82rem;
+            margin-bottom: 8px;
         }
 
         .filter-options label {
             display: block;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             cursor: pointer;
         }
 
         .filter-actions {
             display: flex;
             gap: 8px;
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
         .btn-apply-filter {
@@ -382,10 +396,10 @@
             background-color: var(--primary-mahogany);
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            padding: 8px;
+            padding: 9px;
             border-radius: 6px;
             font-weight: 700;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             cursor: pointer;
             font-family: var(--font-tcg);
         }
@@ -394,10 +408,10 @@
             background-color: var(--bg-cream);
             color: var(--text-muted);
             border: 1px solid var(--border-gold);
-            padding: 8px 12px;
+            padding: 9px 14px;
             border-radius: 6px;
             font-weight: 600;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             cursor: pointer;
         }
 
@@ -405,14 +419,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             border-bottom: 2px solid var(--border-gold);
-            padding-bottom: 4px;
+            padding-bottom: 6px;
         }
 
         .section-header h3 {
             font-family: var(--font-tcg);
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--primary-mahogany);
             font-weight: 800;
             text-transform: uppercase;
@@ -421,7 +435,7 @@
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 12px;
         }
 
         .product-card {
@@ -432,6 +446,12 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(61, 35, 20, 0.1);
         }
 
         .product-badge {
@@ -440,15 +460,19 @@
             left: 6px;
             background-color: var(--emerald);
             color: white;
-            font-size: 0.55rem;
+            font-size: 0.58rem;
             font-weight: 700;
-            padding: 2px 4px;
-            border-radius: 3px;
+            padding: 3px 6px;
+            border-radius: 4px;
             z-index: 2;
         }
 
         .product-badge.alt-art {
             background-color: var(--ruby);
+        }
+
+        .product-badge.stock-low {
+            background-color: var(--gold-dark);
         }
 
         .product-img-wrapper {
@@ -470,25 +494,32 @@
         }
 
         .product-details {
-            padding: 8px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .product-game-tag {
-            font-size: 0.58rem;
+            font-size: 0.6rem;
             color: var(--gold-dark);
             font-weight: 700;
             text-transform: uppercase;
         }
 
         .product-title {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 600;
             color: var(--text-dark);
-            margin: 2px 0 6px;
-            line-height: 1.2;
+            margin: 3px 0 8px;
+            line-height: 1.25;
+        }
+
+        .product-stock-count {
+            font-size: 0.65rem;
+            color: var(--ruby);
+            font-weight: 700;
+            margin-bottom: 6px;
         }
 
         .product-price-row {
@@ -499,7 +530,7 @@
         }
 
         .product-price {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 800;
             color: var(--primary-mahogany);
             font-family: var(--font-tcg);
@@ -509,11 +540,11 @@
             background-color: var(--primary-mahogany);
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            width: 26px;
-            height: 26px;
+            width: 28px;
+            height: 28px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 1rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -531,34 +562,34 @@
             background: linear-gradient(rgba(61, 35, 20, 0.9), rgba(61, 35, 20, 0.9)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80') center/cover;
             border: 2px solid var(--accent-gold);
             border-radius: 12px;
-            padding: 20px 14px;
+            padding: 24px 16px;
             color: white;
             text-align: center;
-            margin: 25px 0;
+            margin: 30px 0;
         }
 
         .coffee-banner h3 {
             font-family: var(--font-tcg);
             color: var(--accent-gold);
-            font-size: 1.1rem;
-            margin-bottom: 6px;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
         }
 
         .coffee-banner p {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--bg-cream);
-            line-height: 1.4;
-            max-width: 500px;
-            margin: 0 auto 12px;
+            line-height: 1.45;
+            max-width: 550px;
+            margin: 0 auto 14px;
         }
 
         .coffee-tag {
             background-color: rgba(197, 160, 89, 0.2);
             border: 1px solid var(--accent-gold);
             color: var(--accent-gold);
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 12px;
-            font-size: 0.68rem;
+            font-size: 0.7rem;
             font-weight: 700;
             display: inline-block;
         }
@@ -567,8 +598,8 @@
             background-color: var(--primary-mahogany);
             border: 2px solid var(--accent-gold);
             border-radius: 12px;
-            padding: 18px 12px;
-            margin: 25px 0 15px;
+            padding: 20px 14px;
+            margin: 30px 0 20px;
             color: white;
             text-align: center;
         }
@@ -576,40 +607,40 @@
         .community-section h3 {
             font-family: var(--font-tcg);
             color: var(--accent-gold);
-            font-size: 1.1rem;
-            margin-bottom: 2px;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
         }
 
         .community-section h4 {
             font-family: var(--font-tcg);
             color: var(--bg-cream);
-            font-size: 0.9rem;
-            margin-bottom: 12px;
+            font-size: 0.92rem;
+            margin-bottom: 14px;
         }
 
         .video-box {
             background-color: #24140B;
             border: 1px solid var(--accent-gold);
             border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
         }
 
         .video-thumb {
             width: 100%;
-            height: 90px;
+            height: 100px;
             background-color: #120A05;
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--accent-gold);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .video-box p {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             color: var(--accent-gold);
             font-weight: 600;
         }
@@ -617,12 +648,12 @@
         .reviews-box {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
-            padding: 12px;
-            margin-top: 12px;
+            padding: 14px;
+            margin-top: 14px;
         }
 
         .reviews-box p {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-style: italic;
             color: #E8D4A8;
         }
@@ -630,15 +661,15 @@
         .value-props-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin: 20px 0 30px;
+            gap: 12px;
+            margin: 24px 0 32px;
         }
 
         .value-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-gold);
             border-radius: 8px;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -647,48 +678,48 @@
         }
 
         .value-icon {
-            font-size: 1.4rem;
-            margin-bottom: 4px;
+            font-size: 1.5rem;
+            margin-bottom: 6px;
         }
 
         .value-card h4 {
             font-family: var(--font-tcg);
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             color: var(--primary-mahogany);
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             font-weight: 700;
         }
 
         .value-card p {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             color: var(--text-muted);
-            line-height: 1.25;
+            line-height: 1.3;
         }
 
         footer {
             background-color: var(--primary-mahogany);
             color: #D0C2B0;
-            padding: 30px 16px 65px 16px;
+            padding: 35px 16px 70px 16px;
             border-top: 2px solid var(--accent-gold);
-            margin-top: 30px;
+            margin-top: 35px;
         }
 
         .footer-block {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .footer-block h4 {
             color: var(--accent-gold);
-            font-size: 0.88rem;
-            margin-bottom: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
             font-family: var(--font-tcg);
             letter-spacing: 0.5px;
         }
 
         .footer-block p {
-            font-size: 0.78rem;
-            line-height: 1.4;
+            font-size: 0.8rem;
+            line-height: 1.45;
             color: #D0C2B0;
         }
 
@@ -697,8 +728,8 @@
         }
 
         .footer-list li {
-            margin-bottom: 8px;
-            font-size: 0.78rem;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -732,17 +763,17 @@
         .social-svg-icon.whatsapp { fill: #25D366; }
 
         .info-accordion {
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
         .info-item {
             border-bottom: 1px dashed rgba(197, 160, 89, 0.25);
-            padding: 8px 0;
+            padding: 10px 0;
         }
 
         .info-title {
             color: #D0C2B0;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 500;
             cursor: pointer;
             display: flex;
@@ -757,10 +788,10 @@
 
         .info-content {
             display: none;
-            padding: 10px 8px;
-            font-size: 0.76rem;
+            padding: 12px 10px;
+            font-size: 0.78rem;
             color: #FAF6EE;
-            line-height: 1.5;
+            line-height: 1.55;
             background-color: rgba(0, 0, 0, 0.2);
             border-radius: 6px;
             margin-top: 8px;
@@ -772,7 +803,7 @@
 
         .guide-link-btn {
             display: inline-block;
-            margin-top: 6px;
+            margin-top: 8px;
             color: var(--accent-gold);
             font-weight: 700;
             text-decoration: underline;
@@ -784,7 +815,7 @@
         }
 
         .badge-soon {
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             color: #A09080;
             font-style: italic;
         }
@@ -792,17 +823,17 @@
         .copyright-text {
             text-align: center;
             border-top: 1px solid rgba(197, 160, 89, 0.2);
-            padding-top: 16px;
-            font-size: 0.7rem;
+            padding-top: 18px;
+            font-size: 0.72rem;
             color: #9E8E7C;
         }
 
         .whatsapp-float {
             position: fixed;
-            width: 52px;
-            height: 52px;
-            bottom: 50px;
-            right: 16px;
+            width: 54px;
+            height: 54px;
+            bottom: 55px;
+            right: 18px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
@@ -821,8 +852,8 @@
         }
 
         .whatsapp-float svg {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             fill: #FFFFFF;
         }
 
@@ -866,7 +897,7 @@
         .cart-header {
             background-color: var(--primary-mahogany);
             color: var(--accent-gold);
-            padding: 14px;
+            padding: 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -875,19 +906,19 @@
 
         .cart-header h3 {
             font-family: var(--font-tcg);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .close-cart-btn {
             background: none;
             border: none;
             color: var(--accent-gold);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
         .cart-body {
-            padding: 14px;
+            padding: 16px;
             flex-grow: 1;
             overflow-y: auto;
         }
@@ -896,21 +927,21 @@
             text-align: center;
             color: var(--text-muted);
             margin-top: 40px;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
         }
 
         .cart-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             border-bottom: 1px dashed var(--border-gold);
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
         }
 
         .cart-item img {
-            width: 46px;
-            height: 46px;
+            width: 48px;
+            height: 48px;
             object-fit: cover;
             border-radius: 4px;
             border: 1px solid var(--border-gold);
@@ -921,34 +952,34 @@
         }
 
         .cart-item-title {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 600;
             color: var(--text-dark);
-            line-height: 1.2;
+            line-height: 1.25;
         }
 
         .cart-item-price {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 700;
             color: var(--primary-mahogany);
-            margin-top: 2px;
+            margin-top: 3px;
         }
 
         .cart-qty-controls {
             display: flex;
             align-items: center;
             gap: 6px;
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
         .cart-qty-btn {
             background-color: var(--bg-cream);
             border: 1px solid var(--border-gold);
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             border-radius: 3px;
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -956,7 +987,7 @@
         }
 
         .cart-qty-val {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 700;
         }
 
@@ -965,26 +996,26 @@
             border: none;
             color: var(--ruby);
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 1rem;
             padding: 4px;
         }
 
         .cart-footer {
-            padding: 14px;
+            padding: 16px;
             background-color: var(--bg-cream);
             border-top: 1px solid var(--border-gold);
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .cart-total-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             font-family: var(--font-tcg);
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: var(--primary-mahogany);
         }
@@ -994,10 +1025,10 @@
             background-color: var(--primary-mahogany);
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            padding: 9px;
+            padding: 10px;
             border-radius: 6px;
             font-weight: 800;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -1011,10 +1042,10 @@
             background-color: #009EE3;
             color: white;
             border: none;
-            padding: 9px;
+            padding: 10px;
             border-radius: 6px;
             font-weight: 800;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -1033,10 +1064,10 @@
             background-color: #1B4D3E;
             color: white;
             border: none;
-            padding: 9px;
+            padding: 10px;
             border-radius: 6px;
             font-weight: 800;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -1066,8 +1097,8 @@
             background-color: var(--card-bg);
             border: 2px solid var(--accent-gold);
             border-radius: 12px;
-            padding: 18px;
-            max-width: 380px;
+            padding: 20px;
+            max-width: 400px;
             width: 100%;
             box-shadow: 0 8px 24px rgba(0,0,0,0.3);
             text-align: center;
@@ -1076,17 +1107,17 @@
         .transfer-card h4 {
             font-family: var(--font-tcg);
             color: var(--primary-mahogany);
-            font-size: 1rem;
-            margin-bottom: 8px;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
             border-bottom: 1px solid var(--border-gold);
-            padding-bottom: 6px;
+            padding-bottom: 8px;
         }
 
         .transfer-card p {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--text-dark);
-            margin-bottom: 14px;
-            line-height: 1.4;
+            margin-bottom: 16px;
+            line-height: 1.45;
         }
 
         .btn-whatsapp-direct {
@@ -1094,21 +1125,21 @@
             color: white;
             border: none;
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border-radius: 6px;
             font-weight: 800;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .btn-whatsapp-direct svg {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             fill: white;
         }
 
@@ -1117,7 +1148,7 @@
             color: var(--primary-mahogany);
             border: 1px solid var(--border-gold);
             width: 100%;
-            padding: 8px;
+            padding: 9px;
             border-radius: 6px;
             font-weight: 700;
             cursor: pointer;
@@ -1125,15 +1156,15 @@
 
         .toast-notification {
             position: fixed;
-            bottom: 75px;
+            bottom: 80px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background-color: var(--primary-dark);
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            padding: 8px 16px;
+            padding: 10px 18px;
             border-radius: 20px;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 700;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
             z-index: 3000;
@@ -1150,26 +1181,26 @@
 
         @media (min-width: 768px) {
             .brand-logo .logo-title {
-                font-size: 1.55rem;
+                font-size: 1.6rem;
                 letter-spacing: 1.5px;
             }
             .brand-logo .logo-title span.accent-k {
-                font-size: 1.7rem;
+                font-size: 1.75rem;
             }
             .brand-logo span.sub-title {
-                font-size: 0.55rem;
+                font-size: 0.58rem;
                 letter-spacing: 1.2px;
             }
             .menu-btn {
-                padding: 7px 12px;
-                font-size: 0.75rem;
+                padding: 8px 14px;
+                font-size: 0.78rem;
             }
             .cart-icon-btn {
-                padding: 6px 14px;
-                font-size: 0.8rem;
+                padding: 8px 16px;
+                font-size: 0.82rem;
             }
             .catalog-container {
-                grid-template-columns: 220px 1fr;
+                grid-template-columns: 240px 1fr;
             }
             .filter-panel {
                 display: block !important;
@@ -1204,17 +1235,16 @@
 
         <div class="search-bar">
             <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            <input type="text" id="searchInput" placeholder="Buscar por carta, expansión o juego (ej: Luffy Alt Art, OP-05)..." oninput="handleSearch(this.value)">
+            <input type="text" id="searchInput" placeholder="Buscar por carta, expansión o juego (ej: Umbreon, OP-17, Mew)..." oninput="handleSearch(this.value)">
         </div>
 
         <div class="mobile-drawer" id="mobileDrawer">
+            <div class="drawer-item" onclick="selectGameFromNav('pokemon')">⚡ Pokémon TCG (30th Anniversary & Delta)</div>
+            <div class="drawer-item" onclick="selectGameFromNav('one-piece')">🏴‍☠️ One Piece Card Game (OP-17 & Starters)</div>
+            <div class="drawer-item" onclick="selectGameFromNav('riftbound')">🛡️ Riftbound TCG (Radiance Booster Box)</div>
             <div class="drawer-item" onclick="selectGameFromNav('promociones')">🏷️ Promociones & Ofertas Especiales</div>
             <div class="drawer-item" onclick="selectGameFromNav('preventas')">🚀 Preventas Exclusivas</div>
             <div class="drawer-item" onclick="selectGameFromNav('torneos')">🏆 Torneos & Eventos Presenciales</div>
-            <div class="drawer-item" onclick="selectGameFromNav('tcg-general')">🎴 Trading Card Games (Catálogo General)</div>
-            <div class="drawer-item" onclick="selectGameFromNav('pokemon')">⚡ Pokémon TCG</div>
-            <div class="drawer-item" onclick="selectGameFromNav('one-piece')">🏴‍☠️ One Piece Card Game</div>
-            <div class="drawer-item" onclick="selectGameFromNav('riftbound')">🛡️ Riftbound (League of Legends TCG)</div>
             <div class="drawer-item" onclick="selectGameFromNav('accesorios')">💼 Accesorios (Sleeves, Binders, Deck Boxes)</div>
             <div class="drawer-item" onclick="scrollToSection('como-jugar')">🎮 Comunidad & Cómo Jugar TCG</div>
         </div>
@@ -1230,10 +1260,10 @@
         </section>
 
         <div class="game-quick-access">
+            <div class="game-pill active" id="pill-pokemon" onclick="filterGame('pokemon', this)">Pokémon ⚡</div>
+            <div class="game-pill" id="pill-one-piece" onclick="filterGame('one-piece', this)">One Piece 🏴‍☠️</div>
+            <div class="game-pill" id="pill-riftbound" onclick="filterGame('riftbound', this)">Riftbound 🛡️</div>
             <div class="game-pill pill-promo" id="pill-promociones" onclick="filterGame('promociones', this)">Ofertas 🏷️</div>
-            <div class="game-pill active" id="pill-one-piece" onclick="filterGame('one-piece', this)">One Piece</div>
-            <div class="game-pill" id="pill-pokemon" onclick="filterGame('pokemon', this)">Pokémon</div>
-            <div class="game-pill" id="pill-riftbound" onclick="filterGame('riftbound', this)">Riftbound</div>
             <div class="game-pill" id="pill-preventas" onclick="filterGame('preventas', this)">Preventas 🚀</div>
             <div class="game-pill" id="pill-torneos" onclick="filterGame('torneos', this)">Torneos 🏆</div>
             <div class="game-pill" id="pill-accesorios" onclick="filterGame('accesorios', this)">Accesorios</div>
@@ -1249,8 +1279,8 @@
                     <div class="filter-group">
                         <h5>Juego / Categoria</h5>
                         <div class="filter-options">
-                            <label><input type="checkbox" id="f-one-piece" class="filter-checkbox"> One Piece</label>
-                            <label><input type="checkbox" id="f-pokemon" class="filter-checkbox"> Pokémon</label>
+                            <label><input type="checkbox" id="f-pokemon" class="filter-checkbox"> Pokémon TCG</label>
+                            <label><input type="checkbox" id="f-one-piece" class="filter-checkbox"> One Piece CG</label>
                             <label><input type="checkbox" id="f-riftbound" class="filter-checkbox"> Riftbound</label>
                             <label><input type="checkbox" id="f-accesorios" class="filter-checkbox"> Accesorios</label>
                         </div>
@@ -1259,13 +1289,12 @@
                     <div class="filter-group">
                         <h5>Tipo de Producto</h5>
                         <div class="filter-options">
-                            <label><input type="checkbox" id="f-dp" class="filter-checkbox"> DP (Double Pack / Display Pack)</label>
-                            <label><input type="checkbox" id="f-starter" class="filter-checkbox"> Starter Deck / Mazo de Inicio</label>
-                            <label><input type="checkbox" id="f-illustration" class="filter-checkbox"> Illustration Box / Collection</label>
-                            <label><input type="checkbox" id="f-booster" class="filter-checkbox"> Booster Box / Display</label>
-                            <label><input type="checkbox" id="f-especiales" class="filter-checkbox"> Ediciones Especiales & Bundles</label>
-                            <label><input type="checkbox" id="f-etb" class="filter-checkbox"> Elite Trainer Box (ETB)</label>
-                            <label><input type="checkbox" id="f-singles" class="filter-checkbox"> Cartas Sueltas / Singles</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Ultra Premium Collection (UPC)</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Booster Bundle / Display</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Booster Box / Caso</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Figure Collection / Poster</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Starter Deck / Mazo</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Illustration Box</label>
                         </div>
                     </div>
 
@@ -1287,7 +1316,7 @@
 
             <main>
                 <div class="section-header">
-                    <h3 id="catalogTitle">CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️</h3>
+                    <h3 id="catalogTitle">CATÁLOGO: POKÉMON TCG ⚡</h3>
                 </div>
                 <div class="product-grid" id="productGrid"></div>
             </main>
@@ -1304,11 +1333,11 @@
             <h4>Dolakanjima (@dolakanjima.tcg)</h4>
             <div class="video-box">
                 <div class="video-thumb">▶️</div>
-                <p>Apertura Caso Completo OP-05 buscando a Manga Luffy</p>
+                <p>Apertura Caso Completo OP-17 & Ediciones 30th Anniversary Pokémon</p>
             </div>
             <div class="reviews-box">
                 <p>"¡Llegó mi Booster Box súper rápido y ultra protegido! El mejor servicio para coleccionistas."</p>
-                <span style="font-size: 0.7rem; color: var(--accent-gold); font-weight: bold;">- Cliente Verificado (@dolakanjima.tcg)</span>
+                <span style="font-size: 0.72rem; color: var(--accent-gold); font-weight: bold;">- Cliente Verificado (@dolakanjima.tcg)</span>
             </div>
         </section>
 
@@ -1555,17 +1584,26 @@
         }
 
         function checkoutWebpay() {
-            if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
             window.open("https://www.webpay.cl", '_blank');
         }
 
         function checkoutMercadoPago() {
-            if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
             window.open("https://www.mercadopago.cl", '_blank');
         }
 
         function openTransferModal() {
-            if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
             const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             document.getElementById('transferTotalVal').innerText = '$' + total.toLocaleString('es-CL');
             document.getElementById('transferModal').classList.add('active');
@@ -1576,7 +1614,10 @@
         }
 
         function checkoutWhatsApp() {
-            if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
             let text = "¡Hola Dolakanjima! ☕🎴 Quisiera coordinar el pago por transferencia y envío de mi pedido:\n\n";
             let total = 0;
             cart.forEach(item => {
@@ -1608,39 +1649,193 @@
         closeCartBtn.addEventListener('click', () => toggleCartModal(false));
         cartOverlay.addEventListener('click', () => toggleCartModal(false));
 
+        // DATOS DE STOCK REAL ACTUALIZADOS
         const productsData = {
-            'promociones': [
-                { badge: 'OFERTA ESPECIAL', isAlt: true, tag: 'Pokémon TCG', title: 'Pack 3 Blisters Scarlet & Violet (Descuento Especial)', price: 12900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'preventas': [
-                { badge: 'PREVENTA CON RESERVA', isAlt: true, tag: 'One Piece CG', title: 'Monkey D. Luffy (Alt Art) - OP-05 (Inglés)', price: 45000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'torneos': [
-                { badge: 'INSCRIPCIÓN ABIERTA', isAlt: false, tag: 'Eventos Presenciales', title: 'Ticket Torneo Inaugural One Piece CG (Incluye Kit)', price: 10000, img: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'one-piece': [
-                { badge: 'PREVENTA CON RESERVA', isAlt: true, tag: 'One Piece CG', title: 'Monkey D. Luffy (Alt Art) - OP-05 (Inglés)', price: 45000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { badge: 'EN STOCK', isAlt: false, tag: 'One Piece CG', title: 'Booster Box OP-06: Wings Captain (Inglés)', price: 119900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' }
-            ],
             'pokemon': [
-                { badge: 'EN STOCK', isAlt: true, tag: 'Pokémon TCG', title: 'Charizard ex Special Illustration Rare (Inglés)', price: 85000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+                {
+                    badge: 'EDICIÓN 30TH',
+                    isAlt: true,
+                    stock: 'Stock: 2 unidades',
+                    tag: 'Pokémon TCG',
+                    title: 'Ultra Premium Collection 30th Anniversary (Umbreon Edition)',
+                    price: 189900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'EDICIÓN 30TH',
+                    isAlt: true,
+                    stock: 'Stock: 1 unidad',
+                    tag: 'Pokémon TCG',
+                    title: 'Ditto Collection Box 30th Anniversary',
+                    price: 42900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'EDICIÓN 30TH',
+                    isAlt: false,
+                    stock: 'Stock: 3 unidades',
+                    tag: 'Pokémon TCG',
+                    title: 'Figure Collection Mew 30th Anniversary',
+                    price: 38900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'EDICIÓN 30TH',
+                    isAlt: false,
+                    stock: 'Stock: 3 unidades',
+                    tag: 'Pokémon TCG',
+                    title: 'Figure Collection Mewtwo 30th Anniversary',
+                    price: 38900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'EN STOCK',
+                    isAlt: false,
+                    stock: 'Stock: 25 unidades',
+                    tag: 'Pokémon TCG',
+                    title: 'Booster Bundle Delta Rain',
+                    price: 24900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'EDICIÓN 30TH',
+                    isAlt: false,
+                    stock: 'Stock: 6 unidades',
+                    tag: 'Pokémon TCG',
+                    title: 'Poster Collection 30th Anniversary',
+                    price: 21900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'EN STOCK',
+                    isAlt: false,
+                    stock: 'Stock: 1 unidad',
+                    tag: 'Pokémon TCG',
+                    title: 'First Partner Pack (Serie 2)',
+                    price: 15900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'EDICIÓN 30TH',
+                    isAlt: false,
+                    stock: 'Stock: 1 unidad',
+                    tag: 'Pokémon TCG',
+                    title: 'Booster Bundle 30th Anniversary Edition',
+                    price: 26900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                }
             ],
             'riftbound': [
-                { badge: 'STOCK INICIAL', isAlt: true, tag: 'Riftbound TCG', title: 'Starter Deck Champion Jinx (Español)', price: 18900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+                {
+                    badge: 'EDICIÓN DESTACADA',
+                    isAlt: true,
+                    stock: 'Stock: 2 unidades',
+                    tag: 'Riftbound TCG',
+                    title: 'Booster Box Riftbound: Radiance Display (24 Packs)',
+                    price: 115000,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                }
+            ],
+            'one-piece': [
+                {
+                    badge: 'SPECIAL BOX',
+                    isAlt: true,
+                    stock: 'Stock: 1 unidad',
+                    tag: 'One Piece CG',
+                    title: 'Illustration Box: Eustass "Captain" Kid & Killer',
+                    price: 34900,
+                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'SPECIAL BOX',
+                    isAlt: true,
+                    stock: 'Stock: 1 unidad',
+                    tag: 'One Piece CG',
+                    title: 'Illustration Box: Silvers Rayleigh',
+                    price: 34900,
+                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'STARTER DECK',
+                    isAlt: false,
+                    stock: 'Stock: 2 unidades',
+                    tag: 'One Piece CG',
+                    title: 'Starter Deck ST-32: Roronoa Zoro',
+                    price: 16900,
+                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'STARTER DECK',
+                    isAlt: false,
+                    stock: 'Stock: 2 unidades',
+                    tag: 'One Piece CG',
+                    title: 'Starter Deck ST-31: Monkey D. Luffy',
+                    price: 16900,
+                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80'
+                },
+                {
+                    badge: 'NUEVA EXPANSIÓN',
+                    isAlt: true,
+                    stock: 'Stock: 1 unidad',
+                    tag: 'One Piece CG',
+                    title: 'Booster Box OP-17: Display Oficial (Inglés)',
+                    price: 124900,
+                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80'
+                }
+            ],
+            'promociones': [
+                {
+                    badge: 'OFERTA ESPECIAL',
+                    isAlt: true,
+                    stock: 'Stock: 25 unidades',
+                    tag: 'Pokémon TCG',
+                    title: 'Booster Bundle Delta Rain (Descuento Especial)',
+                    price: 24900,
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80'
+                }
+            ],
+            'preventas': [
+                {
+                    badge: 'PREVENTA OFICIAL',
+                    isAlt: true,
+                    stock: 'Stock: 1 unidad',
+                    tag: 'One Piece CG',
+                    title: 'Booster Box OP-17: Display Oficial (Reserva Anticipada)',
+                    price: 124900,
+                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80'
+                }
+            ],
+            'torneos': [
+                {
+                    badge: 'EVENTO PRESENCIAL',
+                    isAlt: false,
+                    stock: 'Cupos Disponibles',
+                    tag: 'Dolakanjima Events',
+                    title: 'Ticket Torneo Launch OP-17 & Riftbound Radiance',
+                    price: 10000,
+                    img: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80'
+                }
             ],
             'accesorios': [
-                { badge: 'EN STOCK', isAlt: false, tag: 'Accesorios', title: 'Folios Protectores Matte Gold (x100)', price: 8900, img: 'https://images.unsplash.com/photo-1589241062272-c0a000072dfa?auto=format&fit=crop&w=400&q=80' }
+                {
+                    badge: 'ACCESORIO PREMIUM',
+                    isAlt: false,
+                    stock: 'Stock: Disponible',
+                    tag: 'Protectores',
+                    title: 'Folios Protectores Matte Gold (x100)',
+                    price: 8900,
+                    img: 'https://images.unsplash.com/photo-1589241062272-c0a000072dfa?auto=format&fit=crop&w=400&q=80'
+                }
             ]
         };
 
         const gameTitles = {
+            'pokemon': 'CATÁLOGO: POKÉMON TCG ⚡',
+            'one-piece': 'CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️',
+            'riftbound': 'CATÁLOGO: RIFTBOUND TCG 🛡️',
             'promociones': 'CATÁLOGO: PROMOCIONES & OFERTAS ESPECIALES 🏷️',
             'preventas': 'CATÁLOGO: PREVENTAS EXCLUSIVAS TCG 🚀',
             'torneos': 'CATÁLOGO: TORNEOS & EVENTOS PRESENCIALES 🏆',
-            'tcg-general': 'CATÁLOGO: TRADING CARD GAMES (TODOS LOS JUEGOS) 🎴',
-            'one-piece': 'CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️',
-            'pokemon': 'CATÁLOGO: POKÉMON TCG ⚡',
-            'riftbound': 'CATÁLOGO: RIFTBOUND (LEAGUE OF LEGENDS TCG) 🛡️',
             'accesorios': 'CATÁLOGO: ACCESORIOS (SLEEVES & BINDERS) 💼'
         };
 
@@ -1648,48 +1843,62 @@
             const searchTerm = query.toLowerCase().trim();
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
+            
             let allProducts = [];
-            Object.values(productsData).forEach(list => { allProducts = allProducts.concat(list); });
+            Object.values(productsData).forEach(list => {
+                allProducts = allProducts.concat(list);
+            });
+            
             const uniqueProducts = Array.from(new Set(allProducts.map(p => p.title)))
                 .map(title => allProducts.find(p => p.title === title));
+                
             const filtered = uniqueProducts.filter(item => 
                 item.title.toLowerCase().includes(searchTerm) || 
                 item.tag.toLowerCase().includes(searchTerm)
             );
+            
             if (filtered.length === 0) {
-                grid.innerHTML = '<p style="grid-column: span 2; text-align:center; padding: 25px; color: var(--text-muted);">No se encontraron productos que coincidan con tu búsqueda.</p>';
+                grid.innerHTML = '<p style="grid-column: span 2; text-align:center; padding: 30px; color: var(--text-muted);">No se encontraron productos que coincidan con tu búsqueda.</p>';
                 document.getElementById('catalogTitle').innerText = 'RESULTADOS DE BÚSQUEDA';
                 return;
             }
+            
             document.getElementById('catalogTitle').innerText = `RESULTADOS DE BÚSQUEDA (${filtered.length})`;
             filtered.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper"><img src="${item.img}" alt="${item.title}"></div>
-                    <div class="product-details">
-                        <span class="product-game-tag">${item.tag}</span>
-                        <h4 class="product-title">${item.title}</h4>
-                        <div class="product-price-row">
-                            <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
-                            <button class="add-cart-btn-sm" onclick="addToCart('${item.title}', ${item.price}, '${item.img}')">+</button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
+                renderProductCard(grid, item);
             });
         }
 
+        function renderProductCard(container, item) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
+                <div class="product-img-wrapper">
+                    <img src="${item.img}" alt="${item.title}">
+                </div>
+                <div class="product-details">
+                    <span class="product-game-tag">${item.tag}</span>
+                    <h4 class="product-title">${item.title}</h4>
+                    <span class="product-stock-count">${item.stock || ''}</span>
+                    <div class="product-price-row">
+                        <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
+                        <button class="add-cart-btn-sm" onclick="addToCart('${item.title}', ${item.price}, '${item.img}')">+</button>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        }
+
         function applyCustomFilters() {
-            const isOnePiece = document.getElementById('f-one-piece')?.checked || false;
             const isPokemon = document.getElementById('f-pokemon')?.checked || false;
+            const isOnePiece = document.getElementById('f-one-piece')?.checked || false;
             const isRiftbound = document.getElementById('f-riftbound')?.checked || false;
             const isAccesorios = document.getElementById('f-accesorios')?.checked || false;
 
             const selectedGames = [];
-            if (isOnePiece) selectedGames.push('one-piece');
             if (isPokemon) selectedGames.push('pokemon');
+            if (isOnePiece) selectedGames.push('one-piece');
             if (isRiftbound) selectedGames.push('riftbound');
             if (isAccesorios) selectedGames.push('accesorios');
 
@@ -1707,7 +1916,7 @@
         function clearCustomFilters() {
             document.querySelectorAll('.filter-checkbox').forEach(cb => cb.checked = false);
             document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
-            renderFilteredProducts(['one-piece', 'pokemon', 'riftbound', 'accesorios', 'promociones', 'preventas', 'torneos']);
+            renderFilteredProducts(['pokemon', 'one-piece', 'riftbound', 'accesorios', 'promociones', 'preventas', 'torneos']);
             document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO';
             showToast("Filtros desmarcados");
             if (window.innerWidth < 768) {
@@ -1720,27 +1929,15 @@
             grid.innerHTML = '';
             let combinedItems = [];
             gameKeys.forEach(key => {
-                if (productsData[key]) combinedItems = combinedItems.concat(productsData[key]);
+                if (productsData[key]) {
+                    combinedItems = combinedItems.concat(productsData[key]);
+                }
             });
             const uniqueItems = Array.from(new Set(combinedItems.map(p => p.title)))
                 .map(title => combinedItems.find(p => p.title === title));
             document.getElementById('catalogTitle').innerText = `CATÁLOGO FILTRADO (${uniqueItems.length} PRODUCTOS)`;
             uniqueItems.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper"><img src="${item.img}" alt="${item.title}"></div>
-                    <div class="product-details">
-                        <span class="product-game-tag">${item.tag}</span>
-                        <h4 class="product-title">${item.title}</h4>
-                        <div class="product-price-row">
-                            <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
-                            <button class="add-cart-btn-sm" onclick="addToCart('${item.title}', ${item.price}, '${item.img}')">+</button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
+                renderProductCard(grid, item);
             });
         }
 
@@ -1766,13 +1963,12 @@
             drawer.classList.remove('active');
             document.getElementById('searchInput').value = '';
             const pillMap = {
+                'pokemon': 'pill-pokemon',
+                'one-piece': 'pill-one-piece',
+                'riftbound': 'pill-riftbound',
                 'promociones': 'pill-promociones',
                 'preventas': 'pill-preventas',
                 'torneos': 'pill-torneos',
-                'tcg-general': 'pill-one-piece',
-                'one-piece': 'pill-one-piece',
-                'pokemon': 'pill-pokemon',
-                'riftbound': 'pill-riftbound',
                 'accesorios': 'pill-accesorios'
             };
             filterGame(gameKey, document.getElementById(pillMap[gameKey]));
@@ -1801,33 +1997,22 @@
             document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
             if(element) element.classList.add('active');
             document.getElementById('searchInput').value = '';
+            
             const titleElem = document.getElementById('catalogTitle');
             if (titleElem && gameTitles[gameKey]) {
                 titleElem.innerText = gameTitles[gameKey];
             }
+            
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
             const items = productsData[gameKey] || [];
             items.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper"><img src="${item.img}" alt="${item.title}"></div>
-                    <div class="product-details">
-                        <span class="product-game-tag">${item.tag}</span>
-                        <h4 class="product-title">${item.title}</h4>
-                        <div class="product-price-row">
-                            <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
-                            <button class="add-cart-btn-sm" onclick="addToCart('${item.title}', ${item.price}, '${item.img}')">+</button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
+                renderProductCard(grid, item);
             });
         }
 
-        filterGame('one-piece', document.getElementById('pill-one-piece'));
+        // Carga inicial
+        filterGame('pokemon', document.getElementById('pill-pokemon'));
         updateCartUI();
     </script>
 
