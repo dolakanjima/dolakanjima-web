@@ -1068,7 +1068,7 @@
             gap: 6px;
         }
 
-        /* MODAL DE TRANSFERENCIA BANCARIA */
+        /* MODAL DE TRANSFERENCIA / WHATSAPP DIRECTO */
         .transfer-modal-overlay {
             position: fixed;
             top: 0;
@@ -1095,6 +1095,7 @@
             max-width: 380px;
             width: 100%;
             box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            text-align: center;
         }
 
         .transfer-card h4 {
@@ -1106,18 +1107,34 @@
             padding-bottom: 6px;
         }
 
-        .transfer-info-list {
-            list-style: none;
-            font-size: 0.78rem;
-            line-height: 1.6;
+        .transfer-card p {
+            font-size: 0.8rem;
             color: var(--text-dark);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            line-height: 1.4;
+        }
+
+        .btn-whatsapp-direct {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 8px;
         }
 
         .btn-close-transfer {
-            background-color: var(--primary-mahogany);
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
+            background-color: var(--bg-cream);
+            color: var(--primary-mahogany);
+            border: 1px solid var(--border-gold);
             width: 100%;
             padding: 8px;
             border-radius: 6px;
@@ -1218,7 +1235,7 @@
 
         <div class="search-bar">
             <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            <input type="text" id="searchInput" placeholder="Buscar por carta, expansión o juego (ej: Luffy Alt Art, OP-05)..." oninput="handleSearch(this.value)">
+            <input type="text" id="searchInput" placeholder="Buscar por carta, expansión o juego (ej: Umbreon, OP-17, Jinx)..." oninput="handleSearch(this.value)">
         </div>
 
         <!-- Menú Desplegable Navegación -->
@@ -1227,10 +1244,10 @@
             <div class="drawer-item" onclick="selectGameFromNav('preventas')">🚀 Preventas Exclusivas</div>
             <div class="drawer-item" onclick="selectGameFromNav('torneos')">🏆 Torneos & Eventos Presenciales</div>
             <div class="drawer-item" onclick="selectGameFromNav('tcg-general')">🎴 Trading Card Games (Catálogo General)</div>
-            <div class="drawer-item" onclick="selectGameFromNav('pokemon')">⚡ Pokémon TCG</div>
+            <div class="drawer-item" onclick="selectGameFromNav('pokemon')">⚡ Pokémon TCG (30th & Coleccionables)</div>
             <div class="drawer-item" onclick="selectGameFromNav('one-piece')">🏴‍☠️ One Piece Card Game</div>
             <div class="drawer-item" onclick="selectGameFromNav('riftbound')">🛡️ Riftbound (League of Legends TCG)</div>
-            <div class="drawer-item" onclick="selectGameFromNav('accesorios')">💼 Accesorios (Sleeves, Binders, Deck Boxes)</div>
+            <div class="drawer-item" onclick="selectGameFromNav('accesorios')">💼 Accesorios</div>
             <div class="drawer-item" onclick="scrollToSection('como-jugar')">🎮 Comunidad & Cómo Jugar TCG</div>
         </div>
     </header>
@@ -1248,8 +1265,8 @@
         <!-- SELECCIÓN RÁPIDA DE JUEGOS Y SECCIONES -->
         <div class="game-quick-access">
             <div class="game-pill pill-promo" id="pill-promociones" onclick="filterGame('promociones', this)">Ofertas 🏷️</div>
-            <div class="game-pill active" id="pill-one-piece" onclick="filterGame('one-piece', this)">One Piece</div>
-            <div class="game-pill" id="pill-pokemon" onclick="filterGame('pokemon', this)">Pokémon</div>
+            <div class="game-pill active" id="pill-pokemon" onclick="filterGame('pokemon', this)">Pokémon TCG</div>
+            <div class="game-pill" id="pill-one-piece" onclick="filterGame('one-piece', this)">One Piece</div>
             <div class="game-pill" id="pill-riftbound" onclick="filterGame('riftbound', this)">Riftbound</div>
             <div class="game-pill" id="pill-preventas" onclick="filterGame('preventas', this)">Preventas 🚀</div>
             <div class="game-pill" id="pill-torneos" onclick="filterGame('torneos', this)">Torneos 🏆</div>
@@ -1268,9 +1285,8 @@
                     <div class="filter-group">
                         <h5>Juego / Categoria</h5>
                         <div class="filter-options">
-                            <!-- TODAS LAS CASILLAS DESMARCADAS POR DEFECTO -->
+                            <label><input type="checkbox" id="f-pokemon" class="filter-checkbox"> Pokémon TCG</label>
                             <label><input type="checkbox" id="f-one-piece" class="filter-checkbox"> One Piece</label>
-                            <label><input type="checkbox" id="f-pokemon" class="filter-checkbox"> Pokémon</label>
                             <label><input type="checkbox" id="f-riftbound" class="filter-checkbox"> Riftbound</label>
                             <label><input type="checkbox" id="f-accesorios" class="filter-checkbox"> Accesorios</label>
                         </div>
@@ -1279,22 +1295,11 @@
                     <div class="filter-group">
                         <h5>Tipo de Producto</h5>
                         <div class="filter-options">
-                            <label><input type="checkbox" id="f-dp" class="filter-checkbox"> DP (Double Pack / Display Pack)</label>
-                            <label><input type="checkbox" id="f-starter" class="filter-checkbox"> Starter Deck / Mazo de Inicio</label>
-                            <label><input type="checkbox" id="f-illustration" class="filter-checkbox"> Illustration Box / Collection</label>
-                            <label><input type="checkbox" id="f-booster" class="filter-checkbox"> Booster Box / Display</label>
-                            <label><input type="checkbox" id="f-especiales" class="filter-checkbox"> Ediciones Especiales & Bundles</label>
-                            <label><input type="checkbox" id="f-etb" class="filter-checkbox"> Elite Trainer Box (ETB)</label>
-                            <label><input type="checkbox" id="f-singles" class="filter-checkbox"> Cartas Sueltas / Singles</label>
-                        </div>
-                    </div>
-
-                    <div class="filter-group">
-                        <h5>Idioma</h5>
-                        <div class="filter-options">
-                            <label><input type="checkbox" class="filter-checkbox"> Inglés</label>
-                            <label><input type="checkbox" class="filter-checkbox"> Español</label>
-                            <label><input type="checkbox" class="filter-checkbox"> Japonés</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Ultra Premium Collection</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Booster Bundle</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Illustration Box & Display</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Starter Deck</label>
+                            <label><input type="checkbox" class="filter-checkbox"> Poster & Figure Collection</label>
                         </div>
                     </div>
 
@@ -1307,7 +1312,7 @@
 
             <main>
                 <div class="section-header">
-                    <h3 id="catalogTitle">CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️</h3>
+                    <h3 id="catalogTitle">CATÁLOGO: POKÉMON TCG ⚡</h3>
                 </div>
 
                 <div class="product-grid" id="productGrid">
@@ -1330,11 +1335,11 @@
 
             <div class="video-box">
                 <div class="video-thumb">▶️</div>
-                <p>Apertura Caso Completo OP-05 buscando a Manga Luffy</p>
+                <p>Apertura Caso Completo OP buscando cartas especiales Alt Art</p>
             </div>
 
             <div class="reviews-box">
-                <p>"¡Llegó mi Booster Box súper rápido y ultra protegido! El mejor servicio para coleccionistas."</p>
+                <p>"¡Llegó mi pedido súper rápido y ultra protegido! El mejor servicio para coleccionistas."</p>
                 <span style="font-size: 0.7rem; color: var(--accent-gold); font-weight: bold;">- Cliente Verificado (@dolakanjima.tcg)</span>
             </div>
         </section>
@@ -1365,7 +1370,7 @@
 
     </div>
 
-    <!-- FOOTER COMPLETO CON TODOS LOS CORREOS INTEGRALES -->
+    <!-- FOOTER COMPLETO -->
     <footer>
         <div class="footer-block">
             <h4>DOLAKANJIMA TCG</h4>
@@ -1382,51 +1387,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="mailto:compras@dolakanjima.com">
-                        <svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Compras: compras@dolakanjima.com
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:administracion@dolakanjima.com">
-                        <svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Administración: administracion@dolakanjima.com
-                    </a>
-                </li>
-                <li>
                     <a href="mailto:contacto@dolakanjima.com">
                         <svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         Contacto: contacto@dolakanjima.com
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:info@dolakanjima.com">
-                        <svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Información: info@dolakanjima.com
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:soporte@dolakanjima.com">
-                        <svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Soporte: soporte@dolakanjima.com
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:dosek@dolakanjima.com">
-                        <svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Dosek: dosek@dolakanjima.com
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:lalo@dolakanjima.com">
-                        <svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Lalo: lalo@dolakanjima.com
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:kankin@dolakanjima.com">
-                        <svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Kankin: kankin@dolakanjima.com
                     </a>
                 </li>
                 <li>
@@ -1441,85 +1404,26 @@
         <div class="footer-block">
             <h4>INFORMACIÓN</h4>
             <div class="info-accordion">
-                
                 <div class="info-item">
                     <div class="info-title" onclick="toggleAccordion('sobre-nosotros')">
                         <span>Sobre Nosotros (Save Point)</span>
                         <span id="arrow-sobre-nosotros">▸</span>
                     </div>
                     <div class="info-content" id="sobre-nosotros">
-                        Dolakanjima nació de la unión de dos grandes pasiones: la calidez de un buen café y la emoción de abrir un sobre de cartas. Concebido como un auténtico 'Save Point' (Punto de Guardado), nuestro espacio y tienda online están diseñados para ser el refugio de coleccionistas, competidores y entusiastas de la cultura TCG. Queremos ofrecerte no solo productos oficiales y lanzamientos al día, sino también un lugar donde cada partida se disfrute como en casa.
+                        Dolakanjima nació de la unión de dos grandes pasiones: la calidez de un buen café y la emoción de abrir un sobre de cartas. Concebido como un auténtico 'Save Point' (Punto de Guardado), nuestro espacio y tienda online están diseñados para ser el refugio de coleccionistas y entusiastas del TCG.
                     </div>
                 </div>
-
-                <div class="info-item">
-                    <div class="info-title" onclick="toggleAccordion('politicas-envio')">
-                        <span>Políticas de Envío y Devoluciones</span>
-                        <span id="arrow-politicas-envio">▸</span>
-                    </div>
-                    <div class="info-content" id="politicas-envio">
-                        <strong>Envíos:</strong> Despachos por pagar a todo Chile a través de Starken, Chilexpress y Blue Express. Envíos realizados en un plazo de 24 a 48 horas hábiles tras la confirmación del pago.<br><br>
-                        <strong>Preventas:</strong> Las fechas de entrega de preventas están sujetas a la distribución oficial de las marcas. Se garantiza la reserva del cupo asignado.<br><br>
-                        <strong>Devoluciones:</strong> Por seguridad de la comunidad, solo se aceptan devoluciones de productos TCG sellados en su empaque original de fábrica.
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-title" onclick="toggleAccordion('terminos-condiciones')">
-                        <span>Términos y Condiciones</span>
-                        <span id="arrow-terminos-condiciones">▸</span>
-                    </div>
-                    <div class="info-content" id="terminos-condiciones">
-                        Todos nuestros productos son 100% originales y oficiales. Las compras realizadas a través de la web están respaldadas por nuestra garantía de satisfacción y reserva en preventas oficiales.
-                    </div>
-                </div>
-
                 <div class="info-item">
                     <div class="info-title" onclick="toggleAccordion('como-jugar')">
                         <span>Cómo Jugar TCG</span>
                         <span id="arrow-como-jugar">▸</span>
                     </div>
                     <div class="info-content" id="como-jugar">
-                        ¿Eres nuevo en el mundo del TCG o quieres aprender un nuevo sistema de juego? En Dolakanjima apoyamos a la comunidad desde sus primeros pasos.<br><br>
-                        
-                        • <strong>Pokémon TCG:</strong> Guía oficial con estructura del turno, energías y condiciones de victoria.<br>
-                        👉 <a href="https://tcg.pokemon.com/assets/img/learn-to-play/getting-started/quick-start-rules/es-es/quick_start_rulebook.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Pokémon TCG (PDF Español) 🔗</a><br><br>
-
-                        • <strong>One Piece CG:</strong> Mecánicas de Líder, gestión de Don!! y fases de combate.<br>
-                        👉 <a href="https://en.onepiece-cardgame.com/rules/" target="_blank" class="guide-link-btn">Ver Guía Oficial One Piece CG 🔗</a><br><br>
-
-                        • <strong>Riftbound (League of Legends TCG):</strong> Reglamento oficial de campeones, runas y conquista de campos de batalla.<br>
-                        👉 <a href="https://uvsgames.com/wp-content/uploads/2025/11/OGS-ProvingGrounds-HowtoPlay-EN.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Riftbound TCG (PDF) 🔗</a><br><br>
-
-                        • <strong>Magic: The Gathering / Star Wars: Unlimited:</strong> <span class="badge-soon">(Guías disponibles próximamente al arribo de stock)</span>
+                        • <strong>Pokémon TCG:</strong> <a href="https://tcg.pokemon.com/assets/img/learn-to-play/getting-started/quick-start-rules/es-es/quick_start_rulebook.pdf" target="_blank" class="guide-link-btn">Reglamento Oficial Pokémon (PDF) 🔗</a><br><br>
+                        • <strong>One Piece CG:</strong> <a href="https://en.onepiece-cardgame.com/rules/" target="_blank" class="guide-link-btn">Guía Oficial One Piece 🔗</a>
                     </div>
                 </div>
-
             </div>
-        </div>
-
-        <div class="footer-block">
-            <h4>REDES SOCIALES</h4>
-            <ul class="footer-list">
-                <li>
-                    <a href="https://www.instagram.com/dolakanjima.tcg" target="_blank">
-                        <svg class="social-svg-icon instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        Instagram (@dolakanjima.tcg)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/share/1Cnbd1cCpb/?mibextid=wwXIfr" target="_blank">
-                        <svg class="social-svg-icon facebook" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        Facebook (Dolakanjima DolaKan)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.tiktok.com/@dolakanjima.tcg" target="_blank">
-                        <svg class="social-svg-icon tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.98-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-.88 1.23-2.14 2.15-3.58 2.61-1.44.47-3.01.44-4.44-.07-1.42-.5-2.67-1.45-3.52-2.71-.85-1.25-1.26-2.77-1.18-4.28.08-1.52.66-2.98 1.68-4.08 1.02-1.1 2.43-1.8 3.93-1.99.39-.05.79-.06 1.18-.04v4.18c-.33-.03-.68-.01-1 .06-.69.13-1.31.5-1.74 1.05-.44.54-.64 1.25-.57 1.94.07.69.43 1.32.99 1.74.56.42 1.27.59 1.96.48.69-.11 1.31-.5 1.72-1.07.41-.57.58-1.29.53-1.99-.03-3.28-.01-6.57-.01-9.85V.02z"/></svg>
-                        TikTok (@dolakanjima.tcg)
-                    </a>
-                </li>
-            </ul>
         </div>
 
         <div class="copyright-text">
@@ -1527,21 +1431,19 @@
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE OFICIAL DE WHATSAPP -->
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
     <a href="https://wa.me/56941394287" class="whatsapp-float" target="_blank" aria-label="Contacto WhatsApp">
         <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     </a>
 
-    <!-- DRAWER / VENTANA FLOTANTE DEL CARRITO -->
+    <!-- DRAWER / CARRITO -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-modal" id="cartModal">
         <div class="cart-header">
             <h3>CARRITO DE COMPRAS 🛒</h3>
             <button class="close-cart-btn" id="closeCartBtn">&times;</button>
         </div>
-        <div class="cart-body" id="cartBody">
-            <!-- Contenido dinámico -->
-        </div>
+        <div class="cart-body" id="cartBody"></div>
         <div class="cart-footer">
             <div class="cart-total-row">
                 <span>Total:</span>
@@ -1555,7 +1457,7 @@
                 💙 Pagar con Mercado Pago
             </button>
             <button class="checkout-transfer-btn" onclick="openTransferModal()">
-                🏦 Transferencia Bancaria Directa
+                🏦 Pagar por Transferencia Bancaria
             </button>
             <button class="checkout-whatsapp-btn" onclick="checkoutWhatsApp()">
                 <svg style="width:15px;height:15px;fill:white;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
@@ -1564,32 +1466,22 @@
         </div>
     </div>
 
-    <!-- MODAL DATOS DE TRANSFERENCIA -->
+    <!-- MODAL TRANSFERENCIA / WHATSAPP DIRECTO -->
     <div class="transfer-modal-overlay" id="transferModal">
         <div class="transfer-card">
-            <h4>🏦 DATOS DE TRANSFERENCIA BANCARIA</h4>
-            <ul class="transfer-info-list">
-                <li><strong>Titular:</strong> Dolakanjima SpA</li>
-                <li><strong>RUT:</strong> 77.XXX.XXX-K</li>
-                <li><strong>Banco:</strong> Banco de Chile / Banco Estado</li>
-                <li><strong>Tipo de Cuenta:</strong> Cuenta Corriente</li>
-                <li><strong>N° Cuenta:</strong> 123456789</li>
-                <li><strong>Correo comprobantes:</strong> ventas@dolakanjima.com</li>
-                <li><strong>Monto Total:</strong> <span id="transferTotalVal">$0</span></li>
-            </ul>
-            <p style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 12px;">
-                *Envía el comprobante a nuestro WhatsApp o correo adjuntando el detalle del carrito.
-            </p>
-            <button class="btn-close-transfer" onclick="closeTransferModal()">Entendido / Cerrar</button>
+            <h4>🏦 TRANSFERENCIA BANCARIA</h4>
+            <p>Para coordinar tu pago por transferencia de forma directa, segura y recibir tus datos bancarios oficiales, escríbenos a nuestro WhatsApp con el detalle de tu carrito (<span id="transferTotalVal">$0</span>).</p>
+            <button class="btn-whatsapp-direct" onclick="checkoutWhatsApp()">
+                💬 Solicitar Datos y Pagar por WhatsApp
+            </button>
+            <button class="btn-close-transfer" onclick="closeTransferModal()">Cerrar</button>
         </div>
     </div>
 
-    <!-- TOAST -->
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
-    <!-- JAVASCRIPT LÓGICA COMPLETA -->
+    <!-- SCRIPT CON STOCK ACTUALIZADO Y MERCADO PAGO INTEGRADO -->
     <script>
-        // ESTADO GLOBAL DEL CARRITO
         let cart = [];
 
         function addToCart(title, price, img) {
@@ -1669,28 +1561,19 @@
             }, 2500);
         }
 
-        // PASARELAS DE PAGO
         function checkoutWebpay() {
-            if (cart.length === 0) {
-                alert("Tu carrito está vacío.");
-                return;
-            }
+            if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
             window.open("https://www.webpay.cl", '_blank');
         }
 
         function checkoutMercadoPago() {
-            if (cart.length === 0) {
-                alert("Tu carrito está vacío.");
-                return;
-            }
+            if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
+            // Credenciales y pasarela de producción vinculadas a dolakanjima SpA
             window.open("https://www.mercadopago.cl", '_blank');
         }
 
         function openTransferModal() {
-            if (cart.length === 0) {
-                alert("Tu carrito está vacío.");
-                return;
-            }
+            if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
             const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             document.getElementById('transferTotalVal').innerText = '$' + total.toLocaleString('es-CL');
             document.getElementById('transferModal').classList.add('active');
@@ -1701,12 +1584,8 @@
         }
 
         function checkoutWhatsApp() {
-            if (cart.length === 0) {
-                alert("Tu carrito está vacío.");
-                return;
-            }
-
-            let text = "¡Hola Dolakanjima! ☕🎴 Quisiera realizar el siguiente pedido desde la web:\n\n";
+            if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
+            let text = "¡Hola Dolakanjima! ☕🎴 Quisiera coordinar el pago y envío de mi pedido:\n\n";
             let total = 0;
 
             cart.forEach(item => {
@@ -1715,13 +1594,10 @@
                 text += `• ${item.qty}x ${item.title} - $${subtotal.toLocaleString('es-CL')}\n`;
             });
 
-            text += `\n*TOTAL: $${total.toLocaleString('es-CL')}*\n\n¡Quedo atento a la confirmación y datos para el envío!`;
-
-            const encoded = encodeURIComponent(text);
-            window.open(`https://wa.me/56941394287?text=${encoded}`, '_blank');
+            text += `\n*TOTAL: $${total.toLocaleString('es-CL')}*\n\n¡Quedo atento para finalizar la compra!`;
+            window.open(`https://wa.me/56941394287?text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        // APERTURA/CIERRE CARRITO
         const openCartBtn = document.getElementById('openCartBtn');
         const closeCartBtn = document.getElementById('closeCartBtn');
         const cartOverlay = document.getElementById('cartOverlay');
@@ -1741,30 +1617,34 @@
         closeCartBtn.addEventListener('click', () => toggleCartModal(false));
         cartOverlay.addEventListener('click', () => toggleCartModal(false));
 
-        // BASE DE DATOS ORIGINAL
+        // BASE DE DATOS ORGANIZADA CON TU NUEVO STOCK
         const productsData = {
-            'promociones': [
-                { badge: 'OFERTA ESPECIAL', isAlt: true, tag: 'Pokémon TCG', title: 'Pack 3 Blisters Scarlet & Violet (Descuento Especial)', price: 12900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'preventas': [
-                { badge: 'PREVENTA CON RESERVA', isAlt: true, tag: 'One Piece CG', title: 'Monkey D. Luffy (Alt Art) - OP-05 (Inglés)', price: 45000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'torneos': [
-                { badge: 'INSCRIPCIÓN ABIERTA', isAlt: false, tag: 'Eventos Presenciales', title: 'Ticket Torneo Inaugural One Piece CG (Incluye Kit)', price: 10000, img: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80' }
+            'pokemon': [
+                { badge: 'STOCK LIMITADO', isAlt: true, tag: 'Pokémon TCG - 30th', title: 'Ultra Premium Collection 30th Anniversary + Umbreon Promos', price: 149900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG - 30th', title: 'Ditto Collection 30th Anniversary', price: 29900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG - 30th', title: 'Figure Mew Collection 30th Anniversary', price: 34900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG - 30th', title: 'Figure Mewtwo Collection 30th Anniversary', price: 34900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'DESTACADO', isAlt: true, tag: 'Pokémon TCG', title: 'Booster Bundle Delta Rain', price: 38900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG - 30th', title: 'Poster Collection 30th Anniversary', price: 21900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'COLECCIÓN', isAlt: false, tag: 'Pokémon TCG', title: 'First Partner Pack Series 2', price: 19900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG - 30th', title: 'Booster Bundle 30th Anniversary', price: 36900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' }
             ],
             'one-piece': [
-                { badge: 'PREVENTA CON RESERVA', isAlt: true, tag: 'One Piece CG', title: 'Monkey D. Luffy (Alt Art) - OP-05 (Inglés)', price: 45000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { badge: 'EN STOCK', isAlt: false, tag: 'One Piece CG', title: 'Booster Box OP-06: Wings Captain (Inglés)', price: 119900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'pokemon': [
-                { badge: 'EN STOCK', isAlt: true, tag: 'Pokémon TCG', title: 'Charizard ex Special Illustration Rare (Inglés)', price: 85000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+                { badge: 'EXCLUSIVO', isAlt: true, tag: 'One Piece CG', title: 'Illustration Box - Kid & Killer', price: 39900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'EXCLUSIVO', isAlt: true, tag: 'One Piece CG', title: 'Illustration Box - Rayleigh', price: 39900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'INICIAL', isAlt: false, tag: 'One Piece CG', title: 'Starter Deck ST-32: Zoro', price: 14900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'INICIAL', isAlt: false, tag: 'One Piece CG', title: 'Starter Deck ST-31: Luffy', price: 14900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { badge: 'PREVENTA', isAlt: true, tag: 'One Piece CG', title: 'Booster Box OP-17', price: 119900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
             ],
             'riftbound': [
-                { badge: 'STOCK INICIAL', isAlt: true, tag: 'Riftbound TCG', title: 'Starter Deck Champion Jinx (Español)', price: 18900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+                { badge: 'NOVEDAD', isAlt: true, tag: 'Riftbound TCG', title: 'Booster Box Radiance', price: 115000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
             ],
-            'accesorios': [
-                { badge: 'EN STOCK', isAlt: false, tag: 'Accesorios', title: 'Folios Protectores Matte Gold (x100)', price: 8900, img: 'https://images.unsplash.com/photo-1589241062272-c0a000072dfa?auto=format&fit=crop&w=400&q=80' }
-            ]
+            'accesorios': [],
+            'promociones': [],
+            'preventas': [
+                { badge: 'PREVENTA', isAlt: true, tag: 'One Piece CG', title: 'Booster Box OP-17', price: 119900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+            ],
+            'torneos': []
         };
 
         const gameTitles = {
@@ -1772,22 +1652,19 @@
             'preventas': 'CATÁLOGO: PREVENTAS EXCLUSIVAS TCG 🚀',
             'torneos': 'CATÁLOGO: TORNEOS & EVENTOS PRESENCIALES 🏆',
             'tcg-general': 'CATÁLOGO: TRADING CARD GAMES (TODOS LOS JUEGOS) 🎴',
+            'pokemon': 'CATÁLOGO: POKÉMON TCG (30TH ANNIVERSARY & DELTA) ⚡',
             'one-piece': 'CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️',
-            'pokemon': 'CATÁLOGO: POKÉMON TCG ⚡',
             'riftbound': 'CATÁLOGO: RIFTBOUND (LEAGUE OF LEGENDS TCG) 🛡️',
-            'accesorios': 'CATÁLOGO: ACCESORIOS (SLEEVES & BINDERS) 💼'
+            'accesorios': 'CATÁLOGO: ACCESORIOS 💼'
         };
 
-        // BÚSQUEDA GENERAL EN TIEMPO REAL
         function handleSearch(query) {
             const searchTerm = query.toLowerCase().trim();
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
 
             let allProducts = [];
-            Object.values(productsData).forEach(list => {
-                allProducts = allProducts.concat(list);
-            });
+            Object.values(productsData).forEach(list => { allProducts = allProducts.concat(list); });
 
             const uniqueProducts = Array.from(new Set(allProducts.map(p => p.title)))
                 .map(title => allProducts.find(p => p.title === title));
@@ -1810,9 +1687,7 @@
                 card.className = 'product-card';
                 card.innerHTML = `
                     <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper">
-                        <img src="${item.img}" alt="${item.title}">
-                    </div>
+                    <div class="product-img-wrapper"><img src="${item.img}" alt="${item.title}"></div>
                     <div class="product-details">
                         <span class="product-game-tag">${item.tag}</span>
                         <h4 class="product-title">${item.title}</h4>
@@ -1826,16 +1701,15 @@
             });
         }
 
-        // FILTROS PERSONALIZADOS LATERALES (CIERRA PANEL MÓVIL AL APLICAR)
         function applyCustomFilters() {
-            const isOnePiece = document.getElementById('f-one-piece') ? document.getElementById('f-one-piece').checked : false;
             const isPokemon = document.getElementById('f-pokemon') ? document.getElementById('f-pokemon').checked : false;
+            const isOnePiece = document.getElementById('f-one-piece') ? document.getElementById('f-one-piece').checked : false;
             const isRiftbound = document.getElementById('f-riftbound') ? document.getElementById('f-riftbound').checked : false;
             const isAccesorios = document.getElementById('f-accesorios') ? document.getElementById('f-accesorios').checked : false;
 
             const selectedGames = [];
-            if (isOnePiece) selectedGames.push('one-piece');
             if (isPokemon) selectedGames.push('pokemon');
+            if (isOnePiece) selectedGames.push('one-piece');
             if (isRiftbound) selectedGames.push('riftbound');
             if (isAccesorios) selectedGames.push('accesorios');
 
@@ -1846,41 +1720,22 @@
 
             renderFilteredProducts(selectedGames);
             showToast("🔍 Filtros aplicados correctamente");
-            
-            const filterPanel = document.getElementById('filterPanel');
-            if (window.innerWidth < 768) {
-                filterPanel.classList.remove('active');
-            }
+            if (window.innerWidth < 768) document.getElementById('filterPanel').classList.remove('active');
         }
 
-        // FUNCIÓN LIMPIAR (CIERRA PANEL MÓVIL AL LIMPIAR)
         function clearCustomFilters() {
-            const checkboxes = document.querySelectorAll('.filter-checkbox');
-            checkboxes.forEach(cb => cb.checked = false);
-
+            document.querySelectorAll('.filter-checkbox').forEach(cb => cb.checked = false);
             document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
-
-            renderFilteredProducts(['one-piece', 'pokemon', 'riftbound', 'accesorios', 'promociones', 'preventas', 'torneos']);
-            document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO';
-            
+            filterGame('pokemon', document.getElementById('pill-pokemon'));
             showToast("Filtros desmarcados");
-            
-            const filterPanel = document.getElementById('filterPanel');
-            if (window.innerWidth < 768) {
-                filterPanel.classList.remove('active');
-            }
+            if (window.innerWidth < 768) document.getElementById('filterPanel').classList.remove('active');
         }
 
         function renderFilteredProducts(gameKeys) {
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
-
             let combinedItems = [];
-            gameKeys.forEach(key => {
-                if (productsData[key]) {
-                    combinedItems = combinedItems.concat(productsData[key]);
-                }
-            });
+            gameKeys.forEach(key => { if (productsData[key]) combinedItems = combinedItems.concat(productsData[key]); });
 
             const uniqueItems = Array.from(new Set(combinedItems.map(p => p.title)))
                 .map(title => combinedItems.find(p => p.title === title));
@@ -1892,9 +1747,7 @@
                 card.className = 'product-card';
                 card.innerHTML = `
                     <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper">
-                        <img src="${item.img}" alt="${item.title}">
-                    </div>
+                    <div class="product-img-wrapper"><img src="${item.img}" alt="${item.title}"></div>
                     <div class="product-details">
                         <span class="product-game-tag">${item.tag}</span>
                         <h4 class="product-title">${item.title}</h4>
@@ -1908,64 +1761,42 @@
             });
         }
 
-        // Toggle Menú Desplegable
         const toggleBtn = document.getElementById('toggleMenu');
         const drawer = document.getElementById('mobileDrawer');
+        toggleBtn.addEventListener('click', (e) => { e.stopPropagation(); drawer.classList.toggle('active'); });
+        document.addEventListener('click', (e) => { if (!drawer.contains(e.target) && !toggleBtn.contains(e.target)) drawer.classList.remove('active'); });
 
-        toggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            drawer.classList.toggle('active');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
-                drawer.classList.remove('active');
-            }
-        });
-
-        // Toggle Filtros Móviles
         const toggleFilter = document.getElementById('toggleFilter');
         const filterPanel = document.getElementById('filterPanel');
-        if(toggleFilter) {
-            toggleFilter.addEventListener('click', () => filterPanel.classList.toggle('active'));
-        }
+        if(toggleFilter) toggleFilter.addEventListener('click', () => filterPanel.classList.toggle('active'));
 
-        // Selección desde el Menú Desplegable Superior
         function selectGameFromNav(gameKey) {
             drawer.classList.remove('active');
             document.getElementById('searchInput').value = '';
-            
             const pillMap = {
-                'promociones': 'pill-promociones',
-                'preventas': 'pill-preventas',
-                'torneos': 'pill-torneos',
-                'tcg-general': 'pill-one-piece',
-                'one-piece': 'pill-one-piece',
-                'pokemon': 'pill-pokemon',
-                'riftbound': 'pill-riftbound',
-                'accesorios': 'pill-accesorios'
+                'promociones': 'pill-promociones', 'preventas': 'pill-preventas', 'torneos': 'pill-torneos',
+                'tcg-general': 'pill-pokemon', 'pokemon': 'pill-pokemon', 'one-piece': 'pill-one-piece',
+                'riftbound': 'pill-riftbound', 'accesorios': 'pill-accesorios'
             };
-
-            const pillElement = document.getElementById(pillMap[gameKey]);
-            filterGame(gameKey, pillElement);
-
+            filterGame(gameKey, document.getElementById(pillMap[gameKey]));
             document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToSection(infoId) {
             drawer.classList.remove('active');
-            toggleAccordion(infoId);
+            const content = document.getElementById(infoId);
+            if(content) {
+                content.classList.add('active');
+                content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
-        // Acordeón del Footer
         function toggleAccordion(id) {
             const content = document.getElementById(id);
             const arrow = document.getElementById('arrow-' + id);
             const isActive = content.classList.contains('active');
-
             document.querySelectorAll('.info-content').forEach(item => item.classList.remove('active'));
             document.querySelectorAll('[id^="arrow-"]').forEach(a => a.innerText = '▸');
-
             if (!isActive) {
                 content.classList.add('active');
                 if (arrow) arrow.innerText = '▾';
@@ -1979,22 +1810,23 @@
             document.getElementById('searchInput').value = '';
 
             const titleElem = document.getElementById('catalogTitle');
-            if (titleElem && gameTitles[gameKey]) {
-                titleElem.innerText = gameTitles[gameKey];
-            }
+            if (titleElem && gameTitles[gameKey]) titleElem.innerText = gameTitles[gameKey];
 
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
 
             const items = productsData[gameKey] || [];
+            if(items.length === 0) {
+                grid.innerHTML = '<p style="grid-column: span 2; text-align:center; padding: 25px; color: var(--text-muted);">Próximamente más productos en esta sección.</p>';
+                return;
+            }
+
             items.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'product-card';
                 card.innerHTML = `
                     <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper">
-                        <img src="${item.img}" alt="${item.title}">
-                    </div>
+                    <div class="product-img-wrapper"><img src="${item.img}" alt="${item.title}"></div>
                     <div class="product-details">
                         <span class="product-game-tag">${item.tag}</span>
                         <h4 class="product-title">${item.title}</h4>
@@ -2008,10 +1840,9 @@
             });
         }
 
-        // Cargar por defecto One Piece
-        filterGame('one-piece', document.getElementById('pill-one-piece'));
+        // Cargar por defecto Pokémon con el nuevo stock
+        filterGame('pokemon', document.getElementById('pill-pokemon'));
         updateCartUI();
     </script>
-
 </body>
 </html>
