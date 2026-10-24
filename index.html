@@ -1483,7 +1483,7 @@
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
     <script>
-        // BASE DE DATOS EXACTA CON LOS 15 PRODUCTOS ACTUALIZADOS Y CLAVE NUEVA DE CACHÉ
+        // BASE DE DATOS EXACTA CON LOS 15 PRODUCTOS Y CLAVE DE CACHÉ ACTUALIZADA (v3)
         const defaultProductsData = {
             'pokemon': [
                 { 
@@ -1673,11 +1673,11 @@
             ]
         };
 
-        // GESTIÓN DE STOCK LOCAL CON CLAVE V2 (FUERZA LA CARGA DE LOS 15 PRODUCTOS)
-        let productsData = JSON.parse(localStorage.getItem('dolakanjima_stock_v2')) || defaultProductsData;
+        // GESTIÓN DE STOCK LOCAL CON CLAVE V3 (GARANTIZA LOS 15 PRODUCTOS)
+        let productsData = JSON.parse(localStorage.getItem('dolakanjima_stock_v3')) || defaultProductsData;
 
         function saveStockToLocalStorage() {
-            localStorage.setItem('dolakanjima_stock_v2', JSON.stringify(productsData));
+            localStorage.setItem('dolakanjima_stock_v3', JSON.stringify(productsData));
         }
 
         let cart = [];
@@ -1799,7 +1799,7 @@
             saveStockToLocalStorage();
 
             setTimeout(() => {
-                let currentStock = JSON.parse(localStorage.getItem('dolakanjima_stock_v2')) || productsData;
+                let currentStock = JSON.parse(localStorage.getItem('dolakanjima_stock_v3')) || productsData;
                 reservedItems.forEach(res => {
                     for (const cat in currentStock) {
                         const p = currentStock[cat].find(x => x.id === res.id);
@@ -1808,7 +1808,7 @@
                         }
                     }
                 });
-                localStorage.setItem('dolakanjima_stock_v2', JSON.stringify(currentStock));
+                localStorage.setItem('dolakanjima_stock_v3', JSON.stringify(currentStock));
             }, 15 * 60 * 1000);
 
             cart = [];
