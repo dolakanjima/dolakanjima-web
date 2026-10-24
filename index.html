@@ -1299,31 +1299,33 @@
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
     <script>
-        // PRECIOS ACTUALIZADOS Y OPTIMIZADOS CON MARGEN
+        // LISTA MÁXIMA DE PRECIOS DE MERCADO TOP-TIER
         const defaultProductsData = {
             'pokemon': [
-                { id: 'p1', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', title: 'Ultra Premium Collection 30th Anniversary (Umbreon Edition)', price: 249900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { id: 'p2', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', title: 'Ditto Collection Box 30th Anniversary', price: 54900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { id: 'p3', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Figure Collection Mew 30th Anniversary', price: 48900, stock: 3, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { id: 'p4', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Figure Collection Mewtwo 30th Anniversary', price: 48900, stock: 3, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { id: 'p5', badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG', title: 'Booster Bundle Delta Rain', price: 32900, stock: 25, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { id: 'p6', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Poster Collection 30th Anniversary', price: 28900, stock: 6, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { id: 'p7', badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG', title: 'First Partner Pack (Serie 2)', price: 19900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { id: 'p8', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Booster Bundle 30th Anniversary Edition', price: 34900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+                { id: 'p1', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', title: 'Ultra Premium Collection 30th Anniversary (Umbreon Edition)', price: 649900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p2', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', title: 'Ditto Collection Box 30th Anniversary', price: 169900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p3', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Figure Collection Mew 30th Anniversary', price: 119900, stock: 3, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p4', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Figure Collection Mewtwo 30th Anniversary', price: 119900, stock: 3, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p5', badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG', title: 'Booster Bundle Delta Rain', price: 44900, stock: 25, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p6', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Poster Collection 30th Anniversary', price: 39900, stock: 6, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p7', badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG', title: 'First Partner Pack (Serie 2)', price: 28900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p8', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Booster Bundle 30th Anniversary Edition', price: 48900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
             ],
             'riftbound': [
-                { id: 'r1', badge: 'BOOSTER BOX', isAlt: true, tag: 'Riftbound TCG', title: 'Booster Box Riftbound: Radiance Display (24 Packs)', price: 145000, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+                { id: 'r1', badge: 'BOOSTER BOX', isAlt: true, tag: 'Riftbound TCG', title: 'Booster Box Riftbound: Radiance Display (24 Packs)', price: 189900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
             ],
             'one-piece': [
-                { id: 'op1', badge: 'SPECIAL BOX', isAlt: true, tag: 'One Piece CG', title: 'Illustration Box: Eustass "Captain" Kid & Killer', price: 44900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
-                { id: 'op2', badge: 'SPECIAL BOX', isAlt: true, tag: 'One Piece CG', title: 'Illustration Box: Silvers Rayleigh', price: 44900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
-                { id: 'op3', badge: 'STARTER DECK', isAlt: false, tag: 'One Piece CG', title: 'Starter Deck ST-32: Roronoa Zoro', price: 21900, stock: 2, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
-                { id: 'op4', badge: 'STARTER DECK', isAlt: false, tag: 'One Piece CG', title: 'Starter Deck ST-31: Monkey D. Luffy', price: 21900, stock: 2, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
-                { id: 'op5', badge: 'BOOSTER BOX', isAlt: true, tag: 'One Piece CG', title: 'Booster Box OP-17: Display Oficial (Inglés)', price: 159900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' }
+                { id: 'op1', badge: 'SPECIAL BOX', isAlt: true, tag: 'One Piece CG', title: 'Illustration Box: Eustass "Captain" Kid & Killer', price: 59900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op2', badge: 'SPECIAL BOX', isAlt: true, tag: 'One Piece CG', title: 'Illustration Box: Silvers Rayleigh', price: 59900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op3', badge: 'STARTER DECK', isAlt: false, tag: 'One Piece CG', title: 'Starter Deck ST-32: Roronoa Zoro', price: 28900, stock: 2, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op4', badge: 'STARTER DECK', isAlt: false, tag: 'One Piece CG', title: 'Starter Deck ST-31: Monkey D. Luffy', price: 28900, stock: 2, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op5', badge: 'BOOSTER BOX', isAlt: true, tag: 'One Piece CG', title: 'Booster Box OP-17: Display Oficial (Inglés)', price: 189900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' }
             ]
         };
 
-        let productsData = JSON.parse(localStorage.getItem('dolakanjima_stock')) || defaultProductsData;
+        // FORZAMOS LA RE-SINCRONIZACIÓN
+        localStorage.removeItem('dolakanjima_stock');
+        let productsData = defaultProductsData;
 
         function saveStockToLocalStorage() {
             localStorage.setItem('dolakanjima_stock', JSON.stringify(productsData));
