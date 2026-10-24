@@ -429,6 +429,13 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(61, 35, 20, 0.12);
         }
 
         .product-badge {
@@ -493,6 +500,10 @@
             color: var(--text-muted);
             margin-bottom: 6px;
             line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .product-stock-count {
@@ -516,6 +527,22 @@
             font-family: var(--font-tcg);
         }
 
+        .card-actions-row {
+            display: flex;
+            gap: 4px;
+        }
+
+        .btn-detail-sm {
+            background-color: var(--bg-cream);
+            color: var(--primary-mahogany);
+            border: 1px solid var(--border-gold);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+
         .add-cart-btn-sm {
             background-color: var(--primary-mahogany);
             color: var(--accent-gold);
@@ -528,13 +555,144 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.1s, background-color 0.2s;
         }
 
         .add-cart-btn-sm:active {
             transform: scale(0.9);
             background-color: var(--accent-gold);
             color: var(--primary-dark);
+        }
+
+        /* MODAL DE DETALLE DE PRODUCTO */
+        .product-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65);
+            z-index: 2500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .product-modal {
+            background-color: var(--card-bg);
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: modalPop 0.3s ease;
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-modal-btn {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-mahogany);
+            cursor: pointer;
+        }
+
+        .modal-img-container {
+            width: 100%;
+            height: 240px;
+            background-color: #F8F4EC;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            border: 1px solid var(--border-gold);
+        }
+
+        .modal-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-tag {
+            font-size: 0.7rem;
+            color: var(--gold-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: var(--font-tcg);
+        }
+
+        .modal-title {
+            font-family: var(--font-tcg);
+            font-size: 1.1rem;
+            color: var(--primary-mahogany);
+            margin: 4px 0 8px;
+            font-weight: 800;
+        }
+
+        .modal-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary-mahogany);
+            font-family: var(--font-tcg);
+            margin-bottom: 12px;
+        }
+
+        .modal-stock {
+            font-size: 0.78rem;
+            color: var(--emerald);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .modal-description-box {
+            background-color: var(--bg-cream);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .modal-description-box h5 {
+            font-family: var(--font-tcg);
+            color: var(--primary-mahogany);
+            font-size: 0.82rem;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .modal-add-btn {
+            width: 100%;
+            background-color: var(--primary-mahogany);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.88rem;
+            cursor: pointer;
+            font-family: var(--font-tcg);
+            text-align: center;
         }
 
         /* BANNER CAFETERÍA PRESENCIAL */
@@ -1144,7 +1302,7 @@
 
             <main>
                 <div class="section-header">
-                    <h3 id="catalogTitle">CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟</h3>
+                    <h3 id="catalogTitle">CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟 (14 PRODUCTOS)</h3>
                 </div>
 
                 <div class="product-grid" id="productGrid"></div>
@@ -1180,6 +1338,25 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- MODAL DE DETALLE DE PRODUCTO -->
+    <div class="product-modal-overlay" id="productModalOverlay" onclick="closeProductModal(event)">
+        <div class="product-modal" id="productModalContent" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeProductModalDirect()">&times;</button>
+            <div class="modal-img-container">
+                <img id="modalImg" src="" alt="Producto">
+            </div>
+            <div class="modal-tag" id="modalTag"></div>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <div class="modal-price" id="modalPrice"></div>
+            <div class="modal-stock" id="modalStock"></div>
+            <div class="modal-description-box">
+                <h5>Contenido y Especificaciones Oficiales</h5>
+                <p id="modalDescription"></p>
+            </div>
+            <button class="modal-add-btn" id="modalAddBtn" onclick="">AÑADIR AL CARRITO 🛒</button>
+        </div>
     </div>
 
     <footer>
@@ -1306,7 +1483,7 @@
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
     <script>
-        // BASE DE DATOS ACTUALIZADA CON DESCRIPCIONES COMPLETAS DE STOCK Y CATEGORÍAS CORRECTAS
+        // BASE DE DATOS EXACTA CON LOS 14 PRODUCTOS Y SUS DESCRIPCIONES COMPLETAS DE CONTENIDO (PDF)
         const defaultProductsData = {
             'pokemon': [
                 { 
@@ -1316,7 +1493,7 @@
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-especiales',
                     title: 'Ultra Premium Collection 30th Anniversary (Umbreon Edition)', 
-                    description: 'Edición especial conmemorativa 30th Anniversary con carta promo exclusiva de Umbreon, sobres de colección y accesorios premium.',
+                    description: 'Incluye carta promo exclusiva de Umbreon conmemorativa 30th Anniversary, sobres de expansión coleccionables de la edición especial, tapete de juego prémium, dados metálicos de contadores de daño, monedas coleccionables y caja contenedora rígida de edición limitada.',
                     price: 649900, 
                     stock: 2, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1328,7 +1505,7 @@
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-illustration',
                     title: 'Ditto Collection Box 30th Anniversary', 
-                    description: 'Caja coleccionable especial con figura exclusiva de Ditto, cartas promo foil y sobres de expansión del aniversario.',
+                    description: 'Contiene una figura exclusiva de alta calidad de Ditto transformándose, 1 carta promo foil holográfica especial de Ditto 30th Anniversary, sobres de expansión de la serie y código para Pokémon TCG Live.',
                     price: 169900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1340,7 +1517,7 @@
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-illustration',
                     title: 'Figure Collection Mew 30th Anniversary', 
-                    description: 'Figura de alta calidad de Mew conmemorativa 30th Anniversary, cartas holográficas y sobres de colección.',
+                    description: 'Incluye una figura coleccionable detallada de Mew 30th Anniversary, 1 carta promo holográfica conmemorativa de Mew, sobres de refuerzo de la edición especial y accesorios de juego.',
                     price: 119900, 
                     stock: 3, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1352,7 +1529,7 @@
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-illustration',
                     title: 'Figure Collection Mewtwo 30th Anniversary', 
-                    description: 'Figura coleccionable de Mewtwo conmemorativa 30th Anniversary, cartas promocionales y sobres especiales.',
+                    description: 'Incluye figura de exhibición de Mewtwo conmemorativa 30th Anniversary, carta promo foil de Mewtwo, sobres de expansión de la serie y tarjeta con código.',
                     price: 119900, 
                     stock: 3, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1364,7 +1541,7 @@
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-booster',
                     title: 'Booster Bundle Delta Rain', 
-                    description: 'Bundle oficial con múltiples sobres de expansión de la serie Delta Rain en inglés. Ideal para apertura y búsqueda de cartas raras.',
+                    description: 'Contiene 6 paquetes de mejora (sobres) oficiales de la expansión Delta Rain en idioma inglés. Diseñado para la búsqueda de cartas raras y refuerzo de mazos.',
                     price: 44900, 
                     stock: 25, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1376,7 +1553,7 @@
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-especiales',
                     title: 'Poster Collection 30th Anniversary', 
-                    description: 'Poster conmemorativo de edición limitada por el 30 aniversario de Pokémon TCG junto a sobres de refuerzo.',
+                    description: 'Incluye un póster coleccionable de gran formato con arte exclusivo del 30 aniversario, sobres de refuerzo de la edición especial y cartas promocionales foil.',
                     price: 39900, 
                     stock: 6, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1388,7 +1565,7 @@
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-especiales',
                     title: 'First Partner Pack (Serie 2)', 
-                    description: 'Pack de inicio con cartas oversized de los Pokémon iniciales y sobres de expansión clásicos.',
+                    description: 'Contiene 3 cartas jumbo oversized de los Pokémon iniciales de la región clásica, junto con 2 sobres de expansión estándar de Pokémon TCG.',
                     price: 28900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1400,7 +1577,7 @@
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-booster',
                     title: 'Booster Bundle 30th Anniversary Edition', 
-                    description: 'Bundle especial de sobres de la edición 30th Anniversary. Alta demanda y coleccionabilidad garantizada.',
+                    description: 'Bundle especial que contiene 6 sobres de expansión sellados de la edición conmemorativa 30th Anniversary con alta probabilidad de cartas holográficas.',
                     price: 48900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1414,7 +1591,7 @@
                     tag: 'Riftbound TCG', 
                     typeKey: 'f-booster',
                     title: 'Booster Box Riftbound: Radiance Display (24 Packs)', 
-                    description: 'Display completo de 24 sobres de Riftbound: Radiance Display. Perfecto para torneos, draft y apertura de cartas ultra raras.',
+                    description: 'Display sellado de fábrica que contiene 24 sobres de la expansión Radiance de Riftbound TCG. Ideal para torneos Draft, sellados y búsqueda de campeones legendarios.',
                     price: 189900, 
                     stock: 2, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1428,7 +1605,7 @@
                     tag: 'One Piece CG', 
                     typeKey: 'f-illustration',
                     title: 'Illustration Box: Eustass "Captain" Kid & Killer',
-                    description: 'Caja de ilustración especial con cartas de arte alternativo (Alt-Art) de Eustass Kid y Killer con acabados premium en inglés.',
+                    description: 'Caja de ilustración especial que incluye cartas promo con arte alternativo (Alt-Art) de Eustass Kid y Killer, cartas Don!! conmemorativas y sobres de expansión en inglés.',
                     price: 59900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1440,7 +1617,7 @@
                     tag: 'One Piece CG', 
                     typeKey: 'f-illustration',
                     title: 'Illustration Box: Silvers Rayleigh',
-                    description: 'Caja de ilustración de coleccionista con cartas conmemorativas de arte alternativo de Silvers Rayleigh.',
+                    description: 'Caja coleccionable de ilustración con carta de arte alternativo (Alt-Art) de Silvers Rayleigh, estuche protector y sobres de refuerzo oficiales en inglés.',
                     price: 59900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1452,7 +1629,7 @@
                     tag: 'One Piece CG', 
                     typeKey: 'f-starter',
                     title: 'Starter Deck ST-32: Roronoa Zoro',
-                    description: 'Mazo de inicio estructurado listo para jugar enfocado en Roronoa Zoro. Incluye cartas exclusivas de líder y Don!!',
+                    description: 'Mazo estructurado preconstruido de 51 cartas listo para jugar enfocado en Roronoa Zoro, incluye 10 cartas Don!! y hoja de reglas oficial en inglés.',
                     price: 28900, 
                     stock: 2, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1464,7 +1641,7 @@
                     tag: 'One Piece CG', 
                     typeKey: 'f-starter',
                     title: 'Starter Deck ST-31: Monkey D. Luffy',
-                    description: 'Mazo de inicio estructurado de Monkey D. Luffy. Ideal para jugadores principiantes y competitivos que buscan iniciarse.',
+                    description: 'Mazo estructurado preconstruido de 51 cartas listo para jugar de Monkey D. Luffy, incluye 10 cartas Don!!, tapete de papel y manual oficial.',
                     price: 28900, 
                     stock: 2, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1476,7 +1653,7 @@
                     tag: 'One Piece CG', 
                     typeKey: 'f-booster',
                     title: 'Booster Box OP-17: Display Oficial (Inglés)',
-                    description: 'Display sellado de la codiciada expansión OP-17 en inglés de One Piece Card Game. Alta cotización en el mercado secundario.',
+                    description: 'Display sellado de fábrica con 24 sobres de la cotizada expansión OP-17 de One Piece Card Game en idioma inglés. Excelente para colección y juego competitivo.',
                     price: 189900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1522,6 +1699,7 @@
             updateCartUI();
             renderActiveCatalog();
             showToast(`¡Añadido al carrito! 🎴`);
+            closeProductModalDirect();
         }
 
         function updateCartQty(id, delta) {
@@ -1662,6 +1840,7 @@
         function renderProductCard(container, item) {
             const card = document.createElement('div');
             card.className = 'product-card';
+            card.onclick = () => openProductModal(item.id);
 
             const isOut = item.stock <= 0;
             const stockText = isOut ? 'Agotado' : `Stock: ${item.stock} un.`;
@@ -1678,13 +1857,54 @@
                     <span class="product-stock-count ${isOut ? 'out-stock' : ''}">${stockText}</span>
                     <div class="product-price-row">
                         <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
-                        <button class="add-cart-btn-sm" ${isOut ? 'disabled' : ''} onclick="addToCart('${item.id}')">
-                            ${isOut ? 'Agotado' : '+'}
-                        </button>
+                        <div class="card-actions-row" onclick="event.stopPropagation()">
+                            <button class="btn-detail-sm" onclick="openProductModal('${item.id}')">Ver más</button>
+                            <button class="add-cart-btn-sm" ${isOut ? 'disabled' : ''} onclick="addToCart('${item.id}')">
+                                ${isOut ? 'Agotado' : '+'}
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
             container.appendChild(card);
+        }
+
+        // MODAL FUNCTIONS
+        function openProductModal(id) {
+            const product = findProductById(id);
+            if (!product) return;
+
+            document.getElementById('modalImg').src = product.img;
+            document.getElementById('modalTag').innerText = product.tag + ' • ' + product.badge;
+            document.getElementById('modalTitle').innerText = product.title;
+            document.getElementById('modalPrice').innerText = '$' + product.price.toLocaleString('es-CL');
+            document.getElementById('modalStock').innerText = product.stock > 0 ? `Stock disponible: ${product.stock} un.` : 'Agotado';
+            document.getElementById('modalDescription').innerText = product.description;
+
+            const addBtn = document.getElementById('modalAddBtn');
+            if (product.stock > 0) {
+                addBtn.innerText = 'AÑADIR AL CARRITO 🛒';
+                addBtn.disabled = false;
+                addBtn.style.opacity = '1';
+                addBtn.onclick = () => addToCart(product.id);
+            } else {
+                addBtn.innerText = 'PRODUCTO AGOTADO';
+                addBtn.disabled = true;
+                addBtn.style.opacity = '0.5';
+                addBtn.onclick = null;
+            }
+
+            document.getElementById('productModalOverlay').classList.add('active');
+        }
+
+        function closeProductModal(e) {
+            if (e.target.id === 'productModalOverlay') {
+                closeProductModalDirect();
+            }
+        }
+
+        function closeProductModalDirect() {
+            document.getElementById('productModalOverlay').classList.remove('active');
         }
 
         let currentFilterMode = 'all';
@@ -1696,7 +1916,7 @@
             if(element) element.classList.add('active');
             else document.getElementById('pill-all')?.classList.add('active');
 
-            document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟';
+            document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟 (14 PRODUCTOS)';
             renderActiveCatalog();
             if(drawer) drawer.classList.remove('active');
         }
