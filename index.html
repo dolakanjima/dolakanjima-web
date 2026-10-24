@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dolakanjima | Coffee & TCG - Save Point</title>
-    <!-- Fonts Google: Cinzel, Montserrat, Shojumaru & Permanent Marker -->
+    <!-- Fonts Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Shojumaru&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -47,7 +47,6 @@
             padding-bottom: 85px;
         }
 
-        /* ANNOUNCEMENT BAR */
         .top-bar {
             background-color: var(--primary-dark);
             color: var(--accent-gold);
@@ -59,7 +58,6 @@
             word-break: break-word;
         }
 
-        /* HEADER RESPONSIVO Y CENTRADO */
         header {
             background-color: #FFFFFF;
             border-bottom: 1px solid var(--border-gold);
@@ -188,7 +186,6 @@
             fill: var(--gold-dark);
         }
 
-        /* DRAWER MÓVIL NAV */
         .mobile-drawer {
             display: none;
             background-color: var(--card-bg);
@@ -227,7 +224,6 @@
             width: 100%;
         }
 
-        /* HERO BANNER PRINCIPAL */
         .hero-banner {
             background: linear-gradient(rgba(61, 35, 20, 0.88), rgba(61, 35, 20, 0.88)), url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1350&q=80') center/cover;
             border: 2px solid var(--accent-gold);
@@ -282,7 +278,6 @@
             cursor: pointer;
         }
 
-        /* SELECCIÓN RÁPIDA DE JUEGOS Y SECCIONES */
         .game-quick-access {
             display: flex;
             gap: 8px;
@@ -311,7 +306,6 @@
             color: var(--accent-gold);
         }
 
-        /* CATÁLOGO Y FILTROS LATERALES */
         .catalog-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -414,7 +408,6 @@
             text-transform: uppercase;
         }
 
-        /* PRODUCT GRID */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -557,13 +550,6 @@
             justify-content: center;
         }
 
-        .add-cart-btn-sm:active {
-            transform: scale(0.9);
-            background-color: var(--accent-gold);
-            color: var(--primary-dark);
-        }
-
-        /* MODAL DE DETALLE DE PRODUCTO */
         .product-modal-overlay {
             position: fixed;
             top: 0;
@@ -596,12 +582,6 @@
             padding: 20px;
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: modalPop 0.3s ease;
-        }
-
-        @keyframes modalPop {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
         }
 
         .close-modal-btn {
@@ -695,7 +675,6 @@
             text-align: center;
         }
 
-        /* BANNER CAFETERÍA PRESENCIAL */
         .coffee-banner {
             background: linear-gradient(rgba(61, 35, 20, 0.9), rgba(61, 35, 20, 0.9)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80') center/cover;
             border: 2px solid var(--accent-gold);
@@ -732,7 +711,6 @@
             display: inline-block;
         }
 
-        /* VALORES DE MARCA */
         .value-props-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -771,7 +749,6 @@
             line-height: 1.25;
         }
 
-        /* FOOTER CON TODOS LOS CORREOS Y SECCIONES */
         footer {
             background-color: var(--primary-mahogany);
             color: #D0C2B0;
@@ -818,7 +795,6 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: color 0.2s;
         }
 
         .footer-list a:hover {
@@ -855,11 +831,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: color 0.2s;
-        }
-
-        .info-title:hover {
-            color: var(--accent-gold);
         }
 
         .info-content {
@@ -894,7 +865,6 @@
             color: #9E8E7C;
         }
 
-        /* BOTÓN FLOTANTE DE WHATSAPP */
         .whatsapp-float {
             position: fixed;
             width: 52px;
@@ -911,11 +881,6 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.2s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.08);
         }
 
         .whatsapp-float svg {
@@ -924,7 +889,6 @@
             fill: #FFFFFF;
         }
 
-        /* DRAWER / VENTANA FLOTANTE DEL CARRITO */
         .cart-overlay {
             position: fixed;
             top: 0;
@@ -1145,7 +1109,6 @@
             box-shadow: 0 3px 8px rgba(27, 77, 62, 0.3);
         }
 
-        /* TOAST NOTIFICACIÓN */
         .toast-notification {
             position: fixed;
             bottom: 85px;
@@ -1172,46 +1135,18 @@
         }
 
         @media (min-width: 768px) {
-            .brand-logo .logo-title {
-                font-size: 1.55rem;
-                letter-spacing: 1.5px;
-            }
-
-            .brand-logo .logo-title span.accent-k {
-                font-size: 1.7rem;
-            }
-
-            .brand-logo span.sub-title {
-                font-size: 0.55rem;
-                letter-spacing: 1.2px;
-            }
-
-            .menu-btn {
-                padding: 7px 12px;
-                font-size: 0.75rem;
-            }
-
-            .cart-icon-btn {
-                padding: 6px 14px;
-                font-size: 0.8rem;
-            }
-
             .catalog-container {
                 grid-template-columns: 220px 1fr;
             }
-
             .filter-panel {
                 display: block !important;
             }
-
             .filter-toggle-btn {
                 display: none;
             }
-
             .product-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-
             .value-props-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
@@ -1220,12 +1155,10 @@
 </head>
 <body>
 
-    <!-- Top Bar -->
     <div class="top-bar">
         ☕ ¡Bienvenidos a Dolakanjima! Despachos a todo Chile | 🎴 Stock real automatizado en tiempo real
     </div>
 
-    <!-- Header -->
     <header>
         <div class="header-top">
             <button class="menu-btn" id="toggleMenu">CATÁLOGO 🎴 ▾</button>
@@ -1238,7 +1171,7 @@
 
         <div class="search-bar">
             <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            <input type="text" id="searchInput" placeholder="Buscar por carta, expansión o juego (ej: Umbreon, OP-17, Mew)..." oninput="handleSearch(this.value)">
+            <input type="text" id="searchInput" placeholder="Buscar por carta, expansión o juego..." oninput="handleSearch(this.value)">
         </div>
 
         <div class="mobile-drawer" id="mobileDrawer">
@@ -1266,7 +1199,6 @@
         </div>
 
         <div class="catalog-container" id="catalogo">
-            
             <aside>
                 <button class="filter-toggle-btn" id="toggleFilter">
                     <span>Filtros de Búsqueda ⚙️</span>
@@ -1281,18 +1213,16 @@
                             <label><input type="checkbox" id="f-riftbound" class="filter-checkbox"> Riftbound</label>
                         </div>
                     </div>
-
                     <div class="filter-group">
                         <h5>Tipo de Producto</h5>
                         <div class="filter-options">
-                            <label><input type="checkbox" id="f-dp" class="filter-checkbox"> DP (Double Pack / Display Pack)</label>
-                            <label><input type="checkbox" id="f-starter" class="filter-checkbox"> Starter Deck / Mazo de Inicio</label>
-                            <label><input type="checkbox" id="f-illustration" class="filter-checkbox"> Illustration Box / Collection</label>
+                            <label><input type="checkbox" id="f-dp" class="filter-checkbox"> DP / Display Pack</label>
+                            <label><input type="checkbox" id="f-starter" class="filter-checkbox"> Starter Deck</label>
+                            <label><input type="checkbox" id="f-illustration" class="filter-checkbox"> Illustration Box</label>
                             <label><input type="checkbox" id="f-booster" class="filter-checkbox"> Booster Box / Bundle</label>
-                            <label><input type="checkbox" id="f-especiales" class="filter-checkbox"> Ediciones Especiales & Bundles</label>
+                            <label><input type="checkbox" id="f-especiales" class="filter-checkbox"> Ediciones Especiales</label>
                         </div>
                     </div>
-
                     <div class="filter-actions">
                         <button class="btn-apply-filter" onclick="applyCustomFilters()">Aplicar Filtros</button>
                         <button class="btn-clear-filter" onclick="clearCustomFilters()">Limpiar</button>
@@ -1304,7 +1234,6 @@
                 <div class="section-header">
                     <h3 id="catalogTitle">CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟 (15 PRODUCTOS)</h3>
                 </div>
-
                 <div class="product-grid" id="productGrid"></div>
             </main>
         </div>
@@ -1337,10 +1266,9 @@
                 <p>Asegura tus ediciones favoritas antes de su lanzamiento oficial.</p>
             </div>
         </div>
-
     </div>
 
-    <!-- MODAL DE DETALLE DE PRODUCTO -->
+    <!-- MODAL -->
     <div class="product-modal-overlay" id="productModalOverlay" onclick="closeProductModal(event)">
         <div class="product-modal" id="productModalContent" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeProductModalDirect()">&times;</button>
@@ -1364,85 +1292,13 @@
             <h4>DOLAKANJIMA TCG</h4>
             <p>Tu espacio de reunión, café de especialidad y catálogo oficial de cartas coleccionables.</p>
         </div>
-
         <div class="footer-block">
             <h4>CONTACTO DIRECTO</h4>
             <ul class="footer-list">
                 <li><a href="mailto:ventas@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Ventas: ventas@dolakanjima.com</a></li>
-                <li><a href="mailto:compras@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Compras: compras@dolakanjima.com</a></li>
-                <li><a href="mailto:administracion@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Administración: administracion@dolakanjima.com</a></li>
-                <li><a href="mailto:contacto@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Contacto: contacto@dolakanjima.com</a></li>
-                <li><a href="mailto:info@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Información: info@dolakanjima.com</a></li>
-                <li><a href="mailto:soporte@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Soporte: soporte@dolakanjima.com</a></li>
-                <li><a href="mailto:dosek@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Dosek: dosek@dolakanjima.com</a></li>
-                <li><a href="mailto:lalo@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Lalo: lalo@dolakanjima.com</a></li>
-                <li><a href="mailto:kankin@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Kankin: kankin@dolakanjima.com</a></li>
                 <li><a href="https://wa.me/56941394287" target="_blank"><svg class="social-svg-icon whatsapp" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>WhatsApp: +56 9 4139 4287</a></li>
             </ul>
         </div>
-
-        <div class="footer-block">
-            <h4>INFORMACIÓN Y GUÍAS</h4>
-            <div class="info-accordion">
-                <div class="info-item">
-                    <div class="info-title" onclick="toggleAccordion('sobre-nosotros')">
-                        <span>Sobre Nosotros (Save Point)</span>
-                        <span id="arrow-sobre-nosotros">▸</span>
-                    </div>
-                    <div class="info-content" id="sobre-nosotros">
-                        Dolakanjima nació de la unión de dos grandes pasiones: la calidez de un buen café y la emoción de abrir un sobre de cartas. Concebido como un auténtico 'Save Point' (Punto de Guardado), nuestro espacio y tienda online están diseñados para ser el refugio de coleccionistas, competidores y entusiastas de la cultura TCG. Queremos ofrecerte no solo productos oficiales y lanzamientos al día, sino también un lugar donde cada partida se disfrute como en casa.
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-title" onclick="toggleAccordion('politicas-envio')">
-                        <span>Políticas de Envío y Devoluciones</span>
-                        <span id="arrow-politicas-envio">▸</span>
-                    </div>
-                    <div class="info-content" id="politicas-envio">
-                        <strong>Envíos:</strong> Despachos por pagar a todo Chile a través de Starken, Chilexpress y Blue Express (24 a 48 horas hábiles tras la confirmación del pago).<br><br>
-                        <strong>Devoluciones:</strong> Solo se aceptan devoluciones de productos TCG sellados en su empaque original de fábrica.
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-title" onclick="toggleAccordion('terminos-condiciones')">
-                        <span>Términos y Condiciones</span>
-                        <span id="arrow-terminos-condiciones">▸</span>
-                    </div>
-                    <div class="info-content" id="terminos-condiciones">
-                        Todos nuestros productos son 100% originales y oficiales. Las compras realizadas a través de la web están respaldadas por nuestra garantía de satisfacción y reserva en preventas oficiales.
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-title" onclick="toggleAccordion('como-jugar')">
-                        <span>Cómo Jugar TCG (Guías Oficiales)</span>
-                        <span id="arrow-como-jugar">▸</span>
-                    </div>
-                    <div class="info-content" id="como-jugar">
-                        • <strong>Pokémon TCG:</strong> Reglamento y reglas de inicio rápido.<br>
-                        👉 <a href="https://tcg.pokemon.com/assets/img/learn-to-play/getting-started/quick-start-rules/es-es/quick_start_rulebook.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Pokémon TCG (PDF) 🔗</a><br><br>
-
-                        • <strong>One Piece CG:</strong> Mecánicas de Líder, gestión de Don!! y fases de combate.<br>
-                        👉 <a href="https://en.onepiece-cardgame.com/rules/" target="_blank" class="guide-link-btn">Ver Guía Oficial One Piece CG 🔗</a><br><br>
-
-                        • <strong>Riftbound TCG:</strong> Reglamento oficial de campeones y campos de batalla.<br>
-                        👉 <a href="https://uvsgames.com/wp-content/uploads/2025/11/OGS-ProvingGrounds-HowtoPlay-EN.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Riftbound TCG (PDF) 🔗</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-block">
-            <h4>REDES SOCIALES</h4>
-            <ul class="footer-list">
-                <li><a href="https://www.instagram.com/dolakanjima.tcg" target="_blank"><svg class="social-svg-icon instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram (@dolakanjima.tcg)</a></li>
-                <li><a href="https://www.facebook.com/share/1Cnbd1cCpb/?mibextid=wwXIfr" target="_blank"><svg class="social-svg-icon facebook" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook (Dolakanjima DolaKan)</a></li>
-                <li><a href="https://www.tiktok.com/@dolakanjima.tcg" target="_blank"><svg class="social-svg-icon tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.98-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-.88 1.23-2.14 2.15-3.58 2.61-1.44.47-3.01.44-4.44-.07-1.42-.5-2.67-1.45-3.52-2.71-.85-1.25-1.26-2.77-1.18-4.28.08-1.52.66-2.98 1.68-4.08 1.02-1.1 2.43-1.8 3.93-1.99.39-.05.79-.06 1.18-.04v4.18c-.33-.03-.68-.01-1 .06-.69.13-1.31.5-1.74 1.05-.44.54-.64 1.25-.57 1.94.07.69.43 1.32.99 1.74.56.42 1.27.59 1.96.48.69-.11 1.31-.5 1.72-1.07.41-.57.58-1.29.53-1.99-.03-3.28-.01-6.57-.01-9.85V.02z"/></svg>TikTok (@dolakanjima.tcg)</a></li>
-            </ul>
-        </div>
-
         <div class="copyright-text">
             © 2026 Dolakanjima Coffee & TCG. Todos los derechos reservados.
         </div>
@@ -1464,220 +1320,49 @@
                 <span>Total:</span>
                 <span id="cartTotalVal">$0</span>
             </div>
-            
-            <button class="checkout-webpay-btn" onclick="checkoutWebpay()">
-                💳 Pagar con Webpay / Transbank
-            </button>
-            
-            <button class="checkout-mercadopago-btn" onclick="checkoutMercadoPago()">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                Pagar con Mercado Pago
-            </button>
-
-            <button class="checkout-transfer-btn" onclick="checkoutTransferWhatsApp()">
-                🏦 Pagar por Transferencia Bancaria
-            </button>
+            <button class="checkout-webpay-btn" onclick="checkoutWebpay()">💳 Pagar con Webpay / Transbank</button>
+            <button class="checkout-mercadopago-btn" onclick="checkoutMercadoPago()">Pagar con Mercado Pago</button>
+            <button class="checkout-transfer-btn" onclick="checkoutTransferWhatsApp()">🏦 Pagar por Transferencia Bancaria</button>
         </div>
     </div>
 
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
     <script>
-        // BASE DE DATOS EXACTA CON LOS 15 PRODUCTOS Y CLAVE DE CACHÉ ACTUALIZADA (v3)
-        const defaultProductsData = {
+        // FORZAMOS LA LIMPIEZA DE CUALQUIER LOCALSTORAGE ANTIGUO E INICIALIZAMOS LOS 15 PRODUCTOS
+        const freshProductsData = {
             'pokemon': [
-                { 
-                    id: 'p1', 
-                    badge: 'EDICIÓN 30TH', 
-                    isAlt: true, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-especiales',
-                    title: '30th Celebration - Ultra Premium Collection (Umbreon Edition)', 
-                    description: 'La cúspide del coleccionismo de Pokémon TCG para el 30° Aniversario. Esta edición Ultra Premium Collection (UPC) rinde homenaje al icónico Eeveelution Umbreon en una presentación de lujo de tiraje limitado. Contenido exclusivo: Cartas promocionales metálicas y de acabado foil especial de Umbreon, playmat (tapete de juego) de alta calidad ilustrado, contadores de daño y marcadores de estado metálicos, caja de almacenamiento premium de coleccionista, moneda metálica conmemorativa del 30° Aniversario, selección especial de sobres de mejora (Booster Packs) de la colección de Aniversario e expansiones destacadas, y código para Pokémon TCG Live.',
-                    price: 649900, 
-                    stock: 2, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'p2', 
-                    badge: 'EDICIÓN 30TH', 
-                    isAlt: true, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-especiales',
-                    title: '30th Celebration - Elite Trainer Box (ETB INGLÉS)', 
-                    description: 'Celebra los 30 años de Pokémon TCG con la 30th Celebration Elite Trainer Box (ETB) en inglés. Una edición especial conmemorativa diseñada tanto para jugadores exigentes como para coleccionistas de producto sellado. Contenido Oficial: 9 sobres de refuerzo (Booster Packs) de la colección Pokémon TCG: 30th Celebration, 1 carta promocional holográfica (foil) de edición especial de aniversario, 65 fundas para cartas (sleeves) con diseño oficial del 30° Aniversario, 6 dados marcadores de daño de alta calidad, 1 dado transparente legal para lanzamiento de moneda, 2 marcadores de condición acrílicos, 1 marcador VSTAR acrílico, 4 separadores temáticos para organizar tus cartas dentro de la caja, 1 caja de colección rígida con 4 divisores de almacenamiento, 1 guía para el jugador de la expansión de Aniversario, y código de activación para Pokémon TCG Live.',
-                    price: 159900, 
-                    stock: 2, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'p3', 
-                    badge: 'EDICIÓN 30TH', 
-                    isAlt: true, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-especiales',
-                    title: '30th Celebration - Ditto Premium Collection', 
-                    description: 'Una caja de colección imprescindible enfocada en el Pokémon de las mil transformaciones: Ditto. Contenido destacado: Carta promocional holográfica exclusiva de Ditto con sello del 30° Aniversario, pin de metal / moneda coleccionable con diseño temático de Ditto, selección de sobres de mejora (Booster Packs) de Pokémon TCG en inglés, y carta con código para el juego online Pokémon TCG Live.',
-                    price: 169900, 
-                    stock: 1, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'p4', 
-                    badge: 'EDICIÓN 30TH', 
-                    isAlt: false, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-illustration',
-                    title: '30th Celebration - Figure Collection (Mew Edition)', 
-                    description: 'Celebra tres décadas de Pokémon con esta caja temática que incluye una figura esculpida de gran detalle de Mew, el Pokémon Mítico de la Primera Generación. Contenido: 1 figura detallada de exhibición de Mew, 1 carta promocional holográfica inédita de Mew, 4 sobres de mejora (Booster Packs) de Pokémon TCG, y código de activación para Pokémon TCG Live.',
-                    price: 119900, 
-                    stock: 3, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'p5', 
-                    badge: 'EDICIÓN 30TH', 
-                    isAlt: false, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-illustration',
-                    title: '30th Celebration - Figure Collection (Mewtwo Edition)', 
-                    description: 'Desata el poder psíquico de Mewtwo con esta edición conmemorativa oficial de aniversario. Contenido: 1 figura de alta calidad de Mewtwo lista para exhibir, 1 carta promocional especial de Mewtwo con acabado foil, 4 sobres de expansión (Booster Packs) de Pokémon TCG, y código para Pokémon TCG Live.',
-                    price: 119900, 
-                    stock: 3, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'p6', 
-                    badge: 'EDICIÓN 30TH', 
-                    isAlt: false, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-especiales',
-                    title: '30th Celebration - Poster Collection', 
-                    description: 'Revisa la historia visual de la franquicia con este set conmemorativo a todo color. Contenido: 1 póster desplegable doble cara con arte oficial conmemorativo de las tres décadas de Pokémon TCG, 3 cartas promocionales holográficas de los Pokémon iniciales emblemáticos, 3 sobres de mejora de Pokémon TCG, y código para Pokémon TCG Live.',
-                    price: 39900, 
-                    stock: 6, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'p7', 
-                    badge: 'EDICIÓN 30TH', 
-                    isAlt: false, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-booster',
-                    title: '30th Celebration - Booster Bundle', 
-                    description: 'La forma más directa de adentrarte en la expansión especial de Aniversario. Contenido: 6 sobres de mejora (Booster Packs) sellados de la colección conmemorativa del 30° Aniversario de Pokémon TCG (cada sobre incluye 10 cartas + energía/código).',
-                    price: 49900, 
-                    stock: 1, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'p8', 
-                    badge: 'ESPECIAL', 
-                    isAlt: false, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-especiales',
-                    title: 'First Partner Series 2', 
-                    description: 'Pack de colección gigante pensado para celebrar a los Pokémon iniciales de las distintas regiones. Contenido: 3 cartas promocionales tamaño Jumbo (gigantes) de los iniciales, y 2 sobres de mejora de expansiones regulares de Pokémon TCG.',
-                    price: 34900, 
-                    stock: 1, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'p9', 
-                    badge: 'EN STOCK', 
-                    isAlt: false, 
-                    tag: 'Pokémon TCG', 
-                    typeKey: 'f-booster',
-                    title: 'Delta Reign - Booster Bundle', 
-                    description: 'Aumenta tu poder de mazo con la nueva era de mecánicas en Delta Reign. Contenido: 6 sobres de mejora (Booster Packs) sellados de la expansión Delta Reign en inglés. Ideal para jugadores competitivos y coleccionistas que buscan cartas Secret Rare, Alt-Art y Ultra Rare.',
-                    price: 44900, 
-                    stock: 25, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                }
+                { id: 'p1', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', typeKey: 'f-especiales', title: '30th Celebration - Ultra Premium Collection (Umbreon Edition)', description: 'La cúspide del coleccionismo de Pokémon TCG para el 30° Aniversario. Esta edición Ultra Premium Collection (UPC) rinde homenaje al icónico Eeveelution Umbreon en una presentación de lujo de tiraje limitado. Contenido exclusivo: Cartas promocionales metálicas y de acabado foil especial de Umbreon, playmat (tapete de juego) de alta calidad ilustrado, contadores de daño y marcadores de estado metálicos, caja de almacenamiento premium de coleccionista, moneda metálica conmemorativa del 30° Aniversario, selección especial de sobres de mejora (Booster Packs) de la colección de Aniversario e expansiones destacadas, y código para Pokémon TCG Live.', price: 649900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p2', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', typeKey: 'f-especiales', title: '30th Celebration - Elite Trainer Box (ETB INGLÉS)', description: 'Celebra los 30 años de Pokémon TCG con la 30th Celebration Elite Trainer Box (ETB) en inglés. Una edición especial conmemorativa diseñada tanto para jugadores exigentes como para coleccionistas de producto sellado. Contenido Oficial: 9 sobres de refuerzo (Booster Packs) de la colección Pokémon TCG: 30th Celebration, 1 carta promocional holográfica (foil) de edición especial de aniversario, 65 fundas para cartas (sleeves) con diseño oficial del 30° Aniversario, 6 dados marcadores de daño de alta calidad, 1 dado transparente legal para lanzamiento de moneda, 2 marcadores de condición acrílicos, 1 marcador VSTAR acrílico, 4 separadores temáticos para organizar tus cartas dentro de la caja, 1 caja de colección rígida con 4 divisores de almacenamiento, 1 guía para el jugador de la expansión de Aniversario, y código de activación para Pokémon TCG Live.', price: 159900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p3', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', typeKey: 'f-especiales', title: '30th Celebration - Ditto Premium Collection', description: 'Una caja de colección imprescindible enfocada en el Pokémon de las mil transformaciones: Ditto. Contenido destacado: Carta promocional holográfica exclusiva de Ditto con sello del 30° Aniversario, pin de metal / moneda coleccionable con diseño temático de Ditto, selección de sobres de mejora (Booster Packs) de Pokémon TCG en inglés, y carta con código para el juego online Pokémon TCG Live.', price: 169900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p4', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', typeKey: 'f-illustration', title: '30th Celebration - Figure Collection (Mew Edition)', description: 'Celebra tres décadas de Pokémon con esta caja temática que incluye una figura esculpida de gran detalle de Mew, el Pokémon Mítico de la Primera Generación. Contenido: 1 figura detallada de exhibición de Mew, 1 carta promocional holográfica inédita de Mew, 4 sobres de mejora (Booster Packs) de Pokémon TCG, y código de activación para Pokémon TCG Live.', price: 119900, stock: 3, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p5', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', typeKey: 'f-illustration', title: '30th Celebration - Figure Collection (Mewtwo Edition)', description: 'Desata el poder psíquico de Mewtwo con esta edición conmemorativa oficial de aniversario. Contenido: 1 figura de alta calidad de Mewtwo lista para exhibir, 1 carta promocional especial de Mewtwo con acabado foil, 4 sobres de expansión (Booster Packs) de Pokémon TCG, y código para Pokémon TCG Live.', price: 119900, stock: 3, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p6', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', typeKey: 'f-especiales', title: '30th Celebration - Poster Collection', description: 'Revisa la historia visual de la franquicia con este set conmemorativo a todo color. Contenido: 1 póster desplegable doble cara con arte oficial conmemorativo de las tres décadas de Pokémon TCG, 3 cartas promocionales holográficas de los Pokémon iniciales emblemáticos, 3 sobres de mejora de Pokémon TCG, y código para Pokémon TCG Live.', price: 39900, stock: 6, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p7', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', typeKey: 'f-booster', title: '30th Celebration - Booster Bundle', description: 'La forma más directa de adentrarte en la expansión especial de Aniversario. Contenido: 6 sobres de mejora (Booster Packs) sellados de la colección conmemorativa del 30° Aniversario de Pokémon TCG (cada sobre incluye 10 cartas + energía/código).', price: 49900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p8', badge: 'ESPECIAL', isAlt: false, tag: 'Pokémon TCG', typeKey: 'f-especiales', title: 'First Partner Series 2', description: 'Pack de colección gigante pensado para celebrar a los Pokémon iniciales de las distintas regiones. Contenido: 3 cartas promocionales tamaño Jumbo (gigantes) de los iniciales, y 2 sobres de mejora de expansiones regulares de Pokémon TCG.', price: 34900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p9', badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG', typeKey: 'f-booster', title: 'Delta Reign - Booster Bundle', description: 'Aumenta tu poder de mazo con la nueva era de mecánicas en Delta Reign. Contenido: 6 sobres de mejora (Booster Packs) sellados de la expansión Delta Reign en inglés. Ideal para jugadores competitivos y coleccionistas que buscan cartas Secret Rare, Alt-Art y Ultra Rare.', price: 44900, stock: 25, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
             ],
             'riftbound': [
-                { 
-                    id: 'r1', 
-                    badge: 'BOOSTER BOX', 
-                    isAlt: true, 
-                    tag: 'Riftbound TCG', 
-                    typeKey: 'f-booster',
-                    title: 'Booster Box Radiance Display (24 Packs) - Riftbound TCG', 
-                    description: 'Caja de sobres sellada de fábrica (Display Box) de Riftbound TCG: Radiance. Contenido: 24 sobres de mejora (Booster Packs) sellados de la expansión Radiance. Diseñado para formatos de Draft, eventos de Sellado o para ampliar tu colección competitiva con las cartas más buscadas del meta.',
-                    price: 189900, 
-                    stock: 2, 
-                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
-                }
+                { id: 'r1', badge: 'BOOSTER BOX', isAlt: true, tag: 'Riftbound TCG', typeKey: 'f-booster', title: 'Booster Box Radiance Display (24 Packs) - Riftbound TCG', description: 'Caja de sobres sellada de fábrica (Display Box) de Riftbound TCG: Radiance. Contenido: 24 sobres de mejora (Booster Packs) sellados de la expansión Radiance. Diseñado para formatos de Draft, eventos de Sellado o para ampliar tu colección competitiva con las cartas más buscadas del meta.', price: 189900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
             ],
             'one-piece': [
-                { 
-                    id: 'op1', 
-                    badge: 'SPECIAL BOX', 
-                    isAlt: true, 
-                    tag: 'One Piece CG', 
-                    typeKey: 'f-illustration',
-                    title: 'Illustration Box (Eustass "Captain" Kid & Killer) - One Piece TCG',
-                    description: 'Producto de colección exclusivo enfocado en los piratas de Kid de la Peor Generación. Contenido: Cartas promocionales con ilustración alternativa (Alt-Art) exclusiva de Eustass Kid y/o Killer, caja organizadora / guardacartas con diseño oficial, y sobres de expansión de One Piece Card Game en inglés.',
-                    price: 59900, 
-                    stock: 1, 
-                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'op2', 
-                    badge: 'SPECIAL BOX', 
-                    isAlt: true, 
-                    tag: 'One Piece CG', 
-                    typeKey: 'f-illustration',
-                    title: 'Illustration Box (Silvers Rayleigh) - One Piece TCG',
-                    description: 'Edición dedicada a Silvers Rayleigh, el "Rey Oscuro" y mano derecha del Rey de los Piratas. Contenido: Carta promocional Alt-Art exclusiva con arte alternativo de Rayleigh, accesorio/caja de almacenamiento temática de alta calidad, y sobres de mejora de expansiones oficiales de One Piece CG.',
-                    price: 59900, 
-                    stock: 1, 
-                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'op3', 
-                    badge: 'STARTER DECK', 
-                    isAlt: false, 
-                    tag: 'One Piece CG', 
-                    typeKey: 'f-starter',
-                    title: 'Starter Deck ST-32 (Roronoa Zoro) - One Piece TCG',
-                    description: 'Mazo de inicio preconstruido y listo para jugar de inmediato, centrado en el espadachín Roronoa Zoro. Contenido: 1 mazo listo para jugar de 51 cartas (incluye cartas de personaje y eventos), 1 carta de Líder de Roronoa Zoro, 10 cartas de DON!!, y folleto de reglas y tapete de juego de papel.',
-                    price: 28900, 
-                    stock: 2, 
-                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'op4', 
-                    badge: 'STARTER DECK', 
-                    isAlt: false, 
-                    tag: 'One Piece CG', 
-                    typeKey: 'f-starter',
-                    title: 'Starter Deck ST-31 (Monkey D. Luffy) - One Piece TCG',
-                    description: 'Mazo de inicio completo de Monkey D. Luffy, diseñado para que nuevos jugadores aprendan y compitan rápidamente. Contenido: 1 mazo de 51 cartas preconstruidas y equilibradas, 1 carta de Líder de Monkey D. Luffy, 10 cartas de DON!!, y guía de inicio rápido y mat de juego en papel.',
-                    price: 28900, 
-                    stock: 2, 
-                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
-                },
-                { 
-                    id: 'op5', 
-                    badge: 'BOOSTER BOX', 
-                    isAlt: true, 
-                    tag: 'One Piece CG', 
-                    typeKey: 'f-booster',
-                    title: 'Booster Box OP-17 Display (24 Packs) - One Piece TCG',
-                    description: 'Caja de sobres sellada de fábrica (Display Box) de la cotizada expansión OP-17. Contenido: 24 sobres de mejora (Booster Packs) sellados en inglés, y gran oportunidad para obtener cartas Secret Rare (SEC), Alternate Art (AA), Manga Rares y paralelas de alto valor en el mercado secundario.',
-                    price: 189900, 
-                    stock: 1, 
-                    img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
-                }
+                { id: 'op1', badge: 'SPECIAL BOX', isAlt: true, tag: 'One Piece CG', typeKey: 'f-illustration', title: 'Illustration Box (Eustass "Captain" Kid & Killer) - One Piece TCG', description: 'Producto de colección exclusivo enfocado en los piratas de Kid de la Peor Generación. Contenido: Cartas promocionales con ilustración alternativa (Alt-Art) exclusiva de Eustass Kid y/o Killer, caja organizadora / guardacartas con diseño oficial, y sobres de expansión de One Piece Card Game en inglés.', price: 59900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op2', badge: 'SPECIAL BOX', isAlt: true, tag: 'One Piece CG', typeKey: 'f-illustration', title: 'Illustration Box (Silvers Rayleigh) - One Piece TCG', description: 'Edición dedicada a Silvers Rayleigh, el "Rey Oscuro" y mano derecha del Rey de los Piratas. Contenido: Carta promocional Alt-Art exclusiva con arte alternativo de Rayleigh, accesorio/caja de almacenamiento temática de alta calidad, y sobres de mejora de expansiones oficiales de One Piece CG.', price: 59900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op3', badge: 'STARTER DECK', isAlt: false, tag: 'One Piece CG', typeKey: 'f-starter', title: 'Starter Deck ST-32 (Roronoa Zoro) - One Piece TCG', description: 'Mazo de inicio preconstruido y listo para jugar de inmediato, centrado en el espadachín Roronoa Zoro. Contenido: 1 mazo listo para jugar de 51 cartas (incluye cartas de personaje y eventos), 1 carta de Líder de Roronoa Zoro, 10 cartas de DON!!, y folleto de reglas y tapete de juego de papel.', price: 28900, stock: 2, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op4', badge: 'STARTER DECK', isAlt: false, tag: 'One Piece CG', typeKey: 'f-starter', title: 'Starter Deck ST-31 (Monkey D. Luffy) - One Piece TCG', description: 'Mazo de inicio completo de Monkey D. Luffy, diseñado para que nuevos jugadores aprendan y compitan rápidamente. Contenido: 1 mazo de 51 cartas preconstruidas y equilibradas, 1 carta de Líder de Monkey D. Luffy, 10 cartas de DON!!, y guía de inicio rápido y mat de juego en papel.', price: 28900, stock: 2, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op5', badge: 'BOOSTER BOX', isAlt: true, tag: 'One Piece CG', typeKey: 'f-booster', title: 'Booster Box OP-17 Display (24 Packs) - One Piece TCG', description: 'Caja de sobres sellada de fábrica (Display Box) de la cotizada expansión OP-17. Contenido: 24 sobres de mejora (Booster Packs) sellados en inglés, y gran oportunidad para obtener cartas Secret Rare (SEC), Alternate Art (AA), Manga Rares y paralelas de alto valor en el mercado secundario.', price: 189900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' }
             ]
         };
 
-        // GESTIÓN DE STOCK LOCAL CON CLAVE V3 (GARANTIZA LOS 15 PRODUCTOS)
-        let productsData = JSON.parse(localStorage.getItem('dolakanjima_stock_v3')) || defaultProductsData;
+        // Forzamos la actualización completa usando un identificador absoluto v5
+        localStorage.removeItem('dolakanjima_stock');
+        localStorage.removeItem('dolakanjima_stock_v2');
+        localStorage.removeItem('dolakanjima_stock_v3');
+        
+        let productsData = JSON.parse(localStorage.getItem('dolakanjima_stock_v5')) || freshProductsData;
 
         function saveStockToLocalStorage() {
-            localStorage.setItem('dolakanjima_stock_v3', JSON.stringify(productsData));
+            localStorage.setItem('dolakanjima_stock_v5', JSON.stringify(productsData));
         }
 
         let cart = [];
@@ -1799,7 +1484,7 @@
             saveStockToLocalStorage();
 
             setTimeout(() => {
-                let currentStock = JSON.parse(localStorage.getItem('dolakanjima_stock_v3')) || productsData;
+                let currentStock = JSON.parse(localStorage.getItem('dolakanjima_stock_v5')) || productsData;
                 reservedItems.forEach(res => {
                     for (const cat in currentStock) {
                         const p = currentStock[cat].find(x => x.id === res.id);
@@ -1808,7 +1493,7 @@
                         }
                     }
                 });
-                localStorage.setItem('dolakanjima_stock_v3', JSON.stringify(currentStock));
+                localStorage.setItem('dolakanjima_stock_v5', JSON.stringify(currentStock));
             }, 15 * 60 * 1000);
 
             cart = [];
@@ -1831,20 +1516,15 @@
 
         function checkoutTransferWhatsApp() {
             if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
-
             let text = "¡Hola Dolakanjima! ☕🎴 Quisiera solicitar los datos para transferencia bancaria y coordinar mi pedido:\n\n";
             let total = 0;
-
             cart.forEach(item => {
                 const subtotal = item.price * item.qty;
                 total += subtotal;
                 text += `• ${item.qty}x ${item.title} - $${subtotal.toLocaleString('es-CL')}\n`;
             });
-
             processCheckoutAndHoldStock();
-
-            text += `\n*TOTAL: $${total.toLocaleString('es-CL')}*\n\n¡Quedo atento a la confirmación de los datos bancarios para realizar la transferencia y coordinar el despacho!";`;
-
+            text += `\n*TOTAL: $${total.toLocaleString('es-CL')}*\n\n¡Quedo atento a la confirmación de los datos bancarios!";`;
             const encoded = encodeURIComponent(text);
             window.open(`https://wa.me/56941394287?text=${encoded}`, '_blank');
         }
@@ -1881,7 +1561,6 @@
             container.appendChild(card);
         }
 
-        // MODAL FUNCTIONS
         function openProductModal(id) {
             const product = findProductById(id);
             if (!product) return;
@@ -1930,6 +1609,7 @@
 
             document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟 (15 PRODUCTOS)';
             renderActiveCatalog();
+            const drawer = document.getElementById('mobileDrawer');
             if(drawer) drawer.classList.remove('active');
         }
 
@@ -1949,75 +1629,6 @@
             renderActiveCatalog();
         }
 
-        function applyCustomFilters() {
-            const isPokemon = document.getElementById('f-pokemon')?.checked || false;
-            const isOnePiece = document.getElementById('f-one-piece')?.checked || false;
-            const isRiftbound = document.getElementById('f-riftbound')?.checked || false;
-
-            const isDp = document.getElementById('f-dp')?.checked || false;
-            const isStarter = document.getElementById('f-starter')?.checked || false;
-            const isIllustration = document.getElementById('f-illustration')?.checked || false;
-            const isBooster = document.getElementById('f-booster')?.checked || false;
-            const isEspeciales = document.getElementById('f-especiales')?.checked || false;
-
-            const selectedGames = [];
-            if (isPokemon) selectedGames.push('pokemon');
-            if (isOnePiece) selectedGames.push('one-piece');
-            if (isRiftbound) selectedGames.push('riftbound');
-
-            const selectedTypes = [];
-            if (isDp) selectedTypes.push('f-dp');
-            if (isStarter) selectedTypes.push('f-starter');
-            if (isIllustration) selectedTypes.push('f-illustration');
-            if (isBooster) selectedTypes.push('f-booster');
-            if (isEspeciales) selectedTypes.push('f-especiales');
-
-            if (selectedGames.length === 0 && selectedTypes.length === 0) {
-                showAllCatalog();
-                return;
-            }
-
-            currentFilterMode = 'custom';
-            document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
-
-            let allProducts = [];
-            Object.values(productsData).forEach(list => { allProducts = allProducts.concat(list); });
-
-            let filtered = allProducts.filter(item => {
-                let matchGame = selectedGames.length === 0 || 
-                    (selectedGames.includes('pokemon') && item.tag.includes('Pokémon')) ||
-                    (selectedGames.includes('one-piece') && item.tag.includes('One Piece')) ||
-                    (selectedGames.includes('riftbound') && item.tag.includes('Riftbound'));
-
-                let matchType = selectedTypes.length === 0 || selectedTypes.includes(item.typeKey);
-
-                return matchGame && matchType;
-            });
-
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding: 30px; color: var(--text-muted);">No se encontraron productos con los filtros seleccionados.</p>';
-                document.getElementById('catalogTitle').innerText = 'CATÁLOGO FILTRADO (0 PRODUCTOS)';
-                return;
-            }
-
-            document.getElementById('catalogTitle').innerText = `CATÁLOGO FILTRADO (${filtered.length} PRODUCTOS)`;
-            filtered.forEach(item => renderProductCard(grid, item));
-            
-            showToast("🔍 Filtros aplicados correctamente");
-            if (window.innerWidth < 768) {
-                document.getElementById('filterPanel').classList.remove('active');
-            }
-        }
-
-        function clearCustomFilters() {
-            document.querySelectorAll('.filter-checkbox').forEach(cb => cb.checked = false);
-            showAllCatalog(document.getElementById('pill-all'));
-            showToast("🧹 Filtros limpiados");
-        }
-
         function renderActiveCatalog() {
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
@@ -2027,8 +1638,6 @@
                 Object.values(productsData).forEach(list => { itemsToRender = itemsToRender.concat(list); });
             } else if (currentFilterMode === 'game') {
                 itemsToRender = productsData[selectedGameKey] || [];
-            } else if (currentFilterMode === 'custom') {
-                Object.values(productsData).forEach(list => { itemsToRender = itemsToRender.concat(list); });
             }
 
             itemsToRender.forEach(item => {
@@ -2051,7 +1660,7 @@
             );
 
             if (filtered.length === 0) {
-                grid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding: 30px; color: var(--text-muted);">No se encontraron productos que coincidan con tu búsqueda.</p>';
+                grid.innerHTML = '<p style="grid-column: span 3; text-align:center; padding: 30px; color: var(--text-muted);">No se encontraron productos.</p>';
                 return;
             }
 
@@ -2085,29 +1694,10 @@
             drawer.classList.toggle('active');
         });
 
-        document.addEventListener('click', (e) => {
-            if (!drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
-                drawer.classList.remove('active');
-            }
-        });
-
         const toggleFilter = document.getElementById('toggleFilter');
         const filterPanel = document.getElementById('filterPanel');
         if(toggleFilter) {
             toggleFilter.addEventListener('click', () => filterPanel.classList.toggle('active'));
-        }
-
-        function toggleAccordion(id) {
-            const content = document.getElementById(id);
-            const arrow = document.getElementById('arrow-' + id);
-            const isActive = content.classList.contains('active');
-            document.querySelectorAll('.info-content').forEach(item => item.classList.remove('active'));
-            document.querySelectorAll('[id^="arrow-"]').forEach(a => a.innerText = '▸');
-            if (!isActive) {
-                content.classList.add('active');
-                if (arrow) arrow.innerText = '▾';
-                content.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
         }
 
         function selectGameFromNav(gameKey) {
@@ -2120,6 +1710,5 @@
         showAllCatalog(document.getElementById('pill-all'));
         updateCartUI();
     </script>
-
 </body>
 </html>
