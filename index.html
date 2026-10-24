@@ -649,6 +649,12 @@
             letter-spacing: 0.5px;
         }
 
+        .footer-block p {
+            font-size: 0.8rem;
+            line-height: 1.45;
+            color: #D0C2B0;
+        }
+
         .footer-list {
             list-style: none;
         }
@@ -684,7 +690,67 @@
 
         .social-svg-icon.mail { fill: var(--accent-gold); }
         .social-svg-icon.instagram { fill: #E1306C; }
+        .social-svg-icon.facebook { fill: #1877F2; }
+        .social-svg-icon.tiktok { fill: #FFFFFF; }
         .social-svg-icon.whatsapp { fill: #25D366; }
+
+        .info-accordion {
+            margin-top: 6px;
+        }
+
+        .info-item {
+            border-bottom: 1px dashed rgba(197, 160, 89, 0.25);
+            padding: 10px 0;
+        }
+
+        .info-title {
+            color: #D0C2B0;
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s;
+        }
+
+        .info-title:hover {
+            color: var(--accent-gold);
+        }
+
+        .info-content {
+            display: none;
+            padding: 12px 10px;
+            font-size: 0.78rem;
+            color: #FAF6EE;
+            line-height: 1.55;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        .info-content.active {
+            display: block;
+        }
+
+        .guide-link-btn {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .guide-link-btn:hover {
+            color: #FFF;
+        }
+
+        .badge-soon {
+            font-size: 0.68rem;
+            color: #A09080;
+            font-style: italic;
+        }
 
         .copyright-text {
             text-align: center;
@@ -903,7 +969,7 @@
             font-family: var(--font-tcg);
         }
 
-        /* LOGO OFICIAL MERCADO PAGO */
+        /* LOGO OFICIAL MERCADO PAGO ELEGANTE Y DEFINIDO */
         .checkout-mercadopago-btn {
             width: 100%;
             background-color: #009EE3;
@@ -922,11 +988,12 @@
         }
 
         .checkout-mercadopago-btn svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: white;
         }
 
+        /* BOTÓN DE TRANSFERENCIA DIRECTA QUE REEMPLAZA WHATSAPP EN EL CARRITO */
         .checkout-transfer-btn {
             width: 100%;
             background-color: #1B4D3E;
@@ -941,6 +1008,7 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
+            box-shadow: 0 3px 8px rgba(27, 77, 62, 0.3);
         }
 
         .toast-notification {
@@ -1099,6 +1167,16 @@
                 <h4>Stock Real Sincronizado</h4>
                 <p>Compra con total confianza y sin riesgo de sobreventa.</p>
             </div>
+            <div class="value-card">
+                <div class="value-icon">☕</div>
+                <h4>Experiencia Save Point</h4>
+                <p>Una comunidad hecha por jugadores para jugadores de TCG.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🚀</div>
+                <h4>Preventas Exclusivas</h4>
+                <p>Asegura tus ediciones favoritas antes de su lanzamiento oficial.</p>
+            </div>
         </div>
 
     </div>
@@ -1110,10 +1188,80 @@
         </div>
 
         <div class="footer-block">
-            <h4>CONTACTO DIRECTO</h4>
+            <h4>CONTACTO DIRECTO Y CORREOS</h4>
             <ul class="footer-list">
                 <li><a href="mailto:ventas@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Ventas: ventas@dolakanjima.com</a></li>
+                <li><a href="mailto:compras@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Compras: compras@dolakanjima.com</a></li>
+                <li><a href="mailto:administracion@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Administración: administracion@dolakanjima.com</a></li>
+                <li><a href="mailto:contacto@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Contacto: contacto@dolakanjima.com</a></li>
+                <li><a href="mailto:info@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Información: info@dolakanjima.com</a></li>
+                <li><a href="mailto:soporte@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Soporte: soporte@dolakanjima.com</a></li>
+                <li><a href="mailto:dosek@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Dosek: dosek@dolakanjima.com</a></li>
+                <li><a href="mailto:lalo@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Lalo: lalo@dolakanjima.com</a></li>
+                <li><a href="mailto:kankin@dolakanjima.com"><svg class="social-svg-icon mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Kankin: kankin@dolakanjima.com</a></li>
                 <li><a href="https://wa.me/56941394287" target="_blank"><svg class="social-svg-icon whatsapp" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>WhatsApp: +56 9 4139 4287</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-block">
+            <h4>INFORMACIÓN Y GUÍAS</h4>
+            <div class="info-accordion">
+                <div class="info-item">
+                    <div class="info-title" onclick="toggleAccordion('sobre-nosotros')">
+                        <span>Sobre Nosotros (Save Point)</span>
+                        <span id="arrow-sobre-nosotros">▸</span>
+                    </div>
+                    <div class="info-content" id="sobre-nosotros">
+                        Dolakanjima nació de la unión de dos grandes pasiones: la calidez de un buen café y la emoción de abrir un sobre de cartas. Concebido como un auténtico 'Save Point' (Punto de Guardado), nuestro espacio y tienda online están diseñados para ser el refugio de coleccionistas, competidores y entusiastas de la cultura TCG.
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-title" onclick="toggleAccordion('politicas-envio')">
+                        <span>Políticas de Envío y Devoluciones</span>
+                        <span id="arrow-politicas-envio">▸</span>
+                    </div>
+                    <div class="info-content" id="politicas-envio">
+                        <strong>Envíos:</strong> Despachos por pagar a todo Chile a través de Starken, Chilexpress y Blue Express (24 a 48 horas hábiles tras la confirmación del pago).<br><br>
+                        <strong>Devoluciones:</strong> Solo se aceptan devoluciones de productos TCG sellados en su empaque original de fábrica.
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-title" onclick="toggleAccordion('terminos-condiciones')">
+                        <span>Términos y Condiciones</span>
+                        <span id="arrow-terminos-condiciones">▸</span>
+                    </div>
+                    <div class="info-content" id="terminos-condiciones">
+                        Todos nuestros productos son 100% originales y oficiales. Las compras realizadas a través de la web están respaldadas por nuestra garantía de satisfacción y reserva en preventas oficiales.
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-title" onclick="toggleAccordion('como-jugar')">
+                        <span>Cómo Jugar TCG (Guías Oficiales)</span>
+                        <span id="arrow-como-jugar">▸</span>
+                    </div>
+                    <div class="info-content" id="como-jugar">
+                        • <strong>Pokémon TCG:</strong> Reglamento y reglas de inicio rápido.<br>
+                        👉 <a href="https://tcg.pokemon.com/assets/img/learn-to-play/getting-started/quick-start-rules/es-es/quick_start_rulebook.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Pokémon TCG (PDF) 🔗</a><br><br>
+
+                        • <strong>One Piece CG:</strong> Mecánicas de Líder, gestión de Don!! y fases de combate.<br>
+                        👉 <a href="https://en.onepiece-cardgame.com/rules/" target="_blank" class="guide-link-btn">Ver Guía Oficial One Piece CG 🔗</a><br><br>
+
+                        • <strong>Riftbound TCG:</strong> Reglamento oficial de campeones y campos de batalla.<br>
+                        👉 <a href="https://uvsgames.com/wp-content/uploads/2025/11/OGS-ProvingGrounds-HowtoPlay-EN.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Riftbound TCG (PDF) 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-block">
+            <h4>REDES SOCIALES</h4>
+            <ul class="footer-list">
+                <li><a href="https://www.instagram.com/dolakanjima.tcg" target="_blank"><svg class="social-svg-icon instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram (@dolakanjima.tcg)</a></li>
+                <li><a href="https://www.facebook.com/share/1Cnbd1cCpb/?mibextid=wwXIfr" target="_blank"><svg class="social-svg-icon facebook" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook (Dolakanjima DolaKan)</a></li>
+                <li><a href="https://www.tiktok.com/@dolakanjima.tcg" target="_blank"><svg class="social-svg-icon tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.98-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-.88 1.23-2.14 2.15-3.58 2.61-1.44.47-3.01.44-4.44-.07-1.42-.5-2.67-1.45-3.52-2.71-.85-1.25-1.26-2.77-1.18-4.28.08-1.52.66-2.98 1.68-4.08 1.02-1.1 2.43-1.8 3.93-1.99.39-.05.79-.06 1.18-.04v4.18c-.33-.03-.68-.01-1 .06-.69.13-1.31.5-1.74 1.05-.44.54-.64 1.25-.57 1.94.07.69.43 1.32.99 1.74.56.42 1.27.59 1.96.48.69-.11 1.31-.5 1.72-1.07.41-.57.58-1.29.53-1.99-.03-3.28-.01-6.57-.01-9.85V.02z"/></svg>TikTok (@dolakanjima.tcg)</a></li>
             </ul>
         </div>
 
@@ -1143,14 +1291,15 @@
                 💳 Pagar con Webpay / Transbank
             </button>
 
-            <!-- BOTÓN CON LOGO OFICIAL MERCADO PAGO SVG -->
+            <!-- LOGO OFICIAL MERCADO PAGO SVG MEJORADO -->
             <button class="checkout-mercadopago-btn" onclick="checkoutMercadoPago()">
-                <svg viewBox="0 0 500 500"><path d="M250 0C111.9 0 0 111.9 0 250s111.9 250 250 250 250-111.9 250-250S388.1 0 250 0zm0 460c-115.8 0-210-94.2-210-210S134.2 40 250 40s210 94.2 210 210-94.2 210-210 210z"/><path d="M142.3 226.7c-9.1 0-16.5 7.4-16.5 16.5v60.1c0 9.1 7.4 16.5 16.5 16.5s16.5-7.4 16.5-16.5v-60.1c0-9.1-7.4-16.5-16.5-16.5zm71.8 0c-9.1 0-16.5 7.4-16.5 16.5v60.1c0 9.1 7.4 16.5 16.5 16.5s16.5-7.4 16.5-16.5v-60.1c0-9.1-7.4-16.5-16.5-16.5zm71.8 0c-9.1 0-16.5 7.4-16.5 16.5v60.1c0 9.1 7.4 16.5 16.5 16.5s16.5-7.4 16.5-16.5v-60.1c0-9.1-7.4-16.5-16.5-16.5zm71.8 0c-9.1 0-16.5 7.4-16.5 16.5v60.1c0 9.1 7.4 16.5 16.5 16.5s16.5-7.4 16.5-16.5v-60.1c0-9.1-7.4-16.5-16.5-16.5z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
                 Pagar con Mercado Pago
             </button>
 
-            <button class="checkout-transfer-btn" onclick="checkoutWhatsApp()">
-                📲 Pedir por WhatsApp (Reserva de Stock)
+            <!-- TRANSFERENCIA BANCARIA REEMPLAZANDO A WHATSAPP EN EL CARRITO -->
+            <button class="checkout-transfer-btn" onclick="checkoutTransferWhatsApp()">
+                🏦 Pagar por Transferencia Bancaria
             </button>
         </div>
     </div>
@@ -1158,7 +1307,7 @@
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
     <script>
-        // BASE DE DATOS INICIAL DE STOCK REAL
+        // BASE DE DATOS DE STOCK REAL
         const defaultProductsData = {
             'pokemon': [
                 { id: 'p1', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', title: 'Ultra Premium Collection 30th Anniversary (Umbreon Edition)', price: 189900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
@@ -1182,7 +1331,6 @@
             ]
         };
 
-        // CARGA INTELIGENTE DE STOCK (PERSISTENCIA EN LOCALSTORAGE)
         let productsData = JSON.parse(localStorage.getItem('dolakanjima_stock')) || defaultProductsData;
 
         function saveStockToLocalStorage() {
@@ -1207,7 +1355,7 @@
             const currentQtyInCart = existingCartItem ? existingCartItem.qty : 0;
 
             if (currentQtyInCart + 1 > product.stock) {
-                showToast(`⚠️ No hay más stock disponible de este producto.`);
+                showToast(`⚠️ No hay más stock disponible.`);
                 return;
             }
 
@@ -1228,7 +1376,7 @@
 
             const product = findProductById(id);
             if (delta > 0 && item.qty + 1 > product.stock) {
-                showToast(`⚠️ Alcanzaste el límite de stock disponible.`);
+                showToast(`⚠️ Límite de stock alcanzado.`);
                 return;
             }
 
@@ -1292,9 +1440,7 @@
             const toast = document.getElementById('toastNotif');
             toast.innerText = msg;
             toast.classList.add('active');
-            setTimeout(() => {
-                toast.classList.remove('active');
-            }, 2500);
+            setTimeout(() => { toast.classList.remove('active'); }, 2500);
         }
 
         function checkoutWebpay() {
@@ -1307,11 +1453,11 @@
             window.open("https://www.mercadopago.cl", '_blank');
         }
 
-        // DESCUENTO AUTOMÁTICO DE STOCK AL PEDIR POR WHATSAPP
-        function checkoutWhatsApp() {
+        // REDIRECCIÓN A WHATSAPP PARA SOLICITAR DATOS DE TRANSFERENCIA Y DESCONTAR STOCK
+        function checkoutTransferWhatsApp() {
             if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
 
-            let text = "¡Hola Dolakanjima! ☕🎴 Quisiera coordinar la compra y envío de mi pedido:\n\n";
+            let text = "¡Hola Dolakanjima! ☕🎴 Quisiera solicitar los datos para transferencia bancaria y coordinar mi pedido:\n\n";
             let total = 0;
 
             cart.forEach(item => {
@@ -1319,19 +1465,16 @@
                 total += subtotal;
                 text += `• ${item.qty}x ${item.title} - $${subtotal.toLocaleString('es-CL')}\n`;
 
-                // Descontar automáticamente del stock real
                 const prod = findProductById(item.id);
                 if (prod) {
                     prod.stock = Math.max(0, prod.stock - item.qty);
                 }
             });
 
-            // Guardar cambios en el almacenamiento persistente
             saveStockToLocalStorage();
 
-            text += `\n*TOTAL: $${total.toLocaleString('es-CL')}*\n\n¡Quedo atento para coordinar la transferencia!`;
+            text += `\n*TOTAL: $${total.toLocaleString('es-CL')}*\n\n¡Quedo atento con los datos bancarios para realizar el pago!";`;
 
-            // Vaciar carrito y actualizar vista
             cart = [];
             updateCartUI();
             renderActiveCatalog();
@@ -1368,7 +1511,7 @@
             container.appendChild(card);
         }
 
-        let currentFilterMode = 'all'; // 'all', 'game', 'custom'
+        let currentFilterMode = 'all';
         let selectedGameKey = '';
 
         function showAllCatalog(element) {
@@ -1513,6 +1656,19 @@
             toggleFilter.addEventListener('click', () => filterPanel.classList.toggle('active'));
         }
 
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const arrow = document.getElementById('arrow-' + id);
+            const isActive = content.classList.contains('active');
+            document.querySelectorAll('.info-content').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('[id^="arrow-"]').forEach(a => a.innerText = '▸');
+            if (!isActive) {
+                content.classList.add('active');
+                if (arrow) arrow.innerText = '▾';
+                content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
         function selectGameFromNav(gameKey) {
             drawer.classList.remove('active');
             const pillMap = { 'pokemon': 'pill-pokemon', 'one-piece': 'pill-one-piece', 'riftbound': 'pill-riftbound' };
@@ -1520,7 +1676,7 @@
             document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // CARGA INICIAL POR DEFECTO: CATÁLOGO COMPLETO SIN FILTROS
+        // CARGA INICIAL
         showAllCatalog(document.getElementById('pill-all'));
         updateCartUI();
     </script>
