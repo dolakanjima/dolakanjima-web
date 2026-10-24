@@ -1285,11 +1285,11 @@
                     <div class="filter-group">
                         <h5>Tipo de Producto</h5>
                         <div class="filter-options">
-                            <label><input type="checkbox" id="f-dp" class="filter-checkbox"> DP (Double Pack / Display Pack)</label>
+                            <label><input type="checkbox" id="f-etb" class="filter-checkbox"> Elite Trainer Box (ETB)</label>
                             <label><input type="checkbox" id="f-starter" class="filter-checkbox"> Starter Deck / Mazo de Inicio</label>
-                            <label><input type="checkbox" id="f-illustration" class="filter-checkbox"> Illustration Box / Collection</label>
-                            <label><input type="checkbox" id="f-booster" class="filter-checkbox"> Booster Box / Display</label>
-                            <label><input type="checkbox" id="f-especiales" class="filter-checkbox"> Ediciones Especiales & Bundles</label>
+                            <label><input type="checkbox" id="f-illustration" class="filter-checkbox"> Illustration / Figure Collection</label>
+                            <label><input type="checkbox" id="f-booster" class="filter-checkbox"> Booster Box / Bundle</label>
+                            <label><input type="checkbox" id="f-especiales" class="filter-checkbox"> Ediciones Especiales & UPC</label>
                         </div>
                     </div>
 
@@ -1302,7 +1302,7 @@
 
             <main>
                 <div class="section-header">
-                    <h3 id="catalogTitle">CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟 (14 PRODUCTOS)</h3>
+                    <h3 id="catalogTitle">CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟 (15 PRODUCTOS)</h3>
                 </div>
 
                 <div class="product-grid" id="productGrid"></div>
@@ -1483,7 +1483,7 @@
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
     <script>
-        // BASE DE DATOS EXACTA CON LOS 14 PRODUCTOS Y SUS DESCRIPCIONES COMPLETAS DE CONTENIDO (PDF)
+        // BASE DE DATOS EXACTA CON LOS 15 PRODUCTOS Y SUS DESCRIPCIONES COMPLETAS COMERCIALES Y CONTENIDO
         const defaultProductsData = {
             'pokemon': [
                 { 
@@ -1492,22 +1492,22 @@
                     isAlt: true, 
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-especiales',
-                    title: 'Ultra Premium Collection 30th Anniversary (Umbreon Edition)', 
-                    description: 'Incluye carta promo exclusiva de Umbreon conmemorativa 30th Anniversary, sobres de expansión coleccionables de la edición especial, tapete de juego prémium, dados metálicos de contadores de daño, monedas coleccionables y caja contenedora rígida de edición limitada.',
+                    title: '30th Celebration - Ultra Premium Collection (Umbreon Edition)', 
+                    description: 'La cúspide del coleccionismo de Pokémon TCG para el 30° Aniversario. Esta edición Ultra Premium Collection (UPC) rinde homenaje al icónico Eeveelution Umbreon en una presentación de lujo de tiraje limitado. Contenido exclusivo: Cartas promocionales metálicas y de acabado foil especial de Umbreon, playmat (tapete de juego) de alta calidad ilustrado, contadores de daño y marcadores de estado metálicos, caja de almacenamiento premium de coleccionista, moneda metálica conmemorativa del 30° Aniversario, selección especial de sobres de mejora (Booster Packs) de la colección de Aniversario e expansiones destacadas, y código para Pokémon TCG Live.',
                     price: 649900, 
                     stock: 2, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
                 },
                 { 
                     id: 'p2', 
-                    badge: 'EDICIÓN 30TH', 
+                    badge: 'ELITE TRAINER', 
                     isAlt: true, 
                     tag: 'Pokémon TCG', 
-                    typeKey: 'f-illustration',
-                    title: 'Ditto Collection Box 30th Anniversary', 
-                    description: 'Contiene una figura exclusiva de alta calidad de Ditto transformándose, 1 carta promo foil holográfica especial de Ditto 30th Anniversary, sobres de expansión de la serie y código para Pokémon TCG Live.',
-                    price: 169900, 
-                    stock: 1, 
+                    typeKey: 'f-etb',
+                    title: '30th Celebration - Elite Trainer Box (ETB INGLÉS)', 
+                    description: 'Celebra los 30 años de Pokémon TCG con la 30th Celebration Elite Trainer Box (ETB) en inglés. Una edición especial conmemorativa diseñada tanto para jugadores exigentes como para coleccionistas de producto sellado. Contenido Oficial: 9 sobres de refuerzo (Booster Packs) de la colección Pokémon TCG: 30th Celebration, 1 carta promocional holográfica (foil) de edición especial de aniversario, 65 fundas para cartas (sleeves) con diseño oficial del 30° Aniversario, 6 dados marcadores de daño de alta calidad, 1 dado transparente legal para lanzamiento de moneda, 2 marcadores de condición acrílicos, 1 marcador VSTAR acrílico, 4 separadores temáticos para organizar tus cartas dentro de la caja, 1 caja de colección rígida con 4 divisores de almacenamiento, 1 guía para el jugador de la expansión de Aniversario, y código de activación para Pokémon TCG Live.',
+                    price: 159900, 
+                    stock: 2, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
                 },
                 { 
@@ -1515,11 +1515,11 @@
                     badge: 'EDICIÓN 30TH', 
                     isAlt: false, 
                     tag: 'Pokémon TCG', 
-                    typeKey: 'f-illustration',
-                    title: 'Figure Collection Mew 30th Anniversary', 
-                    description: 'Incluye una figura coleccionable detallada de Mew 30th Anniversary, 1 carta promo holográfica conmemorativa de Mew, sobres de refuerzo de la edición especial y accesorios de juego.',
-                    price: 119900, 
-                    stock: 3, 
+                    typeKey: 'f-especiales',
+                    title: '30th Celebration - Ditto Premium Collection', 
+                    description: 'Una caja de colección imprescindible enfocada en el Pokémon de las mil transformaciones: Ditto. Contenido destacado: Carta promocional holográfica exclusiva de Ditto con sello del 30° Aniversario, pin de metal / moneda coleccionable con diseño temático de Ditto, selección de sobres de mejora (Booster Packs) de Pokémon TCG en inglés, y carta con código para el juego online Pokémon TCG Live.',
+                    price: 169900, 
+                    stock: 1, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
                 },
                 { 
@@ -1528,22 +1528,22 @@
                     isAlt: false, 
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-illustration',
-                    title: 'Figure Collection Mewtwo 30th Anniversary', 
-                    description: 'Incluye figura de exhibición de Mewtwo conmemorativa 30th Anniversary, carta promo foil de Mewtwo, sobres de expansión de la serie y tarjeta con código.',
+                    title: '30th Celebration - Figure Collection (Mew Edition)', 
+                    description: 'Celebra tres décadas de Pokémon con esta caja temática que incluye una figura esculpida de gran detalle de Mew, el Pokémon Mítico de la Primera Generación. Contenido: 1 figura detallada de exhibición de Mew, 1 carta promocional holográfica inédita de Mew, 4 sobres de mejora (Booster Packs) de Pokémon TCG, y código de activación para Pokémon TCG Live.',
                     price: 119900, 
                     stock: 3, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
                 },
                 { 
                     id: 'p5', 
-                    badge: 'EN STOCK', 
+                    badge: 'EDICIÓN 30TH', 
                     isAlt: false, 
                     tag: 'Pokémon TCG', 
-                    typeKey: 'f-booster',
-                    title: 'Booster Bundle Delta Rain', 
-                    description: 'Contiene 6 paquetes de mejora (sobres) oficiales de la expansión Delta Rain en idioma inglés. Diseñado para la búsqueda de cartas raras y refuerzo de mazos.',
-                    price: 44900, 
-                    stock: 25, 
+                    typeKey: 'f-illustration',
+                    title: '30th Celebration - Figure Collection (Mewtwo Edition)', 
+                    description: 'Desata el poder psíquico de Mewtwo con esta edición conmemorativa oficial de aniversario. Contenido: 1 figura de alta calidad de Mewtwo lista para exhibir, 1 carta promocional especial de Mewtwo con acabado foil, 4 sobres de expansión (Booster Packs) de Pokémon TCG, y código para Pokémon TCG Live.',
+                    price: 119900, 
+                    stock: 3, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
                 },
                 { 
@@ -1551,35 +1551,47 @@
                     badge: 'EDICIÓN 30TH', 
                     isAlt: false, 
                     tag: 'Pokémon TCG', 
-                    typeKey: 'f-especiales',
-                    title: 'Poster Collection 30th Anniversary', 
-                    description: 'Incluye un póster coleccionable de gran formato con arte exclusivo del 30 aniversario, sobres de refuerzo de la edición especial y cartas promocionales foil.',
+                    typeKey: 'f-illustration',
+                    title: '30th Celebration - Poster Collection', 
+                    description: 'Revisa la historia visual de la franquicia con este set conmemorativo a todo color. Contenido: 1 póster desplegable doble cara con arte oficial conmemorativo de las tres décadas de Pokémon TCG, 3 cartas promocionales holográficas de los Pokémon iniciales emblemáticos, 3 sobres de mejora de Pokémon TCG, y código para Pokémon TCG Live.',
                     price: 39900, 
                     stock: 6, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
                 },
                 { 
                     id: 'p7', 
-                    badge: 'EN STOCK', 
+                    badge: 'EDICIÓN 30TH', 
                     isAlt: false, 
                     tag: 'Pokémon TCG', 
-                    typeKey: 'f-especiales',
-                    title: 'First Partner Pack (Serie 2)', 
-                    description: 'Contiene 3 cartas jumbo oversized de los Pokémon iniciales de la región clásica, junto con 2 sobres de expansión estándar de Pokémon TCG.',
-                    price: 28900, 
+                    typeKey: 'f-booster',
+                    title: '30th Celebration - Booster Bundle', 
+                    description: 'La forma más directa de adentrarte en la expansión especial de Aniversario. Contenido: 6 sobres de mejora (Booster Packs) sellados de la colección conmemorativa del 30° Aniversario de Pokémon TCG (cada sobre incluye 10 cartas + energía/código).',
+                    price: 49900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
                 },
                 { 
                     id: 'p8', 
-                    badge: 'EDICIÓN 30TH', 
+                    badge: 'ESPECIAL', 
+                    isAlt: false, 
+                    tag: 'Pokémon TCG', 
+                    typeKey: 'f-especiales',
+                    title: 'First Partner Series 2', 
+                    description: 'Pack de colección gigante pensado para celebrar a los Pokémon iniciales de las distintas regiones. Contenido: 3 cartas promocionales tamaño Jumbo (gigantes) de los iniciales, y 2 sobres de mejora de expansiones regulares de Pokémon TCG.',
+                    price: 34900, 
+                    stock: 1, 
+                    img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
+                },
+                { 
+                    id: 'p9', 
+                    badge: 'EN STOCK', 
                     isAlt: false, 
                     tag: 'Pokémon TCG', 
                     typeKey: 'f-booster',
-                    title: 'Booster Bundle 30th Anniversary Edition', 
-                    description: 'Bundle especial que contiene 6 sobres de expansión sellados de la edición conmemorativa 30th Anniversary con alta probabilidad de cartas holográficas.',
-                    price: 48900, 
-                    stock: 1, 
+                    title: 'Delta Reign - Booster Bundle', 
+                    description: 'Aumenta tu poder de mazo con la nueva era de mecánicas en Delta Reign. Contenido: 6 sobres de mejora (Booster Packs) sellados de la expansión Delta Reign en inglés. Ideal para jugadores competitivos y coleccionistas que buscan cartas Secret Rare, Alt-Art y Ultra Rare.',
+                    price: 44900, 
+                    stock: 25, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
                 }
             ],
@@ -1590,8 +1602,8 @@
                     isAlt: true, 
                     tag: 'Riftbound TCG', 
                     typeKey: 'f-booster',
-                    title: 'Booster Box Riftbound: Radiance Display (24 Packs)', 
-                    description: 'Display sellado de fábrica que contiene 24 sobres de la expansión Radiance de Riftbound TCG. Ideal para torneos Draft, sellados y búsqueda de campeones legendarios.',
+                    title: 'Booster Box Radiance Display (24 Packs) - Riftbound TCG', 
+                    description: 'Caja de sobres sellada de fábrica (Display Box) de Riftbound TCG: Radiance. Contenido: 24 sobres de mejora (Booster Packs) sellados de la expansión Radiance. Diseñado para formatos de Draft, eventos de Sellado o para ampliar tu colección competitiva con las cartas más buscadas del meta.',
                     price: 189900, 
                     stock: 2, 
                     img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' 
@@ -1602,10 +1614,10 @@
                     id: 'op1', 
                     badge: 'SPECIAL BOX', 
                     isAlt: true, 
-                    tag: 'One Piece CG', 
+                    tag: 'One Piece Card Game', 
                     typeKey: 'f-illustration',
-                    title: 'Illustration Box: Eustass "Captain" Kid & Killer',
-                    description: 'Caja de ilustración especial que incluye cartas promo con arte alternativo (Alt-Art) de Eustass Kid y Killer, cartas Don!! conmemorativas y sobres de expansión en inglés.',
+                    title: 'Illustration Box (Eustass "Captain" Kid & Killer) - One Piece TCG',
+                    description: 'Producto de colección exclusivo enfocado en los piratas de Kid de la Peor Generación. Contenido: Cartas promocionales con ilustración alternativa (Alt-Art) exclusiva de Eustass Kid y/o Killer, caja organizadora / guardacartas con diseño oficial, y sobres de expansión de One Piece Card Game en inglés.',
                     price: 59900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1614,10 +1626,10 @@
                     id: 'op2', 
                     badge: 'SPECIAL BOX', 
                     isAlt: true, 
-                    tag: 'One Piece CG', 
+                    tag: 'One Piece Card Game', 
                     typeKey: 'f-illustration',
-                    title: 'Illustration Box: Silvers Rayleigh',
-                    description: 'Caja coleccionable de ilustración con carta de arte alternativo (Alt-Art) de Silvers Rayleigh, estuche protector y sobres de refuerzo oficiales en inglés.',
+                    title: 'Illustration Box (Silvers Rayleigh) - One Piece TCG',
+                    description: 'Edición dedicada a Silvers Rayleigh, el "Rey Oscuro" y mano derecha del Rey de los Piratas. Contenido: Carta promocional Alt-Art exclusiva con arte alternativo de Rayleigh, accesorio/caja de almacenamiento temática de alta calidad, y sobres de mejora de expansiones oficiales de One Piece CG.',
                     price: 59900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1626,10 +1638,10 @@
                     id: 'op3', 
                     badge: 'STARTER DECK', 
                     isAlt: false, 
-                    tag: 'One Piece CG', 
+                    tag: 'One Piece Card Game', 
                     typeKey: 'f-starter',
-                    title: 'Starter Deck ST-32: Roronoa Zoro',
-                    description: 'Mazo estructurado preconstruido de 51 cartas listo para jugar enfocado en Roronoa Zoro, incluye 10 cartas Don!! y hoja de reglas oficial en inglés.',
+                    title: 'Starter Deck ST-32 (Roronoa Zoro) - One Piece TCG',
+                    description: 'Mazo de inicio preconstruido y listo para jugar de inmediato, centrado en el espadachín Roronoa Zoro. Contenido: 1 mazo listo para jugar de 51 cartas (incluye cartas de personaje y eventos), 1 carta de Líder de Roronoa Zoro, 10 cartas de DON!!, y folleto de reglas y tapete de juego de papel.',
                     price: 28900, 
                     stock: 2, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1638,10 +1650,10 @@
                     id: 'op4', 
                     badge: 'STARTER DECK', 
                     isAlt: false, 
-                    tag: 'One Piece CG', 
+                    tag: 'One Piece Card Game', 
                     typeKey: 'f-starter',
-                    title: 'Starter Deck ST-31: Monkey D. Luffy',
-                    description: 'Mazo estructurado preconstruido de 51 cartas listo para jugar de Monkey D. Luffy, incluye 10 cartas Don!!, tapete de papel y manual oficial.',
+                    title: 'Starter Deck ST-31 (Monkey D. Luffy) - One Piece TCG',
+                    description: 'Mazo de inicio completo de Monkey D. Luffy, diseñado para que nuevos jugadores aprendan y compitan rápidamente. Contenido: 1 mazo de 51 cartas preconstruidas y equilibradas, 1 carta de Líder de Monkey D. Luffy, 10 cartas de DON!!, y guía de inicio rápido y mat de juego en papel.',
                     price: 28900, 
                     stock: 2, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1650,10 +1662,10 @@
                     id: 'op5', 
                     badge: 'BOOSTER BOX', 
                     isAlt: true, 
-                    tag: 'One Piece CG', 
+                    tag: 'One Piece Card Game', 
                     typeKey: 'f-booster',
-                    title: 'Booster Box OP-17: Display Oficial (Inglés)',
-                    description: 'Display sellado de fábrica con 24 sobres de la cotizada expansión OP-17 de One Piece Card Game en idioma inglés. Excelente para colección y juego competitivo.',
+                    title: 'Booster Box OP-17 Display (24 Packs) - One Piece TCG',
+                    description: 'Caja de sobres sellada de fábrica (Display Box) de la cotizada expansión OP-17. Contenido: 24 sobres de mejora (Booster Packs) sellados en inglés, y gran oportunidad para obtener cartas Secret Rare (SEC), Alternate Art (AA), Manga Rares y paralelas de alto valor en el mercado secundario.',
                     price: 189900, 
                     stock: 1, 
                     img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' 
@@ -1916,7 +1928,7 @@
             if(element) element.classList.add('active');
             else document.getElementById('pill-all')?.classList.add('active');
 
-            document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟 (14 PRODUCTOS)';
+            document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟 (15 PRODUCTOS)';
             renderActiveCatalog();
             if(drawer) drawer.classList.remove('active');
         }
@@ -1942,7 +1954,7 @@
             const isOnePiece = document.getElementById('f-one-piece')?.checked || false;
             const isRiftbound = document.getElementById('f-riftbound')?.checked || false;
 
-            const isDp = document.getElementById('f-dp')?.checked || false;
+            const isEtb = document.getElementById('f-etb')?.checked || false;
             const isStarter = document.getElementById('f-starter')?.checked || false;
             const isIllustration = document.getElementById('f-illustration')?.checked || false;
             const isBooster = document.getElementById('f-booster')?.checked || false;
@@ -1954,7 +1966,7 @@
             if (isRiftbound) selectedGames.push('riftbound');
 
             const selectedTypes = [];
-            if (isDp) selectedTypes.push('f-dp');
+            if (isEtb) selectedTypes.push('f-etb');
             if (isStarter) selectedTypes.push('f-starter');
             if (isIllustration) selectedTypes.push('f-illustration');
             if (isBooster) selectedTypes.push('f-booster');
