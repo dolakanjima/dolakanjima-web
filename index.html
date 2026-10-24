@@ -44,7 +44,7 @@
             line-height: 1.5;
             font-size: 14px;
             overflow-x: hidden;
-            padding-bottom: 75px;
+            padding-bottom: 85px;
         }
 
         /* ANNOUNCEMENT BAR */
@@ -110,7 +110,6 @@
             min-width: 0;
         }
 
-        /* TÍTULO SAMURÁI ORIGINAL CON J EN ROJO */
         .brand-logo .logo-title {
             font-family: var(--font-samurai);
             font-size: 1.15rem;
@@ -312,16 +311,6 @@
             color: var(--accent-gold);
         }
 
-        .game-pill.pill-promo {
-            border-color: var(--ruby);
-            color: var(--ruby);
-        }
-
-        .game-pill.pill-promo.active {
-            background-color: var(--ruby);
-            color: #FFF;
-        }
-
         /* CATÁLOGO Y FILTROS LATERALES */
         .catalog-container {
             display: grid;
@@ -499,6 +488,13 @@
             line-height: 1.2;
         }
 
+        .product-stock-count {
+            font-size: 0.65rem;
+            color: var(--emerald);
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
         .product-price-row {
             margin-top: auto;
             display: flex;
@@ -517,11 +513,10 @@
             background-color: var(--primary-mahogany);
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            width: 26px;
-            height: 26px;
+            padding: 4px 10px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -572,71 +567,6 @@
             display: inline-block;
         }
 
-        /* APERTURAS & INSTAGRAM FEED */
-        .community-section {
-            background-color: var(--primary-mahogany);
-            border: 2px solid var(--accent-gold);
-            border-radius: 12px;
-            padding: 18px 12px;
-            margin: 25px 0 15px;
-            color: white;
-            text-align: center;
-        }
-
-        .community-section h3 {
-            font-family: var(--font-tcg);
-            color: var(--accent-gold);
-            font-size: 1.1rem;
-            margin-bottom: 2px;
-        }
-
-        .community-section h4 {
-            font-family: var(--font-tcg);
-            color: var(--bg-cream);
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-
-        .video-box {
-            background-color: #24140B;
-            border: 1px solid var(--accent-gold);
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .video-thumb {
-            width: 100%;
-            height: 90px;
-            background-color: #120A05;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: var(--accent-gold);
-            margin-bottom: 6px;
-        }
-
-        .video-box p {
-            font-size: 0.75rem;
-            color: var(--accent-gold);
-            font-weight: 600;
-        }
-
-        .reviews-box {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 12px;
-            margin-top: 12px;
-        }
-
-        .reviews-box p {
-            font-size: 0.75rem;
-            font-style: italic;
-            color: #E8D4A8;
-        }
-
         /* VALORES DE MARCA */
         .value-props-grid {
             display: grid;
@@ -676,7 +606,7 @@
             line-height: 1.25;
         }
 
-        /* FOOTER CON TODOS LOS CORREOS */
+        /* FOOTER CON TODOS LOS CORREOS Y SECCIONES */
         footer {
             background-color: var(--primary-mahogany);
             color: #D0C2B0;
@@ -730,7 +660,6 @@
             color: var(--accent-gold);
         }
 
-        /* ÍCONOS SVG ESTILIZADOS */
         .social-svg-icon {
             width: 16px;
             height: 16px;
@@ -792,16 +721,6 @@
             cursor: pointer;
         }
 
-        .guide-link-btn:hover {
-            color: #FFF;
-        }
-
-        .badge-soon {
-            font-size: 0.65rem;
-            color: #A09080;
-            font-style: italic;
-        }
-
         .copyright-text {
             text-align: center;
             border-top: 1px solid rgba(197, 160, 89, 0.2);
@@ -810,18 +729,18 @@
             color: #9E8E7C;
         }
 
-        /* BOTÓN FLOTANTE OFICIAL DE WHATSAPP */
+        /* BOTÓN FLOTANTE OFICIAL DE WHATSAPP CON AJUSTE DE ALTURA PARA NETLIFY */
         .whatsapp-float {
             position: fixed;
-            width: 50px;
-            height: 50px;
-            bottom: 20px;
-            right: 16px;
+            width: 52px;
+            height: 52px;
+            bottom: 90px; /* ELEVADO PARA QUE NETLIFY NO LO TAPE */
+            right: 18px;
             background-color: #25D366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
             z-index: 999;
             display: flex;
             align-items: center;
@@ -835,12 +754,12 @@
         }
 
         .whatsapp-float svg {
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             fill: #FFFFFF;
         }
 
-        /* MODAL / DRAWER INTERACTIVO DEL CARRITO */
+        /* DRAWER / VENTANA FLOTANTE DEL CARRITO */
         .cart-overlay {
             position: fixed;
             top: 0;
@@ -1009,7 +928,7 @@
             background-color: var(--primary-mahogany);
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            padding: 9px;
+            padding: 10px;
             border-radius: 6px;
             font-weight: 800;
             font-size: 0.78rem;
@@ -1021,13 +940,13 @@
             font-family: var(--font-tcg);
         }
 
-        /* LOGO OFICIAL MERCADO PAGO ESTILIZADO */
+        /* LOGO MERCADO PAGO CORREGIDO Y ENLACE DIRECTO */
         .checkout-mercadopago-btn {
             width: 100%;
             background-color: #009EE3;
             color: white;
             border: none;
-            padding: 9px;
+            padding: 10px;
             border-radius: 6px;
             font-weight: 800;
             font-size: 0.78rem;
@@ -1045,13 +964,13 @@
             fill: white;
         }
 
-        /* TRANSFERENCIA BANCARIA DIRECTA REEMPLAZANDO WHATSAPP EN CARRITO */
+        /* BOTÓN DE TRANSFERENCIA DIRECTA QUE MANDA A WHATSAPP */
         .checkout-transfer-btn {
             width: 100%;
             background-color: #1B4D3E;
             color: white;
             border: none;
-            padding: 9px;
+            padding: 10px;
             border-radius: 6px;
             font-weight: 800;
             font-size: 0.78rem;
@@ -1063,67 +982,10 @@
             box-shadow: 0 3px 8px rgba(27, 77, 62, 0.3);
         }
 
-        /* MODAL DE TRANSFERENCIA BANCARIA */
-        .transfer-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 3500;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-        }
-
-        .transfer-modal-overlay.active {
-            display: flex;
-        }
-
-        .transfer-card {
-            background-color: var(--card-bg);
-            border: 2px solid var(--accent-gold);
-            border-radius: 12px;
-            padding: 18px;
-            max-width: 380px;
-            width: 100%;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-        }
-
-        .transfer-card h4 {
-            font-family: var(--font-tcg);
-            color: var(--primary-mahogany);
-            font-size: 1rem;
-            margin-bottom: 8px;
-            border-bottom: 1px solid var(--border-gold);
-            padding-bottom: 6px;
-        }
-
-        .transfer-info-list {
-            list-style: none;
-            font-size: 0.78rem;
-            line-height: 1.6;
-            color: var(--text-dark);
-            margin-bottom: 12px;
-        }
-
-        .btn-close-transfer {
-            background-color: var(--primary-mahogany);
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            width: 100%;
-            padding: 8px;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
         /* TOAST NOTIFICACIÓN */
         .toast-notification {
             position: fixed;
-            bottom: 75px;
+            bottom: 85px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background-color: var(--primary-dark);
@@ -1197,7 +1059,7 @@
 
     <!-- Top Bar -->
     <div class="top-bar">
-        ☕ ¡Bienvenidos a Dolakanjima! Despachos a todo Chile | 🎴 Preventas oficiales TCG con entrega garantizada
+        ☕ ¡Bienvenidos a Dolakanjima! Despachos a todo Chile | 🎴 Stock real automatizado en tiempo real
     </div>
 
     <!-- Header Ajustado y Responsivo -->
@@ -1213,20 +1075,15 @@
 
         <div class="search-bar">
             <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            <input type="text" id="searchInput" placeholder="Buscar por carta, expansión o juego (ej: Luffy Alt Art, OP-05)..." oninput="handleSearch(this.value)">
+            <input type="text" id="searchInput" placeholder="Buscar por carta, expansión o juego (ej: Umbreon, OP-17, Mew)..." oninput="handleSearch(this.value)">
         </div>
 
         <!-- Menú Desplegable Navegación -->
         <div class="mobile-drawer" id="mobileDrawer">
-            <div class="drawer-item" onclick="selectGameFromNav('promociones')">🏷️ Promociones & Ofertas Especiales</div>
-            <div class="drawer-item" onclick="selectGameFromNav('preventas')">🚀 Preventas Exclusivas</div>
-            <div class="drawer-item" onclick="selectGameFromNav('torneos')">🏆 Torneos & Eventos Presenciales</div>
-            <div class="drawer-item" onclick="selectGameFromNav('tcg-general')">🎴 Trading Card Games (Catálogo General)</div>
+            <div class="drawer-item" onclick="showAllCatalog()">🌟 Ver Catálogo Completo</div>
             <div class="drawer-item" onclick="selectGameFromNav('pokemon')">⚡ Pokémon TCG</div>
             <div class="drawer-item" onclick="selectGameFromNav('one-piece')">🏴‍☠️ One Piece Card Game</div>
-            <div class="drawer-item" onclick="selectGameFromNav('riftbound')">🛡️ Riftbound (League of Legends TCG)</div>
-            <div class="drawer-item" onclick="selectGameFromNav('accesorios')">💼 Accesorios (Sleeves, Binders, Deck Boxes)</div>
-            <div class="drawer-item" onclick="scrollToSection('como-jugar')">🎮 Comunidad & Cómo Jugar TCG</div>
+            <div class="drawer-item" onclick="selectGameFromNav('riftbound')">🛡️ Riftbound TCG</div>
         </div>
     </header>
 
@@ -1236,19 +1093,16 @@
         <section class="hero-banner">
             <span class="hero-badge">Tu Punto de Guardado</span>
             <h2>TU PUNTO DE GUARDADO PARA EL CAFÉ Y EL TCG</h2>
-            <p>Encuentra las mejores ediciones, preventas exclusivas y accesorios para llevar tu juego al siguiente nivel.</p>
+            <p>Encuentra tus ediciones favoritas y asegura tu compra con stock sincronizado en tiempo real.</p>
             <a href="#catalogo" class="btn-primary">EXPLORAR CATÁLOGO</a>
         </section>
 
         <!-- SELECCIÓN RÁPIDA DE JUEGOS Y SECCIONES -->
         <div class="game-quick-access">
-            <div class="game-pill pill-promo" id="pill-promociones" onclick="filterGame('promociones', this)">Ofertas 🏷️</div>
-            <div class="game-pill active" id="pill-one-piece" onclick="filterGame('one-piece', this)">One Piece</div>
-            <div class="game-pill" id="pill-pokemon" onclick="filterGame('pokemon', this)">Pokémon</div>
-            <div class="game-pill" id="pill-riftbound" onclick="filterGame('riftbound', this)">Riftbound</div>
-            <div class="game-pill" id="pill-preventas" onclick="filterGame('preventas', this)">Preventas 🚀</div>
-            <div class="game-pill" id="pill-torneos" onclick="filterGame('torneos', this)">Torneos 🏆</div>
-            <div class="game-pill" id="pill-accesorios" onclick="filterGame('accesorios', this)">Accesorios</div>
+            <div class="game-pill active" id="pill-all" onclick="showAllCatalog(this)">Catálogo Completo 🌟</div>
+            <div class="game-pill" id="pill-pokemon" onclick="filterGame('pokemon', this)">Pokémon ⚡</div>
+            <div class="game-pill" id="pill-one-piece" onclick="filterGame('one-piece', this)">One Piece 🏴‍☠️</div>
+            <div class="game-pill" id="pill-riftbound" onclick="filterGame('riftbound', this)">Riftbound 🛡️</div>
         </div>
 
         <!-- CATÁLOGO Y FILTROS LATERALES -->
@@ -1263,10 +1117,9 @@
                     <div class="filter-group">
                         <h5>Juego / Categoria</h5>
                         <div class="filter-options">
-                            <label><input type="checkbox" id="f-one-piece" class="filter-checkbox"> One Piece</label>
-                            <label><input type="checkbox" id="f-pokemon" class="filter-checkbox"> Pokémon</label>
+                            <label><input type="checkbox" id="f-pokemon" class="filter-checkbox"> Pokémon TCG</label>
+                            <label><input type="checkbox" id="f-one-piece" class="filter-checkbox"> One Piece CG</label>
                             <label><input type="checkbox" id="f-riftbound" class="filter-checkbox"> Riftbound</label>
-                            <label><input type="checkbox" id="f-accesorios" class="filter-checkbox"> Accesorios</label>
                         </div>
                     </div>
 
@@ -1278,30 +1131,19 @@
                             <label><input type="checkbox" id="f-illustration" class="filter-checkbox"> Illustration Box / Collection</label>
                             <label><input type="checkbox" id="f-booster" class="filter-checkbox"> Booster Box / Display</label>
                             <label><input type="checkbox" id="f-especiales" class="filter-checkbox"> Ediciones Especiales & Bundles</label>
-                            <label><input type="checkbox" id="f-etb" class="filter-checkbox"> Elite Trainer Box (ETB)</label>
-                            <label><input type="checkbox" id="f-singles" class="filter-checkbox"> Cartas Sueltas / Singles</label>
-                        </div>
-                    </div>
-
-                    <div class="filter-group">
-                        <h5>Idioma</h5>
-                        <div class="filter-options">
-                            <label><input type="checkbox" class="filter-checkbox"> Inglés</label>
-                            <label><input type="checkbox" class="filter-checkbox"> Español</label>
-                            <label><input type="checkbox" class="filter-checkbox"> Japonés</label>
                         </div>
                     </div>
 
                     <div class="filter-actions">
                         <button class="btn-apply-filter" onclick="applyCustomFilters()">Aplicar Filtros</button>
-                        <button class="btn-clear-filter" onclick="clearCustomFilters()">Limpiar</button>
+                        <button class="btn-clear-filter" onclick="showAllCatalog()">Mostrar Todo</button>
                     </div>
                 </div>
             </aside>
 
             <main>
                 <div class="section-header">
-                    <h3 id="catalogTitle">CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️</h3>
+                    <h3 id="catalogTitle">CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟</h3>
                 </div>
 
                 <div class="product-grid" id="productGrid">
@@ -1314,23 +1156,7 @@
         <section class="coffee-banner">
             <span class="coffee-tag">PRÓXIMAMENTE PRESENCIAL</span>
             <h3 style="margin-top: 8px;">Café de Especialidad & Snack Bar</h3>
-            <p>Acompaña tus partidas con el mejor grano de especialidad. Revisa nuestra carta de bebidas y repostería para disfrutar en nuestro local.</p>
-        </section>
-
-        <!-- APERTURAS & INSTAGRAM FEED -->
-        <section class="community-section">
-            <h3>Aperturas & Unboxings</h3>
-            <h4>Dolakanjima (@dolakanjima.tcg)</h4>
-
-            <div class="video-box">
-                <div class="video-thumb">▶️</div>
-                <p>Apertura Caso Completo OP-05 buscando a Manga Luffy</p>
-            </div>
-
-            <div class="reviews-box">
-                <p>"¡Llegó mi Booster Box súper rápido y ultra protegido! El mejor servicio para coleccionistas."</p>
-                <span style="font-size: 0.7rem; color: var(--accent-gold); font-weight: bold;">- Cliente Verificado (@dolakanjima.tcg)</span>
-            </div>
+            <p>Acompaña tus partidas con el mejor grano de especialidad en nuestro local presencial.</p>
         </section>
 
         <!-- VALORES DE MARCA -->
@@ -1338,12 +1164,12 @@
             <div class="value-card">
                 <div class="value-icon">🚚</div>
                 <h4>Envíos Por Pagar</h4>
-                <p>Envíos seguros a todo Chile a través de Starken, Chilexpress y Blue Express.</p>
+                <p>Envíos seguros a todo Chile por Starken y Blue Express.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">🔒</div>
-                <h4>100% Oficiales y Sellados</h4>
-                <p>Garantía de distribución directa y autenticidad en cada producto.</p>
+                <h4>Stock Real Sincronizado</h4>
+                <p>Compra con total confianza y sin riesgo de sobreventa.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon">☕</div>
@@ -1383,7 +1209,7 @@
         </div>
 
         <div class="footer-block">
-            <h4>INFORMACIÓN</h4>
+            <h4>INFORMACIÓN Y GUÍAS</h4>
             <div class="info-accordion">
                 <div class="info-item">
                     <div class="info-title" onclick="toggleAccordion('sobre-nosotros')">
@@ -1401,9 +1227,8 @@
                         <span id="arrow-politicas-envio">▸</span>
                     </div>
                     <div class="info-content" id="politicas-envio">
-                        <strong>Envíos:</strong> Despachos por pagar a todo Chile a través de Starken, Chilexpress y Blue Express. Envíos realizados en un plazo de 24 a 48 horas hábiles tras la confirmación del pago.<br><br>
-                        <strong>Preventas:</strong> Las fechas de entrega de preventas están sujetas a la distribución oficial de las marcas. Se garantiza la reserva del cupo asignado.<br><br>
-                        <strong>Devoluciones:</strong> Por seguridad de la comunidad, solo se aceptan devoluciones de productos TCG sellados en su empaque original de fábrica.
+                        <strong>Envíos:</strong> Despachos por pagar a todo Chile a través de Starken, Chilexpress y Blue Express (24 a 48 horas hábiles tras la confirmación del pago).<br><br>
+                        <strong>Devoluciones:</strong> Solo se aceptan devoluciones de productos TCG sellados en su empaque original de fábrica.
                     </div>
                 </div>
 
@@ -1419,21 +1244,18 @@
 
                 <div class="info-item">
                     <div class="info-title" onclick="toggleAccordion('como-jugar')">
-                        <span>Cómo Jugar TCG</span>
+                        <span>Cómo Jugar TCG (Guías Oficiales)</span>
                         <span id="arrow-como-jugar">▸</span>
                     </div>
                     <div class="info-content" id="como-jugar">
-                        ¿Eres nuevo en el mundo del TCG o quieres aprender un nuevo sistema de juego? En Dolakanjima apoyamos a la comunidad desde sus primeros pasos.<br><br>
-                        • <strong>Pokémon TCG:</strong> Guía oficial con estructura del turno, energías y condiciones de victoria.<br>
-                        👉 <a href="https://tcg.pokemon.com/assets/img/learn-to-play/getting-started/quick-start-rules/es-es/quick_start_rulebook.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Pokémon TCG (PDF Español) 🔗</a><br><br>
+                        • <strong>Pokémon TCG:</strong> Reglamento y reglas de inicio rápido.<br>
+                        👉 <a href="https://tcg.pokemon.com/assets/img/learn-to-play/getting-started/quick-start-rules/es-es/quick_start_rulebook.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Pokémon TCG (PDF) 🔗</a><br><br>
 
                         • <strong>One Piece CG:</strong> Mecánicas de Líder, gestión de Don!! y fases de combate.<br>
                         👉 <a href="https://en.onepiece-cardgame.com/rules/" target="_blank" class="guide-link-btn">Ver Guía Oficial One Piece CG 🔗</a><br><br>
 
-                        • <strong>Riftbound (League of Legends TCG):</strong> Reglamento oficial de campeones, runas y conquista de campos de batalla.<br>
-                        👉 <a href="https://uvsgames.com/wp-content/uploads/2025/11/OGS-ProvingGrounds-HowtoPlay-EN.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Riftbound TCG (PDF) 🔗</a><br><br>
-
-                        • <strong>Magic: The Gathering / Star Wars: Unlimited:</strong> <span class="badge-soon">(Guías disponibles próximamente al arribo de stock)</span>
+                        • <strong>Riftbound TCG:</strong> Reglamento oficial de campeones y campos de batalla.<br>
+                        👉 <a href="https://uvsgames.com/wp-content/uploads/2025/11/OGS-ProvingGrounds-HowtoPlay-EN.pdf" target="_blank" class="guide-link-btn">Ver Reglamento Oficial Riftbound TCG (PDF) 🔗</a>
                     </div>
                 </div>
             </div>
@@ -1453,7 +1275,7 @@
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE OFICIAL DE WHATSAPP -->
+    <!-- BOTÓN FLOTANTE OFICIAL DE WHATSAPP CON MÁGIN INFERIOR AJUSTADA -->
     <a href="https://wa.me/56941394287" class="whatsapp-float" target="_blank" aria-label="Contacto WhatsApp">
         <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     </a>
@@ -1465,9 +1287,7 @@
             <h3>CARRITO DE COMPRAS 🛒</h3>
             <button class="close-cart-btn" id="closeCartBtn">&times;</button>
         </div>
-        <div class="cart-body" id="cartBody">
-            <!-- Contenido dinámico -->
-        </div>
+        <div class="cart-body" id="cartBody"></div>
         <div class="cart-footer">
             <div class="cart-total-row">
                 <span>Total:</span>
@@ -1478,71 +1298,109 @@
                 💳 Pagar con Webpay / Transbank
             </button>
             
-            <!-- LOGO OFICIAL MERCADO PAGO EN SVG -->
+            <!-- MERCADO PAGO ENLACE REAL Y SVG OFICIAL -->
             <button class="checkout-mercadopago-btn" onclick="checkoutMercadoPago()">
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
                 Pagar con Mercado Pago
             </button>
 
-            <!-- TRANSFERENCIA BANCARIA DIRECTA REEMPLAZANDO A WHATSAPP EN EL CARRITO -->
-            <button class="checkout-transfer-btn" onclick="openTransferModal()">
+            <!-- PAGAR POR TRANSFERENCIA DIRECTO A WHATSAPP CON MENSAJE -->
+            <button class="checkout-transfer-btn" onclick="checkoutTransferWhatsApp()">
                 🏦 Pagar por Transferencia Bancaria
             </button>
         </div>
     </div>
 
-    <!-- MODAL DATOS DE TRANSFERENCIA -->
-    <div class="transfer-modal-overlay" id="transferModal">
-        <div class="transfer-card">
-            <h4>🏦 DATOS DE TRANSFERENCIA BANCARIA</h4>
-            <ul class="transfer-info-list">
-                <li><strong>Titular:</strong> Dolakanjima SpA</li>
-                <li><strong>RUT:</strong> 77.XXX.XXX-K</li>
-                <li><strong>Banco:</strong> Banco de Chile / Banco Estado</li>
-                <li><strong>Tipo de Cuenta:</strong> Cuenta Corriente</li>
-                <li><strong>N° Cuenta:</strong> 123456789</li>
-                <li><strong>Correo comprobantes:</strong> ventas@dolakanjima.com</li>
-                <li><strong>Monto Total:</strong> <span id="transferTotalVal">$0</span></li>
-            </ul>
-            <p style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 12px;">
-                *Envía el comprobante a nuestro WhatsApp adjuntando el detalle del pedido para coordinar tu despacho.
-            </p>
-            <button class="btn-close-transfer" onclick="closeTransferModal()">Entendido / Cerrar</button>
-        </div>
-    </div>
-
-    <!-- TOAST -->
+    <!-- TOAST NOTIFICACIÓN -->
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
-    <!-- JAVASCRIPT LÓGICA COMPLETA -->
+    <!-- JAVASCRIPT LÓGICA COMPLETA Y STOCK AUTÉNTICO -->
     <script>
+        const defaultProductsData = {
+            'pokemon': [
+                { id: 'p1', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', title: 'Ultra Premium Collection 30th Anniversary (Umbreon Edition)', price: 189900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p2', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', title: 'Ditto Collection Box 30th Anniversary', price: 42900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p3', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Figure Collection Mew 30th Anniversary', price: 38900, stock: 3, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p4', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Figure Collection Mewtwo 30th Anniversary', price: 38900, stock: 3, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p5', badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG', title: 'Booster Bundle Delta Rain', price: 24900, stock: 25, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p6', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Poster Collection 30th Anniversary', price: 21900, stock: 6, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p7', badge: 'EN STOCK', isAlt: false, tag: 'Pokémon TCG', title: 'First Partner Pack (Serie 2)', price: 15900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
+                { id: 'p8', badge: 'EDICIÓN 30TH', isAlt: false, tag: 'Pokémon TCG', title: 'Booster Bundle 30th Anniversary Edition', price: 26900, stock: 1, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+            ],
+            'riftbound': [
+                { id: 'r1', badge: 'BOOSTER BOX', isAlt: true, tag: 'Riftbound TCG', title: 'Booster Box Riftbound: Radiance Display (24 Packs)', price: 115000, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
+            ],
+            'one-piece': [
+                { id: 'op1', badge: 'SPECIAL BOX', isAlt: true, tag: 'One Piece CG', title: 'Illustration Box: Eustass "Captain" Kid & Killer', price: 34900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op2', badge: 'SPECIAL BOX', isAlt: true, tag: 'One Piece CG', title: 'Illustration Box: Silvers Rayleigh', price: 34900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op3', badge: 'STARTER DECK', isAlt: false, tag: 'One Piece CG', title: 'Starter Deck ST-32: Roronoa Zoro', price: 16900, stock: 2, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op4', badge: 'STARTER DECK', isAlt: false, tag: 'One Piece CG', title: 'Starter Deck ST-31: Monkey D. Luffy', price: 16900, stock: 2, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' },
+                { id: 'op5', badge: 'BOOSTER BOX', isAlt: true, tag: 'One Piece CG', title: 'Booster Box OP-17: Display Oficial (Inglés)', price: 124900, stock: 1, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' }
+            ]
+        };
+
+        let productsData = JSON.parse(localStorage.getItem('dolakanjima_stock')) || defaultProductsData;
+
+        function saveStockToLocalStorage() {
+            localStorage.setItem('dolakanjima_stock', JSON.stringify(productsData));
+        }
+
         let cart = [];
 
-        function addToCart(title, price, img) {
-            const existingItem = cart.find(item => item.title === title);
-            if (existingItem) {
-                existingItem.qty += 1;
+        function findProductById(id) {
+            for (const category in productsData) {
+                const prod = productsData[category].find(p => p.id === id);
+                if (prod) return prod;
+            }
+            return null;
+        }
+
+        function addToCart(id) {
+            const product = findProductById(id);
+            if (!product) return;
+
+            const existingCartItem = cart.find(item => item.id === id);
+            const currentQtyInCart = existingCartItem ? existingCartItem.qty : 0;
+
+            if (currentQtyInCart + 1 > product.stock) {
+                showToast(`⚠️ No hay más stock disponible.`);
+                return;
+            }
+
+            if (existingCartItem) {
+                existingCartItem.qty += 1;
             } else {
-                cart.push({ title, price, img, qty: 1 });
+                cart.push({ id: product.id, title: product.title, price: product.price, img: product.img, qty: 1 });
             }
+
             updateCartUI();
-            showToast(`¡${title.split('-')[0]} agregado!`);
+            renderActiveCatalog();
+            showToast(`¡Añadido al carrito! 🎴`);
         }
 
-        function updateCartQty(title, delta) {
-            const item = cart.find(i => i.title === title);
-            if (item) {
-                item.qty += delta;
-                if (item.qty <= 0) {
-                    cart = cart.filter(i => i.title !== title);
-                }
+        function updateCartQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+
+            const product = findProductById(id);
+            if (delta > 0 && item.qty + 1 > product.stock) {
+                showToast(`⚠️ Límite de stock alcanzado.`);
+                return;
             }
+
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+
             updateCartUI();
+            renderActiveCatalog();
         }
 
-        function removeFromCart(title) {
-            cart = cart.filter(i => i.title !== title);
+        function removeFromCart(id) {
+            cart = cart.filter(i => i.id !== id);
             updateCartUI();
+            renderActiveCatalog();
         }
 
         function updateCartUI() {
@@ -1572,12 +1430,12 @@
                             <div class="cart-item-title">${item.title}</div>
                             <div class="cart-item-price">$${item.price.toLocaleString('es-CL')}</div>
                             <div class="cart-qty-controls">
-                                <button class="cart-qty-btn" onclick="updateCartQty('${item.title}', -1)">-</button>
+                                <button class="cart-qty-btn" onclick="updateCartQty('${item.id}', -1)">-</button>
                                 <span class="cart-qty-val">${item.qty}</span>
-                                <button class="cart-qty-btn" onclick="updateCartQty('${item.title}', 1)">+</button>
+                                <button class="cart-qty-btn" onclick="updateCartQty('${item.id}', 1)">+</button>
                             </div>
                         </div>
-                        <button class="cart-remove-btn" onclick="removeFromCart('${item.title}')">🗑️</button>
+                        <button class="cart-remove-btn" onclick="removeFromCart('${item.id}')">🗑️</button>
                     </div>
                 `;
             });
@@ -1590,9 +1448,7 @@
             const toast = document.getElementById('toastNotif');
             toast.innerText = msg;
             toast.classList.add('active');
-            setTimeout(() => {
-                toast.classList.remove('active');
-            }, 2500);
+            setTimeout(() => { toast.classList.remove('active'); }, 2500);
         }
 
         function checkoutWebpay() {
@@ -1602,18 +1458,173 @@
 
         function checkoutMercadoPago() {
             if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
-            window.open("https://www.mercadopago.cl", '_blank');
+            window.open("https://www.mercadopago.cl/", '_blank');
         }
 
-        function openTransferModal() {
+        // REDIRECCIÓN A WHATSAPP CON RESUMEN PARA DATOS DE TRANSFERENCIA
+        function checkoutTransferWhatsApp() {
             if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
-            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            document.getElementById('transferTotalVal').innerText = '$' + total.toLocaleString('es-CL');
-            document.getElementById('transferModal').classList.add('active');
+
+            let text = "¡Hola Dolakanjima! ☕🎴 Quisiera solicitar los datos para transferencia bancaria y coordinar mi pedido:\n\n";
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                text += `• ${item.qty}x ${item.title} - $${subtotal.toLocaleString('es-CL')}\n`;
+
+                const prod = findProductById(item.id);
+                if (prod) {
+                    prod.stock = Math.max(0, prod.stock - item.qty);
+                }
+            });
+
+            saveStockToLocalStorage();
+
+            text += `\n*TOTAL: $${total.toLocaleString('es-CL')}*\n\n¡Quedo atento a la confirmación de los datos bancarios para realizar la transferencia y coordinar el despacho!";`;
+
+            cart = [];
+            updateCartUI();
+            renderActiveCatalog();
+            toggleCartModal(false);
+
+            const encoded = encodeURIComponent(text);
+            window.open(`https://wa.me/56941394287?text=${encoded}`, '_blank');
         }
 
-        function closeTransferModal() {
-            document.getElementById('transferModal').classList.remove('active');
+        function renderProductCard(container, item) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+
+            const isOut = item.stock <= 0;
+            const stockText = isOut ? 'Agotado' : `Stock: ${item.stock} un.`;
+
+            card.innerHTML = `
+                <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
+                <div class="product-img-wrapper">
+                    <img src="${item.img}" alt="${item.title}">
+                </div>
+                <div class="product-details">
+                    <span class="product-game-tag">${item.tag}</span>
+                    <h4 class="product-title">${item.title}</h4>
+                    <span class="product-stock-count ${isOut ? 'out-stock' : ''}">${stockText}</span>
+                    <div class="product-price-row">
+                        <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
+                        <button class="add-cart-btn-sm" ${isOut ? 'disabled' : ''} onclick="addToCart('${item.id}')">
+                            ${isOut ? 'Agotado' : '+'}
+                        </button>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        }
+
+        let currentFilterMode = 'all';
+        let selectedGameKey = '';
+
+        // CARGA POR DEFECTO DEL CATÁLOGO COMPLETO
+        function showAllCatalog(element) {
+            currentFilterMode = 'all';
+            document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
+            if(element) element.classList.add('active');
+            else document.getElementById('pill-all')?.classList.add('active');
+
+            document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟';
+            renderActiveCatalog();
+            if(drawer) drawer.classList.remove('active');
+        }
+
+        function filterGame(gameKey, element) {
+            currentFilterMode = 'game';
+            selectedGameKey = gameKey;
+            document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
+            if(element) element.classList.add('active');
+            
+            const titles = {
+                'pokemon': 'CATÁLOGO: POKÉMON TCG ⚡',
+                'one-piece': 'CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️',
+                'riftbound': 'CATÁLOGO: RIFTBOUND TCG 🛡️'
+            };
+
+            document.getElementById('catalogTitle').innerText = titles[gameKey] || 'CATÁLOGO DE PRODUCTOS';
+            renderActiveCatalog();
+        }
+
+        function applyCustomFilters() {
+            const isPokemon = document.getElementById('f-pokemon')?.checked || false;
+            const isOnePiece = document.getElementById('f-one-piece')?.checked || false;
+            const isRiftbound = document.getElementById('f-riftbound')?.checked || false;
+
+            const selectedGames = [];
+            if (isPokemon) selectedGames.push('pokemon');
+            if (isOnePiece) selectedGames.push('one-piece');
+            if (isRiftbound) selectedGames.push('riftbound');
+
+            if (selectedGames.length === 0) {
+                showAllCatalog();
+                return;
+            }
+
+            currentFilterMode = 'custom';
+            selectedGameKey = selectedGames;
+            document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
+
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            let combinedItems = [];
+            selectedGames.forEach(key => {
+                if (productsData[key]) combinedItems = combinedItems.concat(productsData[key]);
+            });
+
+            document.getElementById('catalogTitle').innerText = `CATÁLOGO FILTRADO (${combinedItems.length} PRODUCTOS)`;
+            combinedItems.forEach(item => renderProductCard(grid, item));
+            
+            showToast("🔍 Filtros aplicados correctamente");
+            if (window.innerWidth < 768) {
+                document.getElementById('filterPanel').classList.remove('active');
+            }
+        }
+
+        function renderActiveCatalog() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            let itemsToRender = [];
+            if (currentFilterMode === 'all') {
+                Object.values(productsData).forEach(list => { itemsToRender = itemsToRender.concat(list); });
+            } else if (currentFilterMode === 'game') {
+                itemsToRender = productsData[selectedGameKey] || [];
+            } else if (currentFilterMode === 'custom') {
+                selectedGameKey.forEach(key => {
+                    if (productsData[key]) itemsToRender = itemsToRender.concat(productsData[key]);
+                });
+            }
+
+            itemsToRender.forEach(item => {
+                renderProductCard(grid, item);
+            });
+        }
+
+        function handleSearch(query) {
+            const searchTerm = query.toLowerCase().trim();
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            
+            let allProducts = [];
+            Object.values(productsData).forEach(list => { allProducts = allProducts.concat(list); });
+
+            const filtered = allProducts.filter(item => 
+                item.title.toLowerCase().includes(searchTerm) || 
+                item.tag.toLowerCase().includes(searchTerm)
+            );
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<p style="grid-column: span 2; text-align:center; padding: 30px; color: var(--text-muted);">No se encontraron productos que coincidan con tu búsqueda.</p>';
+                return;
+            }
+
+            document.getElementById('catalogTitle').innerText = `RESULTADOS DE BÚSQUEDA (${filtered.length})`;
+            filtered.forEach(item => renderProductCard(grid, item));
         }
 
         const openCartBtn = document.getElementById('openCartBtn');
@@ -1635,160 +1646,6 @@
         closeCartBtn.addEventListener('click', () => toggleCartModal(false));
         cartOverlay.addEventListener('click', () => toggleCartModal(false));
 
-        const productsData = {
-            'promociones': [
-                { badge: 'OFERTA ESPECIAL', isAlt: true, tag: 'Pokémon TCG', title: 'Pack 3 Blisters Scarlet & Violet (Descuento Especial)', price: 12900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'preventas': [
-                { badge: 'PREVENTA CON RESERVA', isAlt: true, tag: 'One Piece CG', title: 'Monkey D. Luffy (Alt Art) - OP-05 (Inglés)', price: 45000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'torneos': [
-                { badge: 'INSCRIPCIÓN ABIERTA', isAlt: false, tag: 'Eventos Presenciales', title: 'Ticket Torneo Inaugural One Piece CG (Incluye Kit)', price: 10000, img: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'one-piece': [
-                { badge: 'PREVENTA CON RESERVA', isAlt: true, tag: 'One Piece CG', title: 'Monkey D. Luffy (Alt Art) - OP-05 (Inglés)', price: 45000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
-                { badge: 'EN STOCK', isAlt: false, tag: 'One Piece CG', title: 'Booster Box OP-06: Wings Captain (Inglés)', price: 119900, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'pokemon': [
-                { badge: 'EN STOCK', isAlt: true, tag: 'Pokémon TCG', title: 'Charizard ex Special Illustration Rare (Inglés)', price: 85000, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'riftbound': [
-                { badge: 'STOCK INICIAL', isAlt: true, tag: 'Riftbound TCG', title: 'Starter Deck Champion Jinx (Español)', price: 18900, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' }
-            ],
-            'accesorios': [
-                { badge: 'EN STOCK', isAlt: false, tag: 'Accesorios', title: 'Folios Protectores Matte Gold (x100)', price: 8900, img: 'https://images.unsplash.com/photo-1589241062272-c0a000072dfa?auto=format&fit=crop&w=400&q=80' }
-            ]
-        };
-
-        const gameTitles = {
-            'promociones': 'CATÁLOGO: PROMOCIONES & OFERTAS ESPECIALES 🏷️',
-            'preventas': 'CATÁLOGO: PREVENTAS EXCLUSIVAS TCG 🚀',
-            'torneos': 'CATÁLOGO: TORNEOS & EVENTOS PRESENCIALES 🏆',
-            'tcg-general': 'CATÁLOGO: TRADING CARD GAMES (TODOS LOS JUEGOS) 🎴',
-            'one-piece': 'CATÁLOGO: ONE PIECE CARD GAME 🏴‍☠️',
-            'pokemon': 'CATÁLOGO: POKÉMON TCG ⚡',
-            'riftbound': 'CATÁLOGO: RIFTBOUND (LEAGUE OF LEGENDS TCG) 🛡️',
-            'accesorios': 'CATÁLOGO: ACCESORIOS (SLEEVES & BINDERS) 💼'
-        };
-
-        function handleSearch(query) {
-            const searchTerm = query.toLowerCase().trim();
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-
-            let allProducts = [];
-            Object.values(productsData).forEach(list => { allProducts = allProducts.concat(list); });
-
-            const uniqueProducts = Array.from(new Set(allProducts.map(p => p.title)))
-                .map(title => allProducts.find(p => p.title === title));
-
-            const filtered = uniqueProducts.filter(item => 
-                item.title.toLowerCase().includes(searchTerm) || 
-                item.tag.toLowerCase().includes(searchTerm)
-            );
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '<p style="grid-column: span 2; text-align:center; padding: 25px; color: var(--text-muted);">No se encontraron productos que coincidan con tu búsqueda.</p>';
-                document.getElementById('catalogTitle').innerText = 'RESULTADOS DE BÚSQUEDA';
-                return;
-            }
-
-            document.getElementById('catalogTitle').innerText = `RESULTADOS DE BÚSQUEDA (${filtered.length})`;
-
-            filtered.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper">
-                        <img src="${item.img}" alt="${item.title}">
-                    </div>
-                    <div class="product-details">
-                        <span class="product-game-tag">${item.tag}</span>
-                        <h4 class="product-title">${item.title}</h4>
-                        <div class="product-price-row">
-                            <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
-                            <button class="add-cart-btn-sm" onclick="addToCart('${item.title}', ${item.price}, '${item.img}')">+</button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        function applyCustomFilters() {
-            const isOnePiece = document.getElementById('f-one-piece')?.checked || false;
-            const isPokemon = document.getElementById('f-pokemon')?.checked || false;
-            const isRiftbound = document.getElementById('f-riftbound')?.checked || false;
-            const isAccesorios = document.getElementById('f-accesorios')?.checked || false;
-
-            const selectedGames = [];
-            if (isOnePiece) selectedGames.push('one-piece');
-            if (isPokemon) selectedGames.push('pokemon');
-            if (isRiftbound) selectedGames.push('riftbound');
-            if (isAccesorios) selectedGames.push('accesorios');
-
-            if (selectedGames.length === 0) {
-                alert("Por favor selecciona al menos un filtro de categoría.");
-                return;
-            }
-
-            renderFilteredProducts(selectedGames);
-            showToast("🔍 Filtros aplicados correctamente");
-            
-            if (window.innerWidth < 768) {
-                document.getElementById('filterPanel').classList.remove('active');
-            }
-        }
-
-        function clearCustomFilters() {
-            document.querySelectorAll('.filter-checkbox').forEach(cb => cb.checked = false);
-            document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
-
-            renderFilteredProducts(['one-piece', 'pokemon', 'riftbound', 'accesorios', 'promociones', 'preventas', 'torneos']);
-            document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO';
-            showToast("Filtros desmarcados");
-            
-            if (window.innerWidth < 768) {
-                document.getElementById('filterPanel').classList.remove('active');
-            }
-        }
-
-        function renderFilteredProducts(gameKeys) {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-
-            let combinedItems = [];
-            gameKeys.forEach(key => {
-                if (productsData[key]) combinedItems = combinedItems.concat(productsData[key]);
-            });
-
-            const uniqueItems = Array.from(new Set(combinedItems.map(p => p.title)))
-                .map(title => combinedItems.find(p => p.title === title));
-
-            document.getElementById('catalogTitle').innerText = `CATÁLOGO FILTRADO (${uniqueItems.length} PRODUCTOS)`;
-
-            uniqueItems.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper">
-                        <img src="${item.img}" alt="${item.title}">
-                    </div>
-                    <div class="product-details">
-                        <span class="product-game-tag">${item.tag}</span>
-                        <h4 class="product-title">${item.title}</h4>
-                        <div class="product-price-row">
-                            <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
-                            <button class="add-cart-btn-sm" onclick="addToCart('${item.title}', ${item.price}, '${item.img}')">+</button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
         const toggleBtn = document.getElementById('toggleMenu');
         const drawer = document.getElementById('mobileDrawer');
         toggleBtn.addEventListener('click', (e) => {
@@ -1808,38 +1665,12 @@
             toggleFilter.addEventListener('click', () => filterPanel.classList.toggle('active'));
         }
 
-        function selectGameFromNav(gameKey) {
-            drawer.classList.remove('active');
-            document.getElementById('searchInput').value = '';
-            
-            const pillMap = {
-                'promociones': 'pill-promociones',
-                'preventas': 'pill-preventas',
-                'torneos': 'pill-torneos',
-                'tcg-general': 'pill-one-piece',
-                'one-piece': 'pill-one-piece',
-                'pokemon': 'pill-pokemon',
-                'riftbound': 'pill-riftbound',
-                'accesorios': 'pill-accesorios'
-            };
-
-            filterGame(gameKey, document.getElementById(pillMap[gameKey]));
-            document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function scrollToSection(infoId) {
-            drawer.classList.remove('active');
-            toggleAccordion(infoId);
-        }
-
         function toggleAccordion(id) {
             const content = document.getElementById(id);
             const arrow = document.getElementById('arrow-' + id);
             const isActive = content.classList.contains('active');
-
             document.querySelectorAll('.info-content').forEach(item => item.classList.remove('active'));
             document.querySelectorAll('[id^="arrow-"]').forEach(a => a.innerText = '▸');
-
             if (!isActive) {
                 content.classList.add('active');
                 if (arrow) arrow.innerText = '▾';
@@ -1847,42 +1678,15 @@
             }
         }
 
-        function filterGame(gameKey, element) {
-            document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
-            if(element) element.classList.add('active');
-            document.getElementById('searchInput').value = '';
-
-            const titleElem = document.getElementById('catalogTitle');
-            if (titleElem && gameTitles[gameKey]) {
-                titleElem.innerText = gameTitles[gameKey];
-            }
-
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-
-            const items = productsData[gameKey] || [];
-            items.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <span class="product-badge ${item.isAlt ? 'alt-art' : ''}">${item.badge}</span>
-                    <div class="product-img-wrapper">
-                        <img src="${item.img}" alt="${item.title}">
-                    </div>
-                    <div class="product-details">
-                        <span class="product-game-tag">${item.tag}</span>
-                        <h4 class="product-title">${item.title}</h4>
-                        <div class="product-price-row">
-                            <span class="product-price">$${item.price.toLocaleString('es-CL')}</span>
-                            <button class="add-cart-btn-sm" onclick="addToCart('${item.title}', ${item.price}, '${item.img}')">+</button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
+        function selectGameFromNav(gameKey) {
+            drawer.classList.remove('active');
+            const pillMap = { 'pokemon': 'pill-pokemon', 'one-piece': 'pill-one-piece', 'riftbound': 'pill-riftbound' };
+            filterGame(gameKey, document.getElementById(pillMap[gameKey]));
+            document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
         }
 
-        filterGame('one-piece', document.getElementById('pill-one-piece'));
+        // CARGA INICIAL POR DEFECTO: MOSTRAR TODO EL CATÁLOGO
+        showAllCatalog(document.getElementById('pill-all'));
         updateCartUI();
     </script>
 
