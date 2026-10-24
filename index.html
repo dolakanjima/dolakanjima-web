@@ -590,30 +590,6 @@
             display: inline-block;
         }
 
-        .community-section {
-            background-color: var(--primary-mahogany);
-            border: 2px solid var(--accent-gold);
-            border-radius: 12px;
-            padding: 20px 14px;
-            margin: 30px 0 20px;
-            color: white;
-            text-align: center;
-        }
-
-        .community-section h3 {
-            font-family: var(--font-tcg);
-            color: var(--accent-gold);
-            font-size: 1.15rem;
-            margin-bottom: 4px;
-        }
-
-        .community-section h4 {
-            font-family: var(--font-tcg);
-            color: var(--bg-cream);
-            font-size: 0.92rem;
-            margin-bottom: 14px;
-        }
-
         .value-props-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -708,8 +684,6 @@
 
         .social-svg-icon.mail { fill: var(--accent-gold); }
         .social-svg-icon.instagram { fill: #E1306C; }
-        .social-svg-icon.facebook { fill: #1877F2; }
-        .social-svg-icon.tiktok { fill: #FFFFFF; }
         .social-svg-icon.whatsapp { fill: #25D366; }
 
         .copyright-text {
@@ -1054,6 +1028,7 @@
         </div>
 
         <div class="mobile-drawer" id="mobileDrawer">
+            <div class="drawer-item" onclick="showAllCatalog()">⚡ Ver Catálogo Completo</div>
             <div class="drawer-item" onclick="selectGameFromNav('pokemon')">⚡ Pokémon TCG</div>
             <div class="drawer-item" onclick="selectGameFromNav('one-piece')">🏴‍☠️ One Piece Card Game</div>
             <div class="drawer-item" onclick="selectGameFromNav('riftbound')">🛡️ Riftbound TCG</div>
@@ -1070,7 +1045,8 @@
         </section>
 
         <div class="game-quick-access">
-            <div class="game-pill active" id="pill-pokemon" onclick="filterGame('pokemon', this)">Pokémon ⚡</div>
+            <div class="game-pill active" id="pill-all" onclick="showAllCatalog(this)">Catálogo Completo 🌟</div>
+            <div class="game-pill" id="pill-pokemon" onclick="filterGame('pokemon', this)">Pokémon ⚡</div>
             <div class="game-pill" id="pill-one-piece" onclick="filterGame('one-piece', this)">One Piece 🏴‍☠️</div>
             <div class="game-pill" id="pill-riftbound" onclick="filterGame('riftbound', this)">Riftbound 🛡️</div>
         </div>
@@ -1093,14 +1069,14 @@
 
                     <div class="filter-actions">
                         <button class="btn-apply-filter" onclick="applyCustomFilters()">Aplicar Filtros</button>
-                        <button class="btn-clear-filter" onclick="clearCustomFilters()">Limpiar</button>
+                        <button class="btn-clear-filter" onclick="showAllCatalog()">Mostrar Todo</button>
                     </div>
                 </div>
             </aside>
 
             <main>
                 <div class="section-header">
-                    <h3 id="catalogTitle">CATÁLOGO: POKÉMON TCG ⚡</h3>
+                    <h3 id="catalogTitle">CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟</h3>
                 </div>
                 <div class="product-grid" id="productGrid"></div>
             </main>
@@ -1182,7 +1158,7 @@
     <div class="toast-notification" id="toastNotif">🛒 Producto agregado al carrito</div>
 
     <script>
-        // BASE DE DATOS INICIAL DE STOCK
+        // BASE DE DATOS INICIAL DE STOCK REAL
         const defaultProductsData = {
             'pokemon': [
                 { id: 'p1', badge: 'EDICIÓN 30TH', isAlt: true, tag: 'Pokémon TCG', title: 'Ultra Premium Collection 30th Anniversary (Umbreon Edition)', price: 189900, stock: 2, img: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=400&q=80' },
@@ -1214,7 +1190,6 @@
         }
 
         let cart = [];
-        let currentGameKey = 'pokemon';
 
         function findProductById(id) {
             for (const category in productsData) {
@@ -1243,7 +1218,7 @@
             }
 
             updateCartUI();
-            renderCurrentView();
+            renderActiveCatalog();
             showToast(`¡Añadido al carrito! 🎴`);
         }
 
@@ -1263,13 +1238,13 @@
             }
 
             updateCartUI();
-            renderCurrentView();
+            renderActiveCatalog();
         }
 
         function removeFromCart(id) {
             cart = cart.filter(i => i.id !== id);
             updateCartUI();
-            renderCurrentView();
+            renderActiveCatalog();
         }
 
         function updateCartUI() {
@@ -1359,7 +1334,7 @@
             // Vaciar carrito y actualizar vista
             cart = [];
             updateCartUI();
-            renderCurrentView();
+            renderActiveCatalog();
             toggleCartModal(false);
 
             const encoded = encodeURIComponent(text);
@@ -1393,8 +1368,23 @@
             container.appendChild(card);
         }
 
+        let currentFilterMode = 'all'; // 'all', 'game', 'custom'
+        let selectedGameKey = '';
+
+        function showAllCatalog(element) {
+            currentFilterMode = 'all';
+            document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
+            if(element) element.classList.add('active');
+            else document.getElementById('pill-all')?.classList.add('active');
+
+            document.getElementById('catalogTitle').innerText = 'CATÁLOGO COMPLETO - TODAS LAS CATEGORÍAS 🌟';
+            renderActiveCatalog();
+            if(drawer) drawer.classList.remove('active');
+        }
+
         function filterGame(gameKey, element) {
-            currentGameKey = gameKey;
+            currentFilterMode = 'game';
+            selectedGameKey = gameKey;
             document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
             if(element) element.classList.add('active');
             
@@ -1405,14 +1395,60 @@
             };
 
             document.getElementById('catalogTitle').innerText = titles[gameKey] || 'CATÁLOGO DE PRODUCTOS';
-            renderCurrentView();
+            renderActiveCatalog();
         }
 
-        function renderCurrentView() {
+        function applyCustomFilters() {
+            const isPokemon = document.getElementById('f-pokemon')?.checked || false;
+            const isOnePiece = document.getElementById('f-one-piece')?.checked || false;
+            const isRiftbound = document.getElementById('f-riftbound')?.checked || false;
+
+            const selectedGames = [];
+            if (isPokemon) selectedGames.push('pokemon');
+            if (isOnePiece) selectedGames.push('one-piece');
+            if (isRiftbound) selectedGames.push('riftbound');
+
+            if (selectedGames.length === 0) {
+                showAllCatalog();
+                return;
+            }
+
+            currentFilterMode = 'custom';
+            selectedGameKey = selectedGames;
+            document.querySelectorAll('.game-pill').forEach(pill => pill.classList.remove('active'));
+
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
-            const items = productsData[currentGameKey] || [];
-            items.forEach(item => {
+            let combinedItems = [];
+            selectedGames.forEach(key => {
+                if (productsData[key]) combinedItems = combinedItems.concat(productsData[key]);
+            });
+
+            document.getElementById('catalogTitle').innerText = `CATÁLOGO FILTRADO (${combinedItems.length} PRODUCTOS)`;
+            combinedItems.forEach(item => renderProductCard(grid, item));
+            
+            showToast("🔍 Filtros aplicados correctamente");
+            if (window.innerWidth < 768) {
+                document.getElementById('filterPanel').classList.remove('active');
+            }
+        }
+
+        function renderActiveCatalog() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            let itemsToRender = [];
+            if (currentFilterMode === 'all') {
+                Object.values(productsData).forEach(list => { itemsToRender = itemsToRender.concat(list); });
+            } else if (currentFilterMode === 'game') {
+                itemsToRender = productsData[selectedGameKey] || [];
+            } else if (currentFilterMode === 'custom') {
+                selectedGameKey.forEach(key => {
+                    if (productsData[key]) itemsToRender = itemsToRender.concat(productsData[key]);
+                });
+            }
+
+            itemsToRender.forEach(item => {
                 renderProductCard(grid, item);
             });
         }
@@ -1471,6 +1507,12 @@
             }
         });
 
+        const toggleFilter = document.getElementById('toggleFilter');
+        const filterPanel = document.getElementById('filterPanel');
+        if(toggleFilter) {
+            toggleFilter.addEventListener('click', () => filterPanel.classList.toggle('active'));
+        }
+
         function selectGameFromNav(gameKey) {
             drawer.classList.remove('active');
             const pillMap = { 'pokemon': 'pill-pokemon', 'one-piece': 'pill-one-piece', 'riftbound': 'pill-riftbound' };
@@ -1478,8 +1520,8 @@
             document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Carga Inicial
-        filterGame('pokemon', document.getElementById('pill-pokemon'));
+        // CARGA INICIAL POR DEFECTO: CATÁLOGO COMPLETO SIN FILTROS
+        showAllCatalog(document.getElementById('pill-all'));
         updateCartUI();
     </script>
 
